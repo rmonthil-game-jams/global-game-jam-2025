@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://vgcsdyrs4fi6"]
+
+[ext_resource type="Script" path="res://remi/hand/hand.gd" id="1_y8m2l"]
+[ext_resource type="Texture2D" uid="uid://d1ubl05fr53qk" path="res://icon.svg" id="2_lhrts"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1ueg"]
+radius = 60.0
+
+[node name="Hand" type="RigidBody2D"]
+script = ExtResource("1_y8m2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lhrts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i1ueg")

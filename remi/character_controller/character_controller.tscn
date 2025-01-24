@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt7c3rs4twbab"]
+
+[ext_resource type="Script" path="res://remi/character_controller/character_controller.gd" id="1_b44bh"]
+[ext_resource type="PackedScene" uid="uid://njtgilhdheeo" path="res://remi/physics_controller/physics_controller.tscn" id="2_ljwv6"]
+
+[node name="CharacterController" type="Node"]
+script = ExtResource("1_b44bh")
+
+[node name="PhysicsController" parent="." instance=ExtResource("2_ljwv6")]
+RIGID_BODY_PATH = NodePath("")

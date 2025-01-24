@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5yyp1kl4s686"]
+
+[ext_resource type="Script" path="res://remi/player/player_keyboard_0/player_keyboard_0.gd" id="1_qwp2j"]
+
+[node name="PlayerKeyboard0" type="Node"]
+script = ExtResource("1_qwp2j")

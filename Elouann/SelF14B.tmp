@@ -1,13 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://csx3amq4xxay5"]
+[gd_scene load_steps=14 format=3 uid="uid://csx3amq4xxay5"]
 
 [ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_gkc03"]
-[ext_resource type="Texture2D" uid="uid://01i8ak4s75ti" path="res://lise/bottle_front.png" id="2_kcndj"]
-[ext_resource type="Texture2D" uid="uid://hkb0d04h84gl" path="res://salome/bottle_1_front.png" id="3_36278"]
-[ext_resource type="Texture2D" uid="uid://bslgok4bln0lr" path="res://salome/bottle_2_front.png" id="4_eujdb"]
+[ext_resource type="Texture2D" uid="uid://d1ubl05fr53qk" path="res://icon.svg" id="2_ndipj"]
+[ext_resource type="Texture2D" uid="uid://cue2q5p2eabij" path="res://Elouann/BierrePng.png" id="3_507vn"]
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="4_qmqsi"]
 [ext_resource type="Texture2D" uid="uid://m242mdr1ibxt" path="res://Elouann/Main1.png" id="5_7ei7x"]
 [ext_resource type="Texture2D" uid="uid://ol4i2igay4ca" path="res://Elouann/Bouteille2.png" id="5_iy4i2"]
-[ext_resource type="Texture2D" uid="uid://m2npewq27pwq" path="res://salome/bottle_3_front.png" id="5_j8xoc"]
 [ext_resource type="Texture2D" uid="uid://nvl437cdvv2h" path="res://Elouann/Ressources/FondEcran.png" id="5_jt4jh"]
 [ext_resource type="Texture2D" uid="uid://b5h60y0b4wxxw" path="res://Elouann/Chara/Chara1.png" id="8_t5seo"]
 [ext_resource type="Texture2D" uid="uid://cj83nqylsruy5" path="res://Elouann/Bouttons/BlackScreen.png" id="9_bd3ha"]
@@ -140,7 +138,7 @@ _data = {
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_gkc03")
-TableChara = [ExtResource("2_kcndj"), ExtResource("3_36278"), ExtResource("4_eujdb"), ExtResource("5_j8xoc")]
+TableChara = [ExtResource("2_ndipj"), ExtResource("3_507vn"), ExtResource("5_iy4i2"), ExtResource("2_ndipj"), ExtResource("2_ndipj")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(0.27, 0.27)
@@ -329,8 +327,8 @@ texture = ExtResource("8_t5seo")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(605.556, 344.009)
-scale = Vector2(7.60582, 7.13351)
+position = Vector2(600, 337)
+scale = Vector2(7, 7)
 texture = ExtResource("9_bd3ha")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
@@ -340,5 +338,4 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

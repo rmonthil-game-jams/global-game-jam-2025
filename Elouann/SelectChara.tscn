@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://wuhwir40toyn"]
+[gd_scene load_steps=12 format=3 uid="uid://wuhwir40toyn"]
 
 [ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_bfoi2"]
 [ext_resource type="Texture2D" uid="uid://b5h60y0b4wxxw" path="res://Elouann/Chara/Chara1.png" id="2_4n8k8"]
-[ext_resource type="Texture2D" uid="uid://d1ubl05fr53qk" path="res://icon.svg" id="2_oa0qu"]
+[ext_resource type="Texture2D" uid="uid://0dcdnd4lltdb" path="res://salome/hand_1.png" id="3_11ulh"]
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="3_nflbn"]
-[ext_resource type="Texture2D" uid="uid://cue2q5p2eabij" path="res://Elouann/BierrePng.png" id="4_86eml"]
 [ext_resource type="Texture2D" uid="uid://m242mdr1ibxt" path="res://Elouann/Main1.png" id="5_hd0ej"]
 [ext_resource type="Texture2D" uid="uid://nvl437cdvv2h" path="res://Elouann/Ressources/FondEcran.png" id="6_5cylr"]
 [ext_resource type="Texture2D" uid="uid://cj83nqylsruy5" path="res://Elouann/Bouttons/BlackScreen.png" id="6_7kmyv"]
@@ -485,7 +484,7 @@ _data = {
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_bfoi2")
-TableChara = [ExtResource("2_4n8k8"), ExtResource("4_86eml"), ExtResource("5_hd0ej"), ExtResource("2_oa0qu"), ExtResource("2_oa0qu")]
+TableChara = [ExtResource("2_4n8k8"), ExtResource("3_11ulh")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(0.27, 0.27)

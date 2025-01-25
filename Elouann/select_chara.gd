@@ -18,21 +18,21 @@ func _ready() -> void:
 	if UiManager.VersusAI:
 		AutoSelect()
 	if name == "SelectBottle":
-		get_node("CanvasLayer/Main1").texture = UiManager.SpriteP0
-		print_debug("next sprite is")
-		print_debug(UiManager.SpriteP0)
-		get_node("CanvasLayer/Main2").texture = UiManager.SpriteP1
+		get_node("CanvasLayer/Main1").texture = UiManager.SavedSprite0
+		get_node("CanvasLayer/Main2").texture = UiManager.SavedSprite1
 
 func _on_timer_timeout():
 	if name == "SelectChara":
-		print_debug("Go to bottle selection")
-		UiManager.SpriteP0 = get_node("CanvasLayer/Sprite2D").texture
-		UiManager.SpriteP1 = get_node("CanvasLayer/Sprite2D2").texture
+		UiManager.SpriteP0 = ScrollNumberP0
+		UiManager.SpriteP1 = ScrollNumberP1
+		UiManager.SavedSprite0 = TableChara[ScrollNumberP0]
+		UiManager.SavedSprite1 = TableChara[ScrollNumberP1]
 		get_tree().change_scene_to_file("res://Elouann/SelectBottle.tscn")
-	elif name == "SelectBottle":
-		print_debug("Go to map selection")
-		UiManager.Bottle0 = get_node("CanvasLayer/Sprite2D").texture
-		UiManager.Bottle1 = get_node("CanvasLayer/Sprite2D2").texture
+	if name == "SelectBottle":
+		UiManager.Bottle0 = ScrollNumberP0
+		UiManager.Bottle1 = ScrollNumberP1
+		UiManager.SavedBottle0 = TableChara[ScrollNumberP0]
+		UiManager.SavedBottle1 = TableChara[ScrollNumberP1]
 		get_tree().change_scene_to_file("res://Elouann/SelectMap.tscn")
 
 func _process(delta: float) -> void:
@@ -109,6 +109,7 @@ func AutoSelect():
 		var TempInt = randi_range(0,TableSize)
 		get_node("CanvasLayer/Sprite2D").texture = TableChara[TempInt]
 		ChangeSprite(0,TempInt)
+		ScrollNumberP0 = TempInt
 		LockP0 = false
 		get_node("CanvasLayer/ValidateP0").text = "Ready !"
 		CheckBothReady()
@@ -117,8 +118,8 @@ func _on_button_pressed() -> void:
 	ActivateAI()
 	get_node("CanvasLayer/Button").visible = false
 
-
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	print_debug(anim_name)
 	if anim_name == "FadeOut":
+		print_debug("test")
 		get_node("Timer").start(1)
-		print_debug("debug")

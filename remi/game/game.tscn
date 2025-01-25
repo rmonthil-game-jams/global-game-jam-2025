@@ -33,7 +33,5 @@ PLAYER_PATH = NodePath("../PlayerKeyboard1")
 [node name="Battle" parent="Processes" instance=ExtResource("5_jtfdm")]
 
 [node name="FoamsUp" parent="Processes" instance=ExtResource("6_a55bu")]
-BOTTLE_0_PATH = NodePath("")
-BOTTLE_1_PATH = NodePath("")
 
 [connection signal="finished" from="Processes/Battle" to="." method="_on_battle_finished"]

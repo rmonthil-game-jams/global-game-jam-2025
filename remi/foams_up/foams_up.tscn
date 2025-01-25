@@ -4,5 +4,3 @@
 
 [node name="FoamsUp" type="Node"]
 script = ExtResource("1_drijy")
-BOTTLE_0_PATH = null
-BOTTLE_1_PATH = null

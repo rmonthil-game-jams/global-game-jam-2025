@@ -3,12 +3,16 @@
 [ext_resource type="Script" path="res://remi/repulse_area/repulse_area_2d.gd" id="1_ec0lx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp16r"]
+size = Vector2(320, 8)
 
 [node name="RepulseArea2D" type="Area2D"]
 collision_layer = 0
 collision_mask = 16
 monitorable = false
 script = ExtResource("1_ec0lx")
+DIRECTION = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dp16r")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

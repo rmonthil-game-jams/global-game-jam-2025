@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsl7lpijaemnm"]
+
+[ext_resource type="Script" path="res://remi/fx/fx_3.gd" id="1_fe1ok"]
+[ext_resource type="Texture2D" uid="uid://bmemngc6y2g2" path="res://roxane/3.png" id="2_nr6xg"]
+
+[node name="Fx3" type="Node2D"]
+z_index = 5
+script = ExtResource("1_fe1ok")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nr6xg")

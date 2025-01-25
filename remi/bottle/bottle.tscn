@@ -83,6 +83,9 @@ texture = ExtResource("3_o75sx")
 [node name="Handle" type="Marker2D" parent="."]
 position = Vector2(0, 13)
 
+[node name="Fx" type="Marker2D" parent="."]
+position = Vector2(-1, 10)
+
 [node name="Area2DFluid" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 8
@@ -143,9 +146,9 @@ position = Vector2(0, 5)
 position = Vector2(-5, 5)
 
 [node name="FluidPart16" parent="." instance=ExtResource("3_x61ig")]
-position = Vector2(-5, 0)
+position = Vector2(0, -5)
 
 [node name="FluidPart17" parent="." instance=ExtResource("3_x61ig")]
 
 [node name="FluidPart18" parent="." instance=ExtResource("3_x61ig")]
-position = Vector2(5, 0)
+position = Vector2(0, -10)

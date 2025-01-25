@@ -56,6 +56,7 @@ func set_up_bottle_0():
 	bottle_0.position.x = 0.5 * HAND_SPACING
 	bottle_0.position.y = 0.0
 	$World.add_child(bottle_0)
+	bottle_0.HAND_PATH = bottle_0.get_path_to(hand_0)
 	# connection
 	connection_0 = preload("res://remi/physics_controller/physics_target_controller.tscn").instantiate()
 	$Processes.add_child(connection_0)
@@ -72,6 +73,7 @@ func set_up_bottle_1():
 	bottle_1.position.x = -0.5 * HAND_SPACING
 	bottle_1.position.y = 0.0
 	$World.add_child(bottle_1)
+	bottle_1.HAND_PATH = bottle_1.get_path_to(hand_1)
 	# connection
 	connection_1 = preload("res://remi/physics_controller/physics_target_controller.tscn").instantiate()
 	$Processes.add_child(connection_1)
@@ -85,19 +87,66 @@ func _ready() -> void:
 	_start_battle()
 
 func _start_battle() -> void:
+	# process
+	$Processes/Battle.process_mode = Node.PROCESS_MODE_DISABLED
+	$Processes/FoamsUp.process_mode = Node.PROCESS_MODE_DISABLED
+	# setup
 	set_up_arena()
 	set_up_hand_0()
 	set_up_hand_1()
 	set_up_bottle_0()
 	set_up_bottle_1()
+	# freeze
+	bottle_0.freeze = true
+	bottle_1.freeze = true
 	# battle
 	$Processes/Battle.is_finishing = false
-	# TODO: better animation
+	# anim
+	## fade in
 	var tween: Tween = create_tween()
 	tween.tween_property($Env/CanvasModulate, "color", Color.WHITE, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+	#await tween.finished
+	## 3
+	var fx_3: Node2D = preload("res://remi/fx/fx_3.tscn").instantiate()
+	fx_3.position = Vector2.ZERO
+	$World.add_child(fx_3)
+	await get_tree().create_timer(fx_3.DURATION).timeout
+	## 2
+	var fx_2: Node2D = preload("res://remi/fx/fx_2.tscn").instantiate()
+	fx_2.position = Vector2.ZERO
+	$World.add_child(fx_2)
+	await get_tree().create_timer(fx_2.DURATION).timeout
+	## 1
+	var fx_1: Node2D = preload("res://remi/fx/fx_1.tscn").instantiate()
+	fx_1.position = Vector2.ZERO
+	$World.add_child(fx_1)
+	await get_tree().create_timer(fx_1.DURATION).timeout
+	## fight
+	var fx_fight: Node2D = preload("res://remi/fx/fx_fight.tscn").instantiate()
+	fx_fight.position = Vector2.ZERO
+	$World.add_child(fx_fight)
+	# await get_tree().create_timer(fx_fight.DURATION).timeout
+	# unfreeze
+	bottle_0.freeze = false
+	bottle_1.freeze = false
+	# process
+	$Processes/Battle.process_mode = Node.PROCESS_MODE_INHERIT
+	$Processes/FoamsUp.process_mode = Node.PROCESS_MODE_INHERIT
 
 func _end_battle(victor_id: int) -> void:
-	# TODO: better animation
+	# process
+	$Processes/Battle.is_bottle_0_safe = true
+	$Processes/Battle.is_bottle_1_safe = true
+	$Processes/Battle.process_mode = Node.PROCESS_MODE_DISABLED
+	$Processes/FoamsUp.is_bottle_0_foaming = false
+	$Processes/FoamsUp.is_bottle_1_foaming = false
+	$Processes/FoamsUp.process_mode = Node.PROCESS_MODE_DISABLED
+	# ko
+	var fx_ko: Node2D = preload("res://remi/fx/fx_ko.tscn").instantiate()
+	fx_ko.position = Vector2.ZERO
+	$World.add_child(fx_ko)
+	await get_tree().create_timer(0.5 * fx_ko.DURATION).timeout
+	# fade out
 	var tween: Tween = create_tween()
 	tween.tween_property($Env/CanvasModulate, "color", Color.BLACK, 4.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	await tween.finished

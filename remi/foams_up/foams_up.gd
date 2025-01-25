@@ -7,12 +7,10 @@ extends Node
 
 const FOAM_ACCELERATION: float = 1024.0
 
-const REPULSE_REACTION_TIME: float = 0.25 * 0.25
-const HIT_INTENSITY: float = pow(2, -10)
+const REPULSE_REACTION_TIME: float = 0.125
+const HIT_INTENSITY: float = pow(2, -11)
 const HIT_INTENSITY_V: float = pow(2, -4)
 const STUN_DELAY: float = 0.25
-
-# TODO: FOAMS UP BASED ON HEIGHT
 
 var is_bottle_0_foaming: bool = false
 var is_bottle_1_foaming: bool = false
@@ -30,17 +28,30 @@ func _physics_process(delta: float) -> void:
 			var hand_0: RigidBody2D = get_node(HAND_0_PATH)
 			hand_0.is_stun = true
 			get_tree().create_timer(STUN_DELAY, false, true).timeout.connect(
-				func():
-					hand_0.is_stun = false
+				_on_stun_end.bind(0)
 			)
+			# TODO: FX CONTACT (PARTICLES)
 			# FOAM: TODO: Proportional with difference !
 			if not is_bottle_0_foaming:
-				var hit_intensity: float = HIT_INTENSITY * (bottle_0.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_0.linear_velocity - other_bottle.linear_velocity).length())
-				if hit_intensity > 0.0:
+				var foam_duration: float = HIT_INTENSITY * (bottle_0.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_0.linear_velocity - other_bottle.linear_velocity).length())
+				if foam_duration > 0.0:
 					is_bottle_0_foaming = true
-					get_tree().create_timer(hit_intensity, false, true).timeout.connect(
+					get_tree().create_timer(foam_duration, false, true).timeout.connect(
 						_on_foam_end.bind(0)
 					)
+					# fx
+					if foam_duration >= 0.5:
+						var fx_good: Node2D = preload("res://remi/fx/fx_perfect.tscn").instantiate()
+						fx_good.position = 0.5 * (bottle_0.global_position + other_bottle.global_position)
+						bottle_0.get_parent().add_child(fx_good)
+					elif foam_duration >= 0.25:
+						var fx_good: Node2D = preload("res://remi/fx/fx_awesome.tscn").instantiate()
+						fx_good.position = 0.5 * (bottle_0.global_position + other_bottle.global_position)
+						bottle_0.get_parent().add_child(fx_good)
+					elif foam_duration >= 0.125:
+						var fx_good: Node2D = preload("res://remi/fx/fx_good.tscn").instantiate()
+						fx_good.position = 0.5 * (bottle_0.global_position + other_bottle.global_position)
+						bottle_0.get_parent().add_child(fx_good)
 					# anim
 					for fluid_part in bottle_0.get_node("Area2DFluid").get_overlapping_bodies():
 						# init
@@ -74,17 +85,28 @@ func _physics_process(delta: float) -> void:
 			var hand_1: RigidBody2D = get_node(HAND_1_PATH)
 			hand_1.is_stun = true
 			get_tree().create_timer(STUN_DELAY, false, true).timeout.connect(
-				func():
-					hand_1.is_stun = false
+				_on_stun_end.bind(1)
 			)
-			# FOAM: TODO: Proportional with difference !
 			if not is_bottle_1_foaming:
-				var hit_intensity: float = HIT_INTENSITY * (bottle_1.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_1.linear_velocity - other_bottle.linear_velocity).length())
-				if hit_intensity > 0.0:
+				var foam_duration: float = HIT_INTENSITY * (bottle_1.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_1.linear_velocity - other_bottle.linear_velocity).length())
+				if foam_duration > 0.0:
 					is_bottle_1_foaming = true
-					get_tree().create_timer(hit_intensity, false, true).timeout.connect(
+					get_tree().create_timer(foam_duration, false, true).timeout.connect(
 						_on_foam_end.bind(1)
 					)
+					# fx
+					if foam_duration >= 0.5:
+						var fx_good: Node2D = preload("res://remi/fx/fx_perfect.tscn").instantiate()
+						fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
+						bottle_1.get_parent().add_child(fx_good)
+					elif foam_duration >= 0.25:
+						var fx_good: Node2D = preload("res://remi/fx/fx_awesome.tscn").instantiate()
+						fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
+						bottle_1.get_parent().add_child(fx_good)
+					elif foam_duration >= 0.125:
+						var fx_good: Node2D = preload("res://remi/fx/fx_good.tscn").instantiate()
+						fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
+						bottle_1.get_parent().add_child(fx_good)
 					# anim
 					for fluid_part in bottle_1.get_node("Area2DFluid").get_overlapping_bodies():
 						# init
@@ -107,8 +129,17 @@ func _physics_process(delta: float) -> void:
 			for fluid_part in bottle_1.get_node("Area2DFluid").get_overlapping_bodies():
 				fluid_part.apply_central_impulse(fluid_part.mass * FOAM_ACCELERATION * delta * -bottle_1.global_transform.y)
 
-func _on_foam_end(_bottle_id: int):
-	match _bottle_id:
+func _on_stun_end(bottle_id: int):
+	match bottle_id:
+		0:
+			var hand_0: RigidBody2D = get_node(HAND_0_PATH)
+			hand_0.is_stun = false
+		1:
+			var hand_1: RigidBody2D = get_node(HAND_1_PATH)
+			hand_1.is_stun = false
+
+func _on_foam_end(bottle_id: int):
+	match bottle_id:
 		0:
 			is_bottle_0_foaming = false
 			if has_node(BOTTLE_0_PATH):
@@ -126,7 +157,8 @@ func _on_fluid_part_foam_end(_area: Area2D, fluid_part: RigidBody2D):
 	var fluid_part_area_hit_box: Area2D = fluid_part.get_node("Area2DHitBox")
 	# clean
 	fluid_part_area_hit_box.monitoring = true
-	fluid_part_area_hit_box.area_exited.disconnect(_on_fluid_part_foam_end)
+	if fluid_part_area_hit_box.area_exited.is_connected(_on_fluid_part_foam_end):
+		fluid_part_area_hit_box.area_exited.disconnect(_on_fluid_part_foam_end)
 	# tween
 	if fluid_part.tween_ui_foam_modulate:
 		fluid_part.tween_ui_foam_modulate.kill()

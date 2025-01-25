@@ -5,7 +5,7 @@ const SPEED: float = 128 + 64
 @export var PLAYER_PATH: NodePath
 @export var HAND_PATH: NodePath
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if has_node(HAND_PATH):
 		var hand: RigidBody2D = get_node(HAND_PATH)
 		if not hand.is_stun:

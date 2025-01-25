@@ -34,6 +34,8 @@ func set_up_hand_0():
 	hand_0.position.y = 0.0
 	$World.add_child(hand_0)
 	$Processes/CharacterController0.HAND_PATH = $Processes/CharacterController0.get_path_to(hand_0)
+	# battle
+	$Processes/FoamsUp.HAND_0_PATH = $Processes/FoamsUp.get_path_to(hand_0)
 
 func set_up_hand_1():
 	# TODO: based on selection
@@ -44,6 +46,8 @@ func set_up_hand_1():
 	hand_1.get_node("UI").scale.x = -1
 	$World.add_child(hand_1)
 	$Processes/CharacterController1.HAND_PATH = $Processes/CharacterController1.get_path_to(hand_1)
+	# battle
+	$Processes/FoamsUp.HAND_1_PATH = $Processes/FoamsUp.get_path_to(hand_1)
 
 func set_up_bottle_0():
 	# TODO: based on selection
@@ -86,6 +90,8 @@ func _start_battle() -> void:
 	set_up_hand_1()
 	set_up_bottle_0()
 	set_up_bottle_1()
+	# battle
+	$Processes/Battle.is_finishing = false
 	# TODO: better animation
 	var tween: Tween = create_tween()
 	tween.tween_property($Env/CanvasModulate, "color", Color.WHITE, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
@@ -98,11 +104,8 @@ func _end_battle(victor_id: int) -> void:
 	# clean
 	hand_0.queue_free()
 	hand_1.queue_free()
-	match victor_id:
-		0:
-			bottle_0.queue_free()
-		1:
-			bottle_1.queue_free()
+	bottle_0.queue_free()
+	bottle_1.queue_free()
 	connection_0.queue_free()
 	connection_1.queue_free()
 	arena.queue_free()

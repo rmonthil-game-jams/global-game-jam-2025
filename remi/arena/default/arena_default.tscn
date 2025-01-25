@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://3w7gwxg0byt4"]
+[gd_scene load_steps=8 format=3 uid="uid://3w7gwxg0byt4"]
 
 [ext_resource type="Script" path="res://remi/arena/default/arena_default.gd" id="1_p1fw1"]
 [ext_resource type="Texture2D" uid="uid://botf2ybcg00yw" path="res://ines/arena_0.png" id="2_l85sa"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_efpab"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uac6d"]
 
@@ -26,6 +30,7 @@ texture = ExtResource("2_l85sa")
 [node name="Physics" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Physics"]
+physics_material_override = SubResource("PhysicsMaterial_efpab")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Physics/StaticBody2D"]
 position = Vector2(0, 90)

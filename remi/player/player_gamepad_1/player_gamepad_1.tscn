@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://v8pyfgbil01f"]
+
+[ext_resource type="Script" path="res://remi/player/player_gamepad_1/player_gamepad_1.gd" id="1_0qtya"]
+
+[node name="PlayerGamepad1" type="Node"]
+script = ExtResource("1_0qtya")

@@ -132,6 +132,12 @@ func _start_battle() -> void:
 	set_up_hand_1(1)
 	set_up_bottle_0(0)
 	set_up_bottle_1(1)
+	# controllers
+	if Input.get_connected_joypads().size() > 0:
+		$Processes/CharacterController1.PLAYER_PATH = $Processes/CharacterController1.get_path_to($Processes/PlayerGamepad0)
+		if Input.get_connected_joypads().size() > 1:
+			$Processes/CharacterController0.PLAYER_PATH = $Processes/CharacterController0.get_path_to($Processes/PlayerGamepad1)
+	## TODO: deal with bot
 	# freeze
 	bottle_0.freeze = true
 	bottle_1.freeze = true

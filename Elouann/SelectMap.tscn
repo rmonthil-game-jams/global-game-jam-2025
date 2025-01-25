@@ -16,13 +16,15 @@ script = ExtResource("1_11kat")
 MapArray = [ExtResource("3_ry5mu"), ExtResource("3_0shah"), ExtResource("4_pxs2p"), ExtResource("5_facni")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.27, 0.27)
+transform = Transform2D(0.27, 0, 0, 0.27, 0, 0)
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(578.225, 322.225)
 scale = Vector2(8.99649, 5.05899)
 texture = ExtResource("2_s2ksm")
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="RandomButton" type="Button" parent="CanvasLayer"]
 offset_left = 303.0
 offset_top = 525.0
 offset_right = 700.0
@@ -34,7 +36,7 @@ text = "    Random
           Map"
 alignment = 0
 
-[node name="Button2" type="Button" parent="CanvasLayer"]
+[node name="StartButton" type="Button" parent="CanvasLayer"]
 offset_left = 629.0
 offset_top = 525.0
 offset_right = 1026.0
@@ -56,26 +58,26 @@ theme_override_font_sizes/font_size = 80
 text = "< "
 
 [node name="Label6" type="Label" parent="CanvasLayer"]
-offset_left = 340.0
+offset_left = 356.0
 offset_top = 184.0
 offset_right = 410.0
 offset_bottom = 228.0
 scale = Vector2(1.01772, 1)
 theme = ExtResource("4_fx1su")
 theme_override_font_sizes/font_size = 30
-text = "Left"
+text = "Q"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="CanvasLayer"]
 offset_left = 754.0
 offset_top = 190.0
-offset_right = 824.0
+offset_right = 792.0
 offset_bottom = 234.0
 scale = Vector2(1.01772, 1)
 theme = ExtResource("4_fx1su")
 theme_override_font_sizes/font_size = 30
-text = "Right"
+text = "D"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -118,7 +120,7 @@ scale = Vector2(0.234547, 0.234547)
 texture = ExtResource("3_0shah")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(250, 361.5)
+position = Vector2(286, 360)
 scale = Vector2(0.234555, 0.234555)
 texture = ExtResource("3_0shah")
 
@@ -129,9 +131,11 @@ texture = ExtResource("5_5e4ny")
 
 [node name="Main2" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(266, 366)
-scale = Vector2(0.675355, 0.675355)
+scale = Vector2(-0.675, 0.675)
 texture = ExtResource("5_5e4ny")
 
 [node name="Timer" type="Timer" parent="."]
 
+[connection signal="pressed" from="CanvasLayer/RandomButton" to="." method="_on_random_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

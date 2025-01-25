@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvnu4cqcqrikp"]
+[gd_scene load_steps=4 format=3 uid="uid://cvnu4cqcqrikp"]
 
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="1_jsfdf"]
+[ext_resource type="Script" path="res://Elouann/main_menu.gd" id="1_vj8ku"]
 [ext_resource type="FontFile" uid="uid://c1fpj8o6nl28m" path="res://Elouann/Winter Drink.otf" id="1_y7ehw"]
 
 [node name="MainMenu" type="Node"]
+script = ExtResource("1_vj8ku")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.27, 0.27)
+transform = Transform2D(0.27, 0, 0, 0.27, 0, 0)
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = -156.0
@@ -51,3 +55,5 @@ theme = ExtResource("1_jsfdf")
 theme_override_font_sizes/font_size = 50
 text = "    Quit"
 alignment = 0
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

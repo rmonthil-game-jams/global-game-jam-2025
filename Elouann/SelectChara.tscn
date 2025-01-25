@@ -10,9 +10,21 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_bfoi2")
-TableChara = [ExtResource("2_oa0qu"), ExtResource("4_86eml"), ExtResource("2_oa0qu"), ExtResource("2_oa0qu"), ExtResource("2_oa0qu")]
+TableChara = [ExtResource("2_oa0qu"), ExtResource("4_86eml"), ExtResource("5_hd0ej"), ExtResource("2_oa0qu"), ExtResource("2_oa0qu")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.27, 0.27)
+transform = Transform2D(0.27, 0, 0, 0.27, 0, 0)
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 785.185
+offset_top = 537.037
+offset_right = 1052.19
+offset_bottom = 596.037
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 30
+text = "    Versus AI"
+alignment = 0
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 103.0
@@ -45,7 +57,7 @@ offset_bottom = 542.5
 scale = Vector2(1.01772, 1)
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 30
-text = "<Space>
+text = "<Down>
 To validate"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -58,7 +70,7 @@ offset_bottom = 546.5
 scale = Vector2(1.01772, 1)
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 30
-text = "<Down>
+text = "<Space>
 To validate"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -179,4 +191,5 @@ texture = ExtResource("5_hd0ej")
 
 [node name="Timer" type="Timer" parent="."]
 
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

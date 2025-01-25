@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://3w7gwxg0byt4"]
+
+[ext_resource type="Script" path="res://remi/arena/default/arena_default.gd" id="1_p1fw1"]
+[ext_resource type="Texture2D" uid="uid://botf2ybcg00yw" path="res://ines/arena_0.png" id="2_l85sa"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uac6d"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p524h"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4b8wg"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sgb4u"]
+normal = Vector2(0, 1)
+
+[node name="ArenaDefault" type="Node2D"]
+script = ExtResource("1_p1fw1")
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
+modulate = Color(0.5, 0.5, 0.5, 1)
+texture = ExtResource("2_l85sa")
+
+[node name="Physics" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Physics"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Physics/StaticBody2D"]
+position = Vector2(0, 90)
+shape = SubResource("WorldBoundaryShape2D_uac6d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Physics/StaticBody2D"]
+position = Vector2(160, 0)
+shape = SubResource("WorldBoundaryShape2D_p524h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Physics/StaticBody2D"]
+position = Vector2(-160, 0)
+shape = SubResource("WorldBoundaryShape2D_4b8wg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Physics/StaticBody2D"]
+position = Vector2(0, -90)
+shape = SubResource("WorldBoundaryShape2D_sgb4u")

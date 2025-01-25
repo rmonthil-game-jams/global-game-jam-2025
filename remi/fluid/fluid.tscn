@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm3dbecfeg1oh"]
+
+[ext_resource type="Script" path="res://remi/fluid/fluid.gd" id="1_wldiw"]
+
+[node name="Fluid" type="Node"]
+script = ExtResource("1_wldiw")

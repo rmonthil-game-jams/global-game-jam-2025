@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://njtgilhdheeo"]
-
-[ext_resource type="Script" path="res://remi/physics_controller/physics_controller.gd" id="1_yvoyx"]
-
-[node name="PhysicsController" type="Node"]
-script = ExtResource("1_yvoyx")
-REACTION_TIME = 0.125
-RIGID_BODY_PATH = NodePath("..")

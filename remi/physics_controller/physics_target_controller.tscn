@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dklwxx3tt5uvt"]
+
+[ext_resource type="Script" path="res://remi/physics_controller/physics_target_controller.gd" id="1_40lty"]
+
+[node name="PhysicsTargetController" type="Node"]
+script = ExtResource("1_40lty")
+REACTION_TIME = 0.02

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hcmm1fgmad7v"]
+
+[ext_resource type="Script" path="res://remi/battle/battle.gd" id="1_j1ilm"]
+
+[node name="Battle" type="Node"]
+script = ExtResource("1_j1ilm")

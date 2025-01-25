@@ -15,8 +15,32 @@ run/main_scene="res://remi/game/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/stretch/mode="canvas_items"
+
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="hand"
+2d_physics/layer_3="bottle"
+2d_physics/layer_4="fluid"
+2d_physics/layer_5="hitbox"
+2d_physics/default_gravity=0.0
+2d_physics/stretch/aspect="keep"
+2d_physics/stretch/mode="disabled"
+
 [physics]
 
-2d/default_gravity=0.0
+common/physics_ticks_per_second=120
+2d/default_gravity=392.0
 2d/default_linear_damp=0.0
 2d/default_angular_damp=0.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

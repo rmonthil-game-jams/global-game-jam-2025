@@ -1,13 +1,11 @@
 extends Node
 
-const SPEED: float = 512.0
+const SPEED: float = 128 + 64
 
 @export var PLAYER_PATH: NodePath
 @export var HAND_PATH: NodePath
 
-func _ready() -> void:
-	$PhysicsController.RIGID_BODY_PATH = "../" + str(HAND_PATH)
-
 func _process(delta: float) -> void:
+	$PhysicsVelocityController.RIGID_BODY_PATH = "../" + str(HAND_PATH)
 	var player: Node = get_node(PLAYER_PATH)
-	$PhysicsController.VELOCITY = SPEED * player.direction
+	$PhysicsVelocityController.TARGET_VELOCITY = SPEED * player.direction

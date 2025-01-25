@@ -127,17 +127,18 @@ func _start_battle() -> void:
 	$Processes/Battle.process_mode = Node.PROCESS_MODE_DISABLED
 	$Processes/FoamsUp.process_mode = Node.PROCESS_MODE_DISABLED
 	# setup
-	set_up_arena(0)
-	set_up_hand_0(0)
-	set_up_hand_1(1)
-	set_up_bottle_0(0)
-	set_up_bottle_1(1)
+	set_up_arena(UiManager.SpriteMap)
+	set_up_hand_0(UiManager.SpriteP0)
+	set_up_hand_1(UiManager.SpriteP1)
+	set_up_bottle_0(UiManager.Bottle0)
+	set_up_bottle_1(UiManager.Bottle1)
 	# controllers
 	if Input.get_connected_joypads().size() > 0:
 		$Processes/CharacterController1.PLAYER_PATH = $Processes/CharacterController1.get_path_to($Processes/PlayerGamepad0)
 		if Input.get_connected_joypads().size() > 1:
 			$Processes/CharacterController0.PLAYER_PATH = $Processes/CharacterController0.get_path_to($Processes/PlayerGamepad1)
-	## TODO: deal with bot
+	if UiManager.VersusAI:
+		$Processes/CharacterController0.PLAYER_PATH = $Processes/CharacterController0.get_path_to($Processes/Bot)
 	# freeze
 	bottle_0.freeze = true
 	bottle_1.freeze = true

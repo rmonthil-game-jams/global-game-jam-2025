@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvnu4cqcqrikp"]
+
+[ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="1_jsfdf"]
+[ext_resource type="FontFile" uid="uid://c1fpj8o6nl28m" path="res://Elouann/Winter Drink.otf" id="1_y7ehw"]
+
+[node name="MainMenu" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = -156.0
+offset_top = 87.0
+offset_right = 994.0
+offset_bottom = 314.0
+rotation = -0.0734006
+theme_override_fonts/font = ExtResource("1_y7ehw")
+theme_override_font_sizes/font_size = 150
+text = "Foams Up"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 774.0
+offset_top = 272.0
+offset_right = 1092.0
+offset_bottom = 355.0
+rotation = 0.0972361
+theme = ExtResource("1_jsfdf")
+theme_override_font_sizes/font_size = 70
+text = "Play"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 756.0
+offset_top = 401.0
+offset_right = 1074.0
+offset_bottom = 484.0
+rotation = -0.038086
+theme = ExtResource("1_jsfdf")
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+offset_left = 787.0
+offset_top = 491.0
+offset_right = 1105.0
+offset_bottom = 574.0
+rotation = 0.0259729
+theme = ExtResource("1_jsfdf")
+theme_override_font_sizes/font_size = 50
+text = "Quit"

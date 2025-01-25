@@ -1,0 +1,166 @@
+[gd_scene load_steps=5 format=3 uid="uid://wuhwir40toyn"]
+
+[ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_bfoi2"]
+[ext_resource type="Texture2D" uid="uid://d1ubl05fr53qk" path="res://icon.svg" id="2_oa0qu"]
+[ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="3_nflbn"]
+[ext_resource type="Texture2D" uid="uid://cue2q5p2eabij" path="res://Elouann/BierrePng.png" id="4_86eml"]
+
+[node name="SelectChara" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bfoi2")
+TableChara = [ExtResource("2_oa0qu"), ExtResource("4_86eml"), ExtResource("2_oa0qu"), ExtResource("2_oa0qu"), ExtResource("2_oa0qu")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 103.0
+offset_top = 60.0
+offset_right = 368.0
+offset_bottom = 164.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 80
+text = "Player 1"
+
+[node name="ValidateP0" type="Label" parent="CanvasLayer"]
+offset_left = 756.0
+offset_top = 438.5
+offset_right = 1021.0
+offset_bottom = 542.5
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 30
+text = "<Space>
+To validate"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValidateP1" type="Label" parent="CanvasLayer"]
+offset_left = 118.0
+offset_top = 442.5
+offset_right = 383.0
+offset_bottom = 546.5
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 30
+text = "<Down>
+To validate"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Decompte" type="Label" parent="CanvasLayer"]
+offset_left = 425.0
+offset_top = 522.0
+offset_right = 690.0
+offset_bottom = 626.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 30
+text = "Decompte"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 750.0
+offset_top = 63.0
+offset_right = 1015.0
+offset_bottom = 167.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 80
+text = "Player 2"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 50.0
+offset_top = 310.0
+offset_right = 105.0
+offset_bottom = 414.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 80
+text = "< "
+
+[node name="Label6" type="Label" parent="CanvasLayer"]
+offset_left = 700.0
+offset_top = 310.0
+offset_right = 755.0
+offset_bottom = 414.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 80
+text = "< "
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = 1050.0
+offset_top = 310.0
+offset_right = 1098.0
+offset_bottom = 414.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 80
+text = ">"
+
+[node name="Label5" type="Label" parent="CanvasLayer"]
+offset_left = 400.0
+offset_top = 310.0
+offset_right = 433.0
+offset_bottom = 414.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 80
+text = ">"
+
+[node name="Label7" type="Label" parent="CanvasLayer"]
+offset_left = 50.0
+offset_top = 392.0
+offset_right = 105.0
+offset_bottom = 496.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 40
+text = "Q"
+
+[node name="Label8" type="Label" parent="CanvasLayer"]
+offset_left = 678.0
+offset_top = 392.0
+offset_right = 752.0
+offset_bottom = 496.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 40
+text = "Left "
+
+[node name="Label9" type="Label" parent="CanvasLayer"]
+offset_left = 1028.0
+offset_top = 392.0
+offset_right = 1113.0
+offset_bottom = 496.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 40
+text = "Right"
+
+[node name="Label10" type="Label" parent="CanvasLayer"]
+offset_left = 400.0
+offset_top = 392.0
+offset_right = 433.0
+offset_bottom = 496.0
+scale = Vector2(1.01772, 1)
+theme = ExtResource("3_nflbn")
+theme_override_font_sizes/font_size = 40
+text = "D"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(891, 358.5)
+scale = Vector2(0.658333, 0.658333)
+texture = ExtResource("4_86eml")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(250, 361.5)
+scale = Vector2(0.658333, 0.658333)
+texture = ExtResource("4_86eml")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

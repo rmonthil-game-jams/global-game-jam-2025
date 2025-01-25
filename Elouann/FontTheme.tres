@@ -1,26 +1,27 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://hulxhl5602n6"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://hulxhl5602n6"]
 
-[ext_resource type="Texture2D" uid="uid://ol4i2igay4ca" path="res://Elouann/Bouteille2.png" id="1_hohqi"]
+[ext_resource type="Texture2D" uid="uid://8s2sg42bg450" path="res://Elouann/Bouttons/PlayNormal.png" id="1_jgx6e"]
 [ext_resource type="FontFile" uid="uid://c1fpj8o6nl28m" path="res://Elouann/Winter Drink.otf" id="1_v6jmm"]
-[ext_resource type="Texture2D" uid="uid://c0clba8lytfbp" path="res://Elouann/Bouteille4.png" id="3_r11m4"]
+[ext_resource type="Texture2D" uid="uid://prig6bqv346c" path="res://Elouann/Bouttons/PlayHover.png" id="2_6y3cg"]
+[ext_resource type="Texture2D" uid="uid://q00w0dn3i0pf" path="res://Elouann/Bouttons/PlayClick.png" id="3_eax6e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndpf4"]
-texture = ExtResource("1_hohqi")
+texture = ExtResource("1_jgx6e")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_545af"]
-texture = ExtResource("3_r11m4")
+texture = ExtResource("1_jgx6e")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ad3on"]
-texture = ExtResource("3_r11m4")
+texture = ExtResource("2_6y3cg")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_beetl"]
-texture = ExtResource("3_r11m4")
+texture = ExtResource("2_6y3cg")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fqkvc"]
-texture = ExtResource("3_r11m4")
+texture = ExtResource("1_jgx6e")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_prth5"]
-texture = ExtResource("3_r11m4")
+texture = ExtResource("3_eax6e")
 
 [resource]
 default_font = ExtResource("1_v6jmm")

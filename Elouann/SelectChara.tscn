@@ -1,36 +1,517 @@
-[gd_scene load_steps=6 format=3 uid="uid://wuhwir40toyn"]
+[gd_scene load_steps=13 format=3 uid="uid://wuhwir40toyn"]
 
 [ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_bfoi2"]
+[ext_resource type="Texture2D" uid="uid://b5h60y0b4wxxw" path="res://Elouann/Chara/Chara1.png" id="2_4n8k8"]
 [ext_resource type="Texture2D" uid="uid://d1ubl05fr53qk" path="res://icon.svg" id="2_oa0qu"]
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="3_nflbn"]
 [ext_resource type="Texture2D" uid="uid://cue2q5p2eabij" path="res://Elouann/BierrePng.png" id="4_86eml"]
 [ext_resource type="Texture2D" uid="uid://m242mdr1ibxt" path="res://Elouann/Main1.png" id="5_hd0ej"]
+[ext_resource type="Texture2D" uid="uid://nvl437cdvv2h" path="res://Elouann/Ressources/FondEcran.png" id="6_5cylr"]
+[ext_resource type="Texture2D" uid="uid://cj83nqylsruy5" path="res://Elouann/Bouttons/BlackScreen.png" id="6_7kmyv"]
+
+[sub_resource type="Animation" id="Animation_v8s1o"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label10:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label9:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.691667, 0.991667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label8:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.691667, 0.991667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label7:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.691667, 0.991667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Label5:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.691667, 0.991667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Label4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.691667, 0.991667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Label6:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.683333, 0.983333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Label3:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.683333, 0.983333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label2:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.683333, 0.983333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ValidateP1:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.683333, 0.983333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ValidateP0:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.683333, 0.983333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Label11:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.683333, 0.983333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Label:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0.672917, 0.972917),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Button:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.672917, 0.972917),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_umbuw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label10:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label9:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label8:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label7:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Label5:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Label4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Label6:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Label3:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label2:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ValidateP1:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ValidateP0:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Label11:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Label:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Button:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_62n58"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label11:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0104167, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ValidateP1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ValidateP0:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_svrtl"]
+_data = {
+"FadeIn": SubResource("Animation_v8s1o"),
+"FadeOut": SubResource("Animation_62n58"),
+"RESET": SubResource("Animation_umbuw")
+}
 
 [node name="SelectChara" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_bfoi2")
-TableChara = [ExtResource("2_oa0qu"), ExtResource("4_86eml"), ExtResource("5_hd0ej"), ExtResource("2_oa0qu"), ExtResource("2_oa0qu")]
+TableChara = [ExtResource("2_4n8k8"), ExtResource("4_86eml"), ExtResource("5_hd0ej"), ExtResource("2_oa0qu"), ExtResource("2_oa0qu")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(0.27, 0.27)
 transform = Transform2D(0.27, 0, 0, 0.27, 0, 0)
 
+[node name="FondEcran" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(592.882, 382.107)
+scale = Vector2(4.3953, 4.3953)
+texture = ExtResource("6_5cylr")
+
 [node name="Button" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 offset_left = 785.185
 offset_top = 537.037
 offset_right = 1052.19
 offset_bottom = 596.037
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 30
-text = "    Versus AI"
 alignment = 0
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 103.0
-offset_top = 160.0
-offset_right = 368.0
-offset_bottom = 264.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 151.852
+offset_top = 140.741
+offset_right = 416.852
+offset_bottom = 244.741
 scale = Vector2(1.01772, 1)
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 60
@@ -39,10 +520,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label11" type="Label" parent="CanvasLayer"]
-offset_left = 201.0
-offset_top = 32.0
-offset_right = 952.0
-offset_bottom = 136.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 203.704
+offset_top = 55.5556
+offset_right = 954.704
+offset_bottom = 159.556
 scale = Vector2(1.01772, 1)
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 80
@@ -50,6 +532,7 @@ text = "Choose your character"
 horizontal_alignment = 1
 
 [node name="ValidateP0" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 offset_left = 756.0
 offset_top = 438.5
 offset_right = 1021.0
@@ -63,10 +546,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ValidateP1" type="Label" parent="CanvasLayer"]
-offset_left = 118.0
-offset_top = 442.5
-offset_right = 383.0
-offset_bottom = 546.5
+modulate = Color(1, 1, 1, 0)
+offset_left = 255.556
+offset_top = 337.037
+offset_right = 520.556
+offset_bottom = 441.037
 scale = Vector2(1.01772, 1)
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 30
@@ -88,10 +572,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
-offset_left = 750.0
-offset_top = 163.0
-offset_right = 1029.0
-offset_bottom = 267.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 718.518
+offset_top = 137.037
+offset_right = 997.518
+offset_bottom = 241.037
 scale = Vector2(1.01772, 1)
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 60
@@ -100,16 +585,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer"]
-offset_left = 50.0
-offset_top = 310.0
-offset_right = 105.0
-offset_bottom = 414.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 281.481
+offset_top = 348.148
+offset_right = 336.481
+offset_bottom = 452.148
 scale = Vector2(1.01772, 1)
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 80
 text = "< "
 
 [node name="Label6" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 offset_left = 700.0
 offset_top = 310.0
 offset_right = 755.0
@@ -120,6 +607,7 @@ theme_override_font_sizes/font_size = 80
 text = "< "
 
 [node name="Label4" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 offset_left = 1050.0
 offset_top = 310.0
 offset_right = 1098.0
@@ -130,26 +618,29 @@ theme_override_font_sizes/font_size = 80
 text = ">"
 
 [node name="Label5" type="Label" parent="CanvasLayer"]
-offset_left = 400.0
-offset_top = 310.0
-offset_right = 433.0
-offset_bottom = 414.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 462.963
+offset_top = 344.444
+offset_right = 495.963
+offset_bottom = 448.444
 scale = Vector2(1.01772, 1)
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
 [node name="Label7" type="Label" parent="CanvasLayer"]
-offset_left = 50.0
-offset_top = 392.0
-offset_right = 105.0
-offset_bottom = 496.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 248.148
+offset_top = 370.37
+offset_right = 303.148
+offset_bottom = 474.37
 scale = Vector2(1.01772, 1)
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 40
 text = "Q"
 
 [node name="Label8" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 offset_left = 678.0
 offset_top = 392.0
 offset_right = 752.0
@@ -160,6 +651,7 @@ theme_override_font_sizes/font_size = 40
 text = "Left "
 
 [node name="Label9" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 offset_left = 1028.0
 offset_top = 392.0
 offset_right = 1113.0
@@ -170,26 +662,42 @@ theme_override_font_sizes/font_size = 40
 text = "Right"
 
 [node name="Label10" type="Label" parent="CanvasLayer"]
-offset_left = 400.0
-offset_top = 392.0
-offset_right = 433.0
-offset_bottom = 496.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 500.0
+offset_top = 374.074
+offset_right = 533.0
+offset_bottom = 478.074
 scale = Vector2(1.01772, 1)
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 40
 text = "D"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(891, 358.5)
 scale = Vector2(0.658333, 0.658333)
 texture = ExtResource("5_hd0ej")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(250, 361.5)
-scale = Vector2(0.658333, 0.658333)
-texture = ExtResource("5_hd0ej")
+modulate = Color(1, 1, 1, 0)
+position = Vector2(250, 400)
+scale = Vector2(-3.5, 3.5)
+texture = ExtResource("2_4n8k8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_svrtl")
+}
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(600, 337)
+scale = Vector2(7, 7)
+texture = ExtResource("6_7kmyv")
 
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

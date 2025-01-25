@@ -3,6 +3,8 @@ extends Control
 @export var MapArray: Array = []
 @onready var MapArraySize: int = MapArray.size()-1
 
+@export var MapNameArray: Array = []
+
 var ChosenMap: int = 0
 
 func _ready() -> void:
@@ -13,6 +15,8 @@ func _ready() -> void:
 
 func GetRandomMap():
 	ChosenMap = randi_range(0,MapArraySize)
+	get_node("CanvasLayer/Sprite2D3").texture = MapArray[ChosenMap]
+	get_node("CanvasLayer/MapName").text = MapNameArray[ChosenMap]
 	UiManager.SpriteMap = MapArray[ChosenMap]
 
 func _input(event: InputEvent) -> void:

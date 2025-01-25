@@ -14,6 +14,7 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_11kat")
 MapArray = [ExtResource("3_ry5mu"), ExtResource("3_0shah"), ExtResource("4_pxs2p"), ExtResource("5_facni")]
+MapNameArray = ["Bar animé", "L'espace", "Sous l'océan", "Désert aride"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(0.27, 0.27)
@@ -91,7 +92,7 @@ theme = ExtResource("4_fx1su")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
-[node name="Label5" type="Label" parent="CanvasLayer"]
+[node name="MapName" type="Label" parent="CanvasLayer"]
 offset_left = 436.0
 offset_top = 160.0
 offset_right = 715.0

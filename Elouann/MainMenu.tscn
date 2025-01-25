@@ -1,8 +1,242 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvnu4cqcqrikp"]
+[gd_scene load_steps=25 format=3 uid="uid://cvnu4cqcqrikp"]
 
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="1_jsfdf"]
 [ext_resource type="Script" path="res://Elouann/main_menu.gd" id="1_vj8ku"]
 [ext_resource type="FontFile" uid="uid://c1fpj8o6nl28m" path="res://Elouann/Winter Drink.otf" id="1_y7ehw"]
+[ext_resource type="Texture2D" uid="uid://b3msa8p5cnaxs" path="res://Elouann/Bouttons/CreditNormal.png" id="4_cy02q"]
+[ext_resource type="Texture2D" uid="uid://doj38esgdjqbo" path="res://Elouann/Bouttons/CreditHover.png" id="5_db35w"]
+[ext_resource type="Texture2D" uid="uid://bee1t6d07okl7" path="res://Elouann/Bouttons/CreditsClick.png" id="6_gr360"]
+[ext_resource type="Texture2D" uid="uid://66awn62jgq0r" path="res://Elouann/Bouttons/ExitNormal.png" id="7_0ikyr"]
+[ext_resource type="Texture2D" uid="uid://c2tw4y0fbagge" path="res://Elouann/Bouttons/ExitHover.png" id="8_vwnyo"]
+[ext_resource type="Texture2D" uid="uid://b4mg5neln76u7" path="res://Elouann/Bouttons/ExitClick.png" id="9_nbc38"]
+[ext_resource type="Texture2D" uid="uid://cj83nqylsruy5" path="res://Elouann/Bouttons/BlackScreen.png" id="10_klad5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4iqq4"]
+texture = ExtResource("4_cy02q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f8gwg"]
+texture = ExtResource("5_db35w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6vm2r"]
+texture = ExtResource("5_db35w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ov35c"]
+texture = ExtResource("6_gr360")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_de2xr"]
+texture = ExtResource("4_cy02q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynddt"]
+texture = ExtResource("7_0ikyr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_av5fh"]
+texture = ExtResource("7_0ikyr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bkc6y"]
+texture = ExtResource("8_vwnyo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xjjk3"]
+texture = ExtResource("9_nbc38")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyml0"]
+texture = ExtResource("7_0ikyr")
+
+[sub_resource type="Animation" id="Animation_2n84x"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Button2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Button3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g2agm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Button2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Button3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7shdg"]
+resource_name = "FadeIn"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.6, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Button:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Button2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Button3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6y1cu"]
+_data = {
+"FadeIn": SubResource("Animation_7shdg"),
+"FadeOut": SubResource("Animation_2n84x"),
+"RESET": SubResource("Animation_g2agm")
+}
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_vj8ku")
@@ -24,36 +258,57 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 748.0
-offset_top = 253.0
-offset_right = 1120.0
-offset_bottom = 350.0
+offset_left = 743.0
+offset_top = 222.0
+offset_right = 1123.0
+offset_bottom = 349.0
 rotation = 0.0972361
 theme = ExtResource("1_jsfdf")
 theme_override_font_sizes/font_size = 70
-text = "  Play"
+text = "  "
 alignment = 0
 
 [node name="Button2" type="Button" parent="CanvasLayer"]
-offset_left = 756.0
-offset_top = 401.0
-offset_right = 1074.0
-offset_bottom = 484.0
+offset_left = 751.852
+offset_top = 411.111
+offset_right = 1100.85
+offset_bottom = 528.111
 rotation = -0.038086
-theme = ExtResource("1_jsfdf")
+theme_type_variation = &"FlatButton"
 theme_override_font_sizes/font_size = 50
-text = "  Credits"
+theme_override_styles/focus = SubResource("StyleBoxTexture_4iqq4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_f8gwg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6vm2r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ov35c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_de2xr")
+text = "  "
 alignment = 0
 
 [node name="Button3" type="Button" parent="CanvasLayer"]
-offset_left = 777.0
-offset_top = 502.0
-offset_right = 1095.0
-offset_bottom = 585.0
+offset_left = 785.185
+offset_top = 540.741
+offset_right = 1103.19
+offset_bottom = 643.741
 rotation = 0.0259729
 theme = ExtResource("1_jsfdf")
 theme_override_font_sizes/font_size = 50
-text = "    Quit"
+theme_override_styles/focus = SubResource("StyleBoxTexture_ynddt")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_av5fh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bkc6y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xjjk3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lyml0")
 alignment = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(600, 337.037)
+scale = Vector2(7.36332, 6.63139)
+texture = ExtResource("10_klad5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6y1cu")
+}
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

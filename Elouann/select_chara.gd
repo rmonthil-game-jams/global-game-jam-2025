@@ -12,6 +12,7 @@ var StartTimer: bool = true
 @onready var TableSize: int = TableChara.size()-1
 
 func _ready() -> void:
+	get_node("CanvasLayer/AnimationPlayer").play("FadeIn")
 	get_node("CanvasLayer/Decompte").visible = false
 	get_node("Timer").one_shot = true
 	if UiManager.VersusAI:
@@ -98,7 +99,7 @@ func ChangeSprite(Player: int ,Sprite: int):
 func CheckBothReady():
 	if not LockP0 and not LockP1:
 		#get_node("CanvasLayer/Decompte").visible = true
-		get_node("Timer").start(1)
+		get_node("CanvasLayer/AnimationPlayer").play("FadeOut")
 
 func ActivateAI():
 	UiManager.VersusAI = true
@@ -115,3 +116,9 @@ func AutoSelect():
 func _on_button_pressed() -> void:
 	ActivateAI()
 	get_node("CanvasLayer/Button").visible = false
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "FadeOut":
+		get_node("Timer").start(1)
+		print_debug("debug")

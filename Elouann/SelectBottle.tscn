@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://wuhwir40toyn"]
+[gd_scene load_steps=7 format=3 uid="uid://csx3amq4xxay5"]
 
-[ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_bfoi2"]
-[ext_resource type="Texture2D" uid="uid://d1ubl05fr53qk" path="res://icon.svg" id="2_oa0qu"]
-[ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="3_nflbn"]
-[ext_resource type="Texture2D" uid="uid://cue2q5p2eabij" path="res://Elouann/BierrePng.png" id="4_86eml"]
-[ext_resource type="Texture2D" uid="uid://m242mdr1ibxt" path="res://Elouann/Main1.png" id="5_hd0ej"]
+[ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_gkc03"]
+[ext_resource type="Texture2D" uid="uid://d1ubl05fr53qk" path="res://icon.svg" id="2_ndipj"]
+[ext_resource type="Texture2D" uid="uid://cue2q5p2eabij" path="res://Elouann/BierrePng.png" id="3_507vn"]
+[ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="4_qmqsi"]
+[ext_resource type="Texture2D" uid="uid://m242mdr1ibxt" path="res://Elouann/Main1.png" id="5_7ei7x"]
+[ext_resource type="Texture2D" uid="uid://ol4i2igay4ca" path="res://Elouann/Bouteille2.png" id="5_iy4i2"]
 
-[node name="SelectChara" type="Control"]
+[node name="SelectBottle" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_bfoi2")
-TableChara = [ExtResource("2_oa0qu"), ExtResource("4_86eml"), ExtResource("2_oa0qu"), ExtResource("2_oa0qu"), ExtResource("2_oa0qu")]
+script = ExtResource("1_gkc03")
+TableChara = [ExtResource("2_ndipj"), ExtResource("3_507vn"), ExtResource("2_ndipj"), ExtResource("2_ndipj"), ExtResource("2_ndipj")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -20,7 +21,7 @@ offset_top = 160.0
 offset_right = 368.0
 offset_bottom = 264.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 60
 text = "Player 1"
 horizontal_alignment = 1
@@ -32,9 +33,9 @@ offset_top = 32.0
 offset_right = 952.0
 offset_bottom = 136.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 80
-text = "Choose your character"
+text = "Choose your bottle"
 horizontal_alignment = 1
 
 [node name="ValidateP0" type="Label" parent="CanvasLayer"]
@@ -43,7 +44,7 @@ offset_top = 438.5
 offset_right = 1021.0
 offset_bottom = 542.5
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 30
 text = "<Space>
 To validate"
@@ -56,7 +57,7 @@ offset_top = 442.5
 offset_right = 383.0
 offset_bottom = 546.5
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 30
 text = "<Down>
 To validate"
@@ -69,7 +70,7 @@ offset_top = 522.0
 offset_right = 690.0
 offset_bottom = 626.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 30
 text = "Decompte"
 horizontal_alignment = 1
@@ -81,7 +82,7 @@ offset_top = 163.0
 offset_right = 1029.0
 offset_bottom = 267.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 60
 text = "Player 2"
 horizontal_alignment = 1
@@ -93,7 +94,7 @@ offset_top = 310.0
 offset_right = 105.0
 offset_bottom = 414.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 80
 text = "< "
 
@@ -103,7 +104,7 @@ offset_top = 310.0
 offset_right = 755.0
 offset_bottom = 414.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 80
 text = "< "
 
@@ -113,7 +114,7 @@ offset_top = 310.0
 offset_right = 1098.0
 offset_bottom = 414.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
@@ -123,7 +124,7 @@ offset_top = 310.0
 offset_right = 433.0
 offset_bottom = 414.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
@@ -133,7 +134,7 @@ offset_top = 392.0
 offset_right = 105.0
 offset_bottom = 496.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 40
 text = "Q"
 
@@ -143,7 +144,7 @@ offset_top = 392.0
 offset_right = 752.0
 offset_bottom = 496.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 40
 text = "Left "
 
@@ -153,7 +154,7 @@ offset_top = 392.0
 offset_right = 1113.0
 offset_bottom = 496.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 40
 text = "Right"
 
@@ -163,19 +164,29 @@ offset_top = 392.0
 offset_right = 433.0
 offset_bottom = 496.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 40
 text = "D"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(891, 358.5)
-scale = Vector2(0.658333, 0.658333)
-texture = ExtResource("5_hd0ej")
+scale = Vector2(0.2053, 0.2053)
+texture = ExtResource("5_iy4i2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(250, 361.5)
-scale = Vector2(0.658333, 0.658333)
-texture = ExtResource("5_hd0ej")
+scale = Vector2(0.211958, 0.211958)
+texture = ExtResource("5_iy4i2")
+
+[node name="Main1" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(906, 365)
+scale = Vector2(0.675355, 0.675355)
+texture = ExtResource("5_7ei7x")
+
+[node name="Main2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(266, 366)
+scale = Vector2(0.675355, 0.675355)
+texture = ExtResource("5_7ei7x")
 
 [node name="Timer" type="Timer" parent="."]
 

@@ -15,9 +15,11 @@ func _ready() -> void:
 	get_node("CanvasLayer/Decompte").visible = false
 	get_node("Timer").one_shot = true
 
-# Ce truc la marche pas btw
 func _on_timer_timeout():
-	print_debug("Start the game")
+	if name == "SelectChara":
+		print_debug("Go to bottle selection")
+	elif name == "SelectBottle":
+		print_debug("Go to map selection")
 
 func _process(delta: float) -> void:
 	var Temps: int = int(get_node("Timer").time_left)
@@ -82,5 +84,5 @@ func ChangeSprite(Player: int ,Sprite: int):
 		
 func CheckBothReady():
 	if not LockP0 and not LockP1:
-		get_node("CanvasLayer/Decompte").visible = true
-		get_node("Timer").start(5)
+		#get_node("CanvasLayer/Decompte").visible = true
+		get_node("Timer").start(1)

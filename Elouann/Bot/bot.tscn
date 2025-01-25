@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qgv0w0vtp0wl"]
+
+[ext_resource type="Script" path="res://Elouann/Bot/bot.gd" id="1_rhpcu"]
+
+[node name="Bot" type="Node"]
+script = ExtResource("1_rhpcu")

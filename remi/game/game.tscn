@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bagd4it3fab80"]
+[gd_scene load_steps=8 format=3 uid="uid://bagd4it3fab80"]
 
 [ext_resource type="Script" path="res://remi/game/game.gd" id="1_hroc5"]
 [ext_resource type="PackedScene" uid="uid://b5yyp1kl4s686" path="res://remi/player/player_keyboard_0/player_keyboard_0.tscn" id="2_p0mod"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://hcmm1fgmad7v" path="res://remi/battle/battle.tscn" id="5_jtfdm"]
 [ext_resource type="PackedScene" uid="uid://khpdhlkvfrqv" path="res://remi/player/player_keyboard_1/player_keyboard_1.tscn" id="5_vg2k1"]
 [ext_resource type="PackedScene" uid="uid://ylk4lchh8pj7" path="res://remi/foams_up/foams_up.tscn" id="6_a55bu"]
+[ext_resource type="PackedScene" uid="uid://qgv0w0vtp0wl" path="res://Elouann/Bot/bot.tscn" id="7_auw4w"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_hroc5")
@@ -21,7 +22,7 @@ script = ExtResource("1_hroc5")
 [node name="Processes" type="Node" parent="."]
 
 [node name="CharacterController0" parent="Processes" instance=ExtResource("3_y470b")]
-PLAYER_PATH = NodePath("../PlayerKeyboard0")
+PLAYER_PATH = NodePath("../Bot")
 
 [node name="CharacterController1" parent="Processes" instance=ExtResource("3_y470b")]
 PLAYER_PATH = NodePath("../PlayerKeyboard1")
@@ -33,5 +34,7 @@ PLAYER_PATH = NodePath("../PlayerKeyboard1")
 [node name="Battle" parent="Processes" instance=ExtResource("5_jtfdm")]
 
 [node name="FoamsUp" parent="Processes" instance=ExtResource("6_a55bu")]
+
+[node name="Bot" parent="Processes" instance=ExtResource("7_auw4w")]
 
 [connection signal="finished" from="Processes/Battle" to="." method="_on_battle_finished"]

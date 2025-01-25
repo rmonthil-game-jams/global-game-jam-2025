@@ -44,4 +44,4 @@ func _on_random_button_pressed() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	print_debug("Strat the game for real")
+	get_tree().change_scene_to_file("res://remi/game/game.tscn")

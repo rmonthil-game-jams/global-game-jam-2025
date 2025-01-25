@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://vgcsdyrs4fi6"]
 
-[ext_resource type="Script" path="res://remi/hand/hand.gd" id="1_y8m2l"]
-[ext_resource type="Texture2D" uid="uid://cpj84c7nkkhlr" path="res://lise/hand_0.png" id="2_h3sim"]
-[ext_resource type="Texture2D" uid="uid://bkkhex2ig0c18" path="res://lise/thumb_0.png" id="3_ufgx0"]
+[ext_resource type="Script" path="res://remi/hand/hand_0.gd" id="1_y8m2l"]
+[ext_resource type="Texture2D" uid="uid://dbhroptgir30h" path="res://salome/hand_0.png" id="2_pf16m"]
+[ext_resource type="Texture2D" uid="uid://ccnonwhtykchk" path="res://salome/thumb_0.png" id="3_peeqe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6uxuj"]
 
-[node name="Hand" type="RigidBody2D"]
+[node name="Hand0" type="RigidBody2D"]
 collision_layer = 2
 mass = 8.0
 gravity_scale = 0.0
@@ -17,11 +17,11 @@ z_index = 3
 
 [node name="Sprite2DHand" type="Sprite2D" parent="UI"]
 position = Vector2(-7, 0)
-texture = ExtResource("2_h3sim")
+texture = ExtResource("2_pf16m")
 
 [node name="Sprite2DThumb" type="Sprite2D" parent="UI"]
-position = Vector2(11, 0)
-texture = ExtResource("3_ufgx0")
+position = Vector2(12, 1)
+texture = ExtResource("3_peeqe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6uxuj")

@@ -1,11 +1,6 @@
 class_name Game
 extends Node
 
-# Selection:
-# - Hand
-# - Bottle
-# - Arena
-
 # parameters
 const HAND_SPACING: float = 180.0
 
@@ -22,14 +17,20 @@ var connection_1: Node
 
 # TODO: func set_up_arena():
 
-func set_up_arena():
-	arena = preload("res://remi/arena/default/arena_default.tscn").instantiate()
+func set_up_arena(arena_id: int):
+	match arena_id:
+		0:
+			arena = preload("res://remi/arena/default/arena_default.tscn").instantiate()
 	arena.name = "Arena"
 	$World.add_child(arena)
 
-func set_up_hand_0():
+func set_up_hand_0(hand_id: int):
 	# TODO: based on selection
-	hand_0 = preload("res://remi/hand/hand.tscn").instantiate()
+	match hand_id:
+		0:
+			hand_0 = preload("res://remi/hand/hand_0.tscn").instantiate()
+		1:
+			hand_0 = preload("res://remi/hand/hand_1.tscn").instantiate()
 	hand_0.name = "Hand0"
 	hand_0.position.x = 0.5 * HAND_SPACING
 	hand_0.position.y = 0.0
@@ -38,9 +39,13 @@ func set_up_hand_0():
 	# battle
 	$Processes/FoamsUp.HAND_0_PATH = $Processes/FoamsUp.get_path_to(hand_0)
 
-func set_up_hand_1():
+func set_up_hand_1(hand_id: int):
 	# TODO: based on selection
-	hand_1 = preload("res://remi/hand/hand.tscn").instantiate()
+	match hand_id:
+		0:
+			hand_1 = preload("res://remi/hand/hand_0.tscn").instantiate()
+		1:
+			hand_1 = preload("res://remi/hand/hand_1.tscn").instantiate()
 	hand_1.name = "Hand1"
 	hand_1.position.x = -0.5 * HAND_SPACING
 	hand_1.position.y = 0.0
@@ -50,9 +55,24 @@ func set_up_hand_1():
 	# battle
 	$Processes/FoamsUp.HAND_1_PATH = $Processes/FoamsUp.get_path_to(hand_1)
 
-func set_up_bottle_0():
-	# TODO: based on selection
-	bottle_0 = preload("res://remi/bottle/bottle.tscn").instantiate()
+func set_up_bottle_0(bottle_id: int):
+	match bottle_id:
+		0:
+			bottle_0 = preload("res://remi/bottle/bottle_0.tscn").instantiate()
+			$Processes/CharacterController0.SPEED = 192.0
+			$Processes/CharacterController0/PhysicsVelocityController.LINEAR_REACTION_TIME = 0.25
+		1:
+			bottle_0 = preload("res://remi/bottle/bottle_1.tscn").instantiate()
+			$Processes/CharacterController0.SPEED = 256.0
+			$Processes/CharacterController0/PhysicsVelocityController.LINEAR_REACTION_TIME = 0.5
+		2:
+			bottle_0 = preload("res://remi/bottle/bottle_2.tscn").instantiate()
+			$Processes/CharacterController0.SPEED = 192.0 + 32.0
+			$Processes/CharacterController0/PhysicsVelocityController.LINEAR_REACTION_TIME = 0.25
+		3:
+			bottle_0 = preload("res://remi/bottle/bottle_3.tscn").instantiate()
+			$Processes/CharacterController0.SPEED = 128.0 + 32.0
+			$Processes/CharacterController0/PhysicsVelocityController.LINEAR_REACTION_TIME = 0.25
 	bottle_0.name = "Bottle0"
 	bottle_0.position.x = 0.5 * HAND_SPACING
 	bottle_0.position.y = 0.0
@@ -67,9 +87,24 @@ func set_up_bottle_0():
 	$Processes/Battle.BOTTLE_0_PATH = $Processes/Battle.get_path_to(bottle_0)
 	$Processes/FoamsUp.BOTTLE_0_PATH = $Processes/FoamsUp.get_path_to(bottle_0)
 
-func set_up_bottle_1():
-	# TODO: based on selection
-	bottle_1 = preload("res://remi/bottle/bottle.tscn").instantiate()
+func set_up_bottle_1(bottle_id: int):
+	match bottle_id:
+		0:
+			bottle_1 = preload("res://remi/bottle/bottle_0.tscn").instantiate()
+			$Processes/CharacterController1.SPEED = 192.0
+			$Processes/CharacterController1/PhysicsVelocityController.LINEAR_REACTION_TIME = 0.25
+		1:
+			bottle_1 = preload("res://remi/bottle/bottle_1.tscn").instantiate()
+			$Processes/CharacterController1.SPEED = 256.0
+			$Processes/CharacterController1/PhysicsVelocityController.LINEAR_REACTION_TIME = 0.5
+		2:
+			bottle_1 = preload("res://remi/bottle/bottle_2.tscn").instantiate()
+			$Processes/CharacterController1.SPEED = 192.0 + 32.0
+			$Processes/CharacterController1/PhysicsVelocityController.LINEAR_REACTION_TIME = 0.25
+		3:
+			bottle_1 = preload("res://remi/bottle/bottle_3.tscn").instantiate()
+			$Processes/CharacterController1.SPEED = 128.0 + 32.0
+			$Processes/CharacterController1/PhysicsVelocityController.LINEAR_REACTION_TIME = 0.25
 	bottle_1.name = "Bottle1"
 	bottle_1.position.x = -0.5 * HAND_SPACING
 	bottle_1.position.y = 0.0
@@ -92,11 +127,11 @@ func _start_battle() -> void:
 	$Processes/Battle.process_mode = Node.PROCESS_MODE_DISABLED
 	$Processes/FoamsUp.process_mode = Node.PROCESS_MODE_DISABLED
 	# setup
-	set_up_arena()
-	set_up_hand_0()
-	set_up_hand_1()
-	set_up_bottle_0()
-	set_up_bottle_1()
+	set_up_arena(0)
+	set_up_hand_0(0)
+	set_up_hand_1(1)
+	set_up_bottle_0(0)
+	set_up_bottle_1(1)
 	# freeze
 	bottle_0.freeze = true
 	bottle_1.freeze = true

@@ -1,6 +1,6 @@
 extends Node
 
-const SPEED: float = 128 + 64
+@export var SPEED: float
 
 @export var PLAYER_PATH: NodePath
 @export var HAND_PATH: NodePath

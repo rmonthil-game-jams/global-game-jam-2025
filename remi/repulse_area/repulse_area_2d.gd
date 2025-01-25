@@ -32,6 +32,8 @@ func _on_area_entered(area: Area2D) -> void:
 		# core
 		hand.is_stun = true
 		get_tree().create_timer(STUN_DELAY, false, true).timeout.connect(
-			func():
-				hand.is_stun = false
+			_on_stun_end.bind(hand)
 		)
+
+func _on_stun_end(hand: RigidBody2D):
+	hand.is_stun = false

@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://dknbblx2dsguc"]
+
+[ext_resource type="Script" path="res://remi/bottle/bottle_0.gd" id="1_wnhc4"]
+[ext_resource type="Texture2D" uid="uid://dfvstps87kwlq" path="res://lise/bottle_back.png" id="2_ayfmc"]
+[ext_resource type="Texture2D" uid="uid://01i8ak4s75ti" path="res://lise/bottle_front.png" id="3_o75sx"]
+[ext_resource type="PackedScene" uid="uid://bnq2ui4dv7oq6" path="res://remi/fluid/fluid_part.tscn" id="3_x61ig"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wnbal"]
+friction = 0.0
+bounce = 0.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ijxqa"]
+radius = 2.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sj5se"]
+radius = 2.0
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qywce"]
+radius = 2.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gubpb"]
+radius = 2.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7sd4"]
+radius = 2.0
+height = 20.0
+
+[node name="Bottle0" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 13
+physics_material_override = SubResource("PhysicsMaterial_wnbal")
+gravity_scale = 0.0
+continuous_cd = 2
+script = ExtResource("1_wnhc4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 27)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ijxqa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 14)
+shape = SubResource("CapsuleShape2D_sj5se")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(8, 14)
+shape = SubResource("CapsuleShape2D_sj5se")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-7, -3)
+rotation = 0.261799
+shape = SubResource("CapsuleShape2D_qywce")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(6, -3)
+rotation = -0.261799
+shape = SubResource("CapsuleShape2D_gubpb")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(5, -16)
+shape = SubResource("CapsuleShape2D_s7sd4")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -16)
+shape = SubResource("CapsuleShape2D_s7sd4")
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
+z_index = 1
+texture = ExtResource("2_ayfmc")
+
+[node name="BottleFront" type="Sprite2D" parent="UI"]
+modulate = Color(1, 1, 1, 0.5)
+z_index = 2
+position = Vector2(0, 8)
+texture = ExtResource("3_o75sx")
+
+[node name="Handle" type="Marker2D" parent="."]
+position = Vector2(0, 13)
+
+[node name="Fx" type="Marker2D" parent="."]
+position = Vector2(-1, 10)
+
+[node name="Area2DFluid" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2DFluid"]
+polygon = PackedVector2Array(-6, 25, 5, 25, 5, 3, 3, -6, 3, -26, -3, -26, -3, -6, -6, 3)
+
+[node name="Area2DHitBox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2DHitBox"]
+polygon = PackedVector2Array(-11, 27, -8, 30, 8, 30, 11, 27, 11, 1, 8, -9, 8, -26, -9, -26, -9, -9, -11, 1)
+
+[node name="FluidPart" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(-5, 25)
+
+[node name="FluidPart2" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(0, 25)
+
+[node name="FluidPart3" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(5, 25)
+
+[node name="FluidPart4" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(5, 20)
+
+[node name="FluidPart5" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(0, 20)
+
+[node name="FluidPart6" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(-5, 20)
+
+[node name="FluidPart7" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(-5, 15)
+
+[node name="FluidPart8" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(0, 15)
+
+[node name="FluidPart9" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(5, 15)
+
+[node name="FluidPart10" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(-5, 10)
+
+[node name="FluidPart11" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(0, 10)
+
+[node name="FluidPart12" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(5, 10)
+
+[node name="FluidPart13" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(5, 5)
+
+[node name="FluidPart14" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(0, 5)
+
+[node name="FluidPart15" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(-5, 5)
+
+[node name="FluidPart16" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(0, -5)
+
+[node name="FluidPart17" parent="." instance=ExtResource("3_x61ig")]
+
+[node name="FluidPart18" parent="." instance=ExtResource("3_x61ig")]
+position = Vector2(0, -10)

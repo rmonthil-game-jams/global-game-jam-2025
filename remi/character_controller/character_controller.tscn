@@ -5,6 +5,7 @@
 
 [node name="CharacterController" type="Node"]
 script = ExtResource("1_b44bh")
+SPEED = 192.0
 
 [node name="PhysicsVelocityController" parent="." instance=ExtResource("2_ljwv6")]
 RIGID_BODY_PATH = NodePath("")

@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 				_on_stun_end.bind(0)
 			)
 			# TODO: FX CONTACT (PARTICLES)
-			# FOAM: TODO: Proportional with difference !
 			if not is_bottle_0_foaming:
 				var foam_duration: float = HIT_INTENSITY * (bottle_0.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_0.linear_velocity - other_bottle.linear_velocity).length())
 				if foam_duration > 0.0:

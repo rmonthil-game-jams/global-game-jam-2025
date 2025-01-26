@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgmvccrrdy452"]
+
+[ext_resource type="Script" path="res://remi/powers/power_pipe.gd" id="1_1qc3q"]
+[ext_resource type="Texture2D" uid="uid://dj6o8uvm1aqmr" path="res://salome/pipe.png" id="2_2omq5"]
+[ext_resource type="Texture2D" uid="uid://il1vou6smatw" path="res://roxane/speed-up.png" id="3_uyspp"]
+[ext_resource type="PackedScene" uid="uid://dsm0ag4sbdk1d" path="res://remi/source/source.tscn" id="4_bpe7n"]
+[ext_resource type="PackedScene" uid="uid://fughhaqm3ueq" path="res://remi/fluid/fluid_part_speed_up.tscn" id="5_a7uis"]
+
+[node name="PowerPipe" type="Node2D"]
+position = Vector2(0, -25)
+script = ExtResource("1_1qc3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(0, 2)
+texture = ExtResource("2_2omq5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 6
+texture = ExtResource("3_uyspp")
+
+[node name="Source" parent="." instance=ExtResource("4_bpe7n")]
+position = Vector2(-4, 24)
+SCENE = ExtResource("5_a7uis")
+PARENT_PATH = NodePath("../../..")
+VELOCITY = Vector2(0, 64)
+INTERVAL = 0.125
+N = 3

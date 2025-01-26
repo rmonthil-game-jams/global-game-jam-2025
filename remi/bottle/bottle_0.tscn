@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dknbblx2dsguc"]
+[gd_scene load_steps=13 format=3 uid="uid://dknbblx2dsguc"]
 
 [ext_resource type="Script" path="res://remi/bottle/bottle_0.gd" id="1_wnhc4"]
 [ext_resource type="Texture2D" uid="uid://dfvstps87kwlq" path="res://lise/bottle_back.png" id="2_ayfmc"]
 [ext_resource type="Texture2D" uid="uid://01i8ak4s75ti" path="res://lise/bottle_front.png" id="3_o75sx"]
-[ext_resource type="PackedScene" uid="uid://bnq2ui4dv7oq6" path="res://remi/fluid/fluid_part.tscn" id="3_x61ig"]
+[ext_resource type="PackedScene" uid="uid://bnq2ui4dv7oq6" path="res://remi/fluid/fluid_part_default.tscn" id="3_x61ig"]
+[ext_resource type="PackedScene" uid="uid://bvkvc3mtpd0yj" path="res://remi/fx/fx_speed_up.tscn" id="4_3ae7m"]
+[ext_resource type="PackedScene" uid="uid://daabiho17xdpp" path="res://remi/bottle/points.tscn" id="4_lmrhs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wnbal"]
 friction = 0.0
@@ -80,17 +82,28 @@ z_index = 2
 position = Vector2(0, 8)
 texture = ExtResource("3_o75sx")
 
+[node name="Points" parent="UI" instance=ExtResource("4_lmrhs")]
+
 [node name="Handle" type="Marker2D" parent="."]
 position = Vector2(0, 13)
 
 [node name="Fx" type="Marker2D" parent="."]
 position = Vector2(-1, 10)
 
+[node name="FxSpeedUp" parent="Fx" instance=ExtResource("4_3ae7m")]
+
 [node name="Area2DFluid" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2DFluid"]
+polygon = PackedVector2Array(-6, 25, 5, 25, 5, 3, 3, -6, 3, -26, -3, -26, -3, -6, -6, 3)
+
+[node name="Area2DFluidSpeedUp" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2DFluidSpeedUp"]
 polygon = PackedVector2Array(-6, 25, 5, 25, 5, 3, 3, -6, 3, -26, -3, -26, -3, -6, -6, 3)
 
 [node name="Area2DHitBox" type="Area2D" parent="."]
@@ -152,3 +165,5 @@ position = Vector2(0, -5)
 
 [node name="FluidPart18" parent="." instance=ExtResource("3_x61ig")]
 position = Vector2(0, -10)
+
+[connection signal="body_entered" from="Area2DFluidSpeedUp" to="." method="_on_area_2d_fluid_speed_up_body_entered"]

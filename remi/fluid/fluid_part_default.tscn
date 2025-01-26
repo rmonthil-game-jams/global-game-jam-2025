@@ -1,28 +1,28 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnq2ui4dv7oq6"]
 
-[ext_resource type="Script" path="res://remi/fluid/fluid_part.gd" id="1_se1ag"]
+[ext_resource type="Script" path="res://remi/fluid/fluid_part_default.gd" id="1_f7mln"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fmcsd"]
 friction = 0.0
 bounce = 0.25
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jnl2x"]
-radius = 2.0
+radius = 1.75
 
-[node name="FluidPart" type="RigidBody2D"]
+[node name="FluidPartDefault" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 12
 mass = 0.125
 physics_material_override = SubResource("PhysicsMaterial_fmcsd")
 lock_rotation = true
 continuous_cd = 2
-script = ExtResource("1_se1ag")
+script = ExtResource("1_f7mln")
 
 [node name="UI" type="Node2D" parent="."]
 
 [node name="Fluid" type="Polygon2D" parent="UI"]
 color = Color(0.75, 0.6125, 0, 1)
-polygon = PackedVector2Array(0, 3, -1, 2, -2, 2, -2, 1, -3, 0, -2, -1, -2, -2, -1, -2, 0, -3, 1, -2, 2, -2, 2, -1, 3, 0, 2, 1, 2, 2, 1, 2)
+polygon = PackedVector2Array(-2, 2, -2, -2, 2, -2, 2, 2)
 
 [node name="Foam" type="Polygon2D" parent="UI"]
 visible = false
@@ -40,3 +40,8 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DHitBox"]
 shape = SubResource("CircleShape2D_jnl2x")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.3, 0.3)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -5,11 +5,11 @@ extends Node
 @export var BOTTLE_1_PATH: NodePath
 @export var HAND_1_PATH: NodePath
 
-const FOAM_ACCELERATION: float = 1024.0
+const FOAM_ACCELERATION: float = 1024.0 * 0.5
 
 const REPULSE_REACTION_TIME: float = 0.125
-const HIT_INTENSITY: float = pow(2, -11)
-const HIT_INTENSITY_V: float = pow(2, -4)
+const HIT_INTENSITY: float = pow(2, -7) * 0.75
+const HIT_INTENSITY_V: float = pow(2, -7) * 0.75
 const STUN_DELAY: float = 0.25
 
 var is_bottle_0_foaming: bool = false
@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 				var foam_duration: float = HIT_INTENSITY * (53.0/bottle_0.HEIGHT) * (bottle_0.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_0.linear_velocity - other_bottle.linear_velocity).length())
 				if foam_duration >= 0.1:
 					is_bottle_0_foaming = true
-					get_tree().create_timer(foam_duration, false, true).timeout.connect(
+					get_tree().create_timer(2.0 * foam_duration, false, true).timeout.connect(
 						_on_foam_end.bind(0)
 					)
 					# fx
@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 						var fx_good: Node2D = preload("res://remi/fx/fx_perfect.tscn").instantiate()
 						fx_good.position = 0.5 * (bottle_0.global_position + other_bottle.global_position)
 						bottle_0.get_parent().add_child(fx_good)
-					elif foam_duration >= 0.2:
+					elif foam_duration >= 0.25:
 						var fx_good: Node2D = preload("res://remi/fx/fx_awesome.tscn").instantiate()
 						fx_good.position = 0.5 * (bottle_0.global_position + other_bottle.global_position)
 						bottle_0.get_parent().add_child(fx_good)
@@ -100,7 +100,7 @@ func _physics_process(delta: float) -> void:
 				var foam_duration: float = HIT_INTENSITY * (53.0/bottle_1.HEIGHT) * (bottle_1.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_1.linear_velocity - other_bottle.linear_velocity).length())
 				if foam_duration >= 0.1:
 					is_bottle_1_foaming = true
-					get_tree().create_timer(foam_duration, false, true).timeout.connect(
+					get_tree().create_timer(2.0 * foam_duration, false, true).timeout.connect(
 						_on_foam_end.bind(1)
 					)
 					# fx
@@ -109,7 +109,7 @@ func _physics_process(delta: float) -> void:
 							var fx_good: Node2D = preload("res://remi/fx/fx_perfect.tscn").instantiate()
 							fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
 							bottle_1.get_parent().add_child(fx_good)
-						elif foam_duration >= 0.2:
+						elif foam_duration >= 0.25:
 							var fx_good: Node2D = preload("res://remi/fx/fx_awesome.tscn").instantiate()
 							fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
 							bottle_1.get_parent().add_child(fx_good)

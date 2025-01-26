@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://vjld7tq6l66h"]
-
-[ext_resource type="Script" path="res://remi/arena/default/arena_default_process.gd" id="1_gd8hr"]
-
-[node name="ArenaDefaultProcess" type="Node"]
-script = ExtResource("1_gd8hr")

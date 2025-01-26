@@ -35,6 +35,7 @@ window/stretch/mode="canvas_items"
 2d_physics/layer_3="bottle"
 2d_physics/layer_4="fluid"
 2d_physics/layer_5="hitbox"
+2d_physics/layer_6="speedup"
 2d_physics/default_gravity=0.0
 2d_physics/stretch/aspect="keep"
 2d_physics/stretch/mode="disabled"

@@ -15,6 +15,9 @@ var bottle_1: RigidBody2D
 var connection_0: Node
 var connection_1: Node
 
+var score_0: int = 0
+var score_1: int = 0
+
 # TODO: func set_up_arena():
 
 func set_up_arena(arena_id: int):
@@ -84,6 +87,7 @@ func set_up_bottle_0(bottle_id: int):
 	bottle_0.position.y = 0.0
 	$World.add_child(bottle_0)
 	bottle_0.HAND_PATH = bottle_0.get_path_to(hand_0)
+	hand_0.BOTTLE_PATH = hand_0.get_path_to(bottle_0)
 	# connection
 	connection_0 = preload("res://remi/physics_controller/physics_target_controller.tscn").instantiate()
 	$Processes.add_child(connection_0)
@@ -116,6 +120,7 @@ func set_up_bottle_1(bottle_id: int):
 	bottle_1.position.y = 0.0
 	$World.add_child(bottle_1)
 	bottle_1.HAND_PATH = bottle_1.get_path_to(hand_1)
+	hand_1.BOTTLE_PATH = hand_1.get_path_to(bottle_1)
 	# connection
 	connection_1 = preload("res://remi/physics_controller/physics_target_controller.tscn").instantiate()
 	$Processes.add_child(connection_1)
@@ -159,7 +164,10 @@ func _start_battle() -> void:
 	## fade in
 	var tween: Tween = create_tween()
 	tween.tween_property($Env/CanvasModulate, "color", Color.WHITE, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
-	#await tween.finished
+	# score
+	bottle_0.get_node("UI/Points").start(score_0)
+	bottle_1.get_node("UI/Points").start(score_1)
+	# await tween.finished
 	## 3
 	var fx_3: Node2D = preload("res://remi/fx/fx_3.tscn").instantiate()
 	fx_3.position = Vector2.ZERO
@@ -188,6 +196,13 @@ func _start_battle() -> void:
 	$Processes/FoamsUp.process_mode = Node.PROCESS_MODE_INHERIT
 
 func _end_battle(victor_id: int) -> void:
+	match victor_id:
+		0:
+			score_0 += 1
+			bottle_0.get_node("UI/Points").start(score_0)
+		1:
+			score_1 += 1
+			bottle_1.get_node("UI/Points").start(score_1)
 	# process
 	$Processes/Battle.is_bottle_0_safe = true
 	$Processes/Battle.is_bottle_1_safe = true
@@ -202,7 +217,7 @@ func _end_battle(victor_id: int) -> void:
 	await get_tree().create_timer(0.5 * fx_ko.DURATION).timeout
 	# fade out
 	var tween: Tween = create_tween()
-	tween.tween_property($Env/CanvasModulate, "color", Color.BLACK, 4.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property($Env/CanvasModulate, "color", Color.BLACK, 2.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	await tween.finished
 	# clean
 	hand_0.queue_free()
@@ -214,7 +229,20 @@ func _end_battle(victor_id: int) -> void:
 	arena.queue_free()
 	await get_tree().process_frame
 	# restart TODO: back to menu
-	_start_battle()
+	if score_0 >= 3 or score_1 >= 3:
+		get_tree().change_scene_to_file("res://Elouann/SelectChara.tscn")
+	else:
+		_start_battle()
 
 func _on_battle_finished(victor_id: int) -> void:
 	_end_battle(victor_id)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if not event.pressed:
+			# fade out
+			var tween: Tween = create_tween()
+			tween.tween_property($Env/CanvasModulate, "color", Color.BLACK, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+			await tween.finished
+			# open menu
+			get_tree().change_scene_to_file("res://Elouann/MainMenu.tscn")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://3w7gwxg0byt4"]
+[gd_scene load_steps=10 format=3 uid="uid://3w7gwxg0byt4"]
 
 [ext_resource type="Script" path="res://remi/arena/default/arena_default.gd" id="1_p1fw1"]
 [ext_resource type="Texture2D" uid="uid://botf2ybcg00yw" path="res://ines/arena_0.png" id="2_l85sa"]
 [ext_resource type="PackedScene" uid="uid://cpjcm3peroxv8" path="res://remi/repulse_area/repulse_area_2d.tscn" id="3_ihefk"]
+[ext_resource type="PackedScene" uid="uid://dgmvccrrdy452" path="res://remi/powers/power_pipe.tscn" id="4_55uu6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_efpab"]
 friction = 0.0
@@ -51,3 +52,6 @@ shape = SubResource("WorldBoundaryShape2D_sgb4u")
 
 [node name="RepulseArea2D" parent="Physics" instance=ExtResource("3_ihefk")]
 position = Vector2(0, -90)
+
+[node name="PowerPipe" parent="." instance=ExtResource("4_55uu6")]
+position = Vector2(0, -116)

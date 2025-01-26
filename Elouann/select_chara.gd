@@ -116,9 +116,7 @@ func AutoSelect():
 		CheckBothReady()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	print_debug(anim_name)
 	if anim_name == "FadeOut":
-		print_debug("test")
 		get_node("Timer").start(1)
 
 #Button Play

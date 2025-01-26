@@ -456,13 +456,23 @@ texture_hover = ExtResource("10_vynst")
 
 [node name="Label11" type="Label" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 27.0
-offset_top = 7.0
-offset_right = 815.0
-offset_bottom = 124.0
-scale = Vector2(0.341167, 0.335227)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 9.0
+offset_right = 96.0
+offset_bottom = 27.0
+grow_horizontal = 2
 theme = ExtResource("3_nflbn")
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.843137, 0.709804, 0.580392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 16
 text = "Select Character"
 horizontal_alignment = 1
 
@@ -524,6 +534,7 @@ scale = Vector2(0.736764, 0.736764)
 texture = ExtResource("14_ai65n")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(161.5, 100)
 scale = Vector2(2.17262, 2.26667)

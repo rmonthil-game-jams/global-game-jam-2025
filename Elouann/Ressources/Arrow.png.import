@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f87xs6qm8fbn"
-path="res://.godot/imported/Chara1.png-cd1384c826130d045eaa8b314c8def52.ctex"
+uid="uid://cb814dnsc0ad4"
+path="res://.godot/imported/Arrow.png-7e962fa76a4136abbfc947ec6de64482.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Elouann/Chara/Chara1.png"
-dest_files=["res://.godot/imported/Chara1.png-cd1384c826130d045eaa8b314c8def52.ctex"]
+source_file="res://Elouann/Ressources/Arrow.png"
+dest_files=["res://.godot/imported/Arrow.png-7e962fa76a4136abbfc947ec6de64482.ctex"]
 
 [params]
 

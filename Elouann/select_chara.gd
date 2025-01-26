@@ -10,10 +10,11 @@ var StartTimer: bool = true
 
 @export var TableChara: Array = []
 @onready var TableSize: int = TableChara.size()-1
+@export var BotArray: Array = []
 
 func _ready() -> void:
 	get_node("CanvasLayer/AnimationPlayer").play("FadeIn")
-	get_node("CanvasLayer/Decompte").visible = false
+	#get_node("CanvasLayer/Decompte").visible = false
 	get_node("Timer").one_shot = true
 	if UiManager.VersusAI:
 		AutoSelect()
@@ -37,22 +38,22 @@ func _on_timer_timeout():
 
 func _process(delta: float) -> void:
 	var Temps: int = int(get_node("Timer").time_left)
-	get_node("CanvasLayer/Decompte").text = str(Temps)
+	#get_node("CanvasLayer/Decompte").text = str(Temps)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and not UiManager.VersusAI:
-		if not event.pressed:
-			if event.keycode == KEY_DOWN:
-				LockP0 = false
-				get_node("CanvasLayer/ValidateP0").text = "Ready !"
-				CheckBothReady()
+	#if event is InputEventKey and not UiManager.VersusAI:
+		#if not event.pressed:
+			#if event.keycode == KEY_DOWN:
+				#LockP0 = false
+				#get_node("CanvasLayer/ValidateP0").text = "Ready !"
+				#CheckBothReady()
 	
-	if event is InputEventKey :
-		if not event.pressed:
-			if event.keycode == KEY_SPACE:
-				LockP1 = false
-				get_node("CanvasLayer/ValidateP1").text = "Ready !"
-				CheckBothReady()
+	#if event is InputEventKey :
+		#if not event.pressed:
+			#if event.keycode == KEY_SPACE:
+				#LockP1 = false
+				#get_node("CanvasLayer/ValidateP1").text = "Ready !"
+				#CheckBothReady()
 	
 	if event is InputEventKey and not UiManager.VersusAI:
 		if LockP0:
@@ -92,9 +93,9 @@ func _input(event: InputEvent) -> void:
 		
 func ChangeSprite(Player: int ,Sprite: int):
 	if Player == 0:
-		get_node("CanvasLayer/Sprite2D").texture = TableChara[Sprite]
+		get_node("CanvasLayer/P0Chara").texture = TableChara[Sprite]
 	if Player == 1:
-		get_node("CanvasLayer/Sprite2D2").texture = TableChara[Sprite]
+		get_node("CanvasLayer/P1Chara").texture = TableChara[Sprite]
 		
 func CheckBothReady():
 	if not LockP0 and not LockP1:
@@ -107,19 +108,71 @@ func ActivateAI():
 	
 func AutoSelect():
 		var TempInt = randi_range(0,TableSize)
-		get_node("CanvasLayer/Sprite2D").texture = TableChara[TempInt]
+		get_node("CanvasLayer/P0Chara").texture = TableChara[TempInt]
 		ChangeSprite(0,TempInt)
 		ScrollNumberP0 = TempInt
 		LockP0 = false
-		get_node("CanvasLayer/ValidateP0").text = "Ready !"
+		#get_node("CanvasLayer/ValidateP0").text = "Ready !"
 		CheckBothReady()
-
-func _on_button_pressed() -> void:
-	ActivateAI()
-	get_node("CanvasLayer/Button").visible = false
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	print_debug(anim_name)
 	if anim_name == "FadeOut":
 		print_debug("test")
 		get_node("Timer").start(1)
+
+#Button Play
+func _on_button_pressed() -> void:
+	get_node("CanvasLayer/AnimationPlayer").play("FadeOut")
+
+
+func _on_player_1_previous_choice_pressed() -> void:
+	ScrollNumberP1 +=1
+	if ScrollNumberP1 > TableSize:
+		ScrollNumberP1 = 0
+	ChangeSprite(1,ScrollNumberP1)
+
+
+func _on_player_1_next_choice_pressed() -> void:
+	ScrollNumberP1 -=1
+	if ScrollNumberP1 < 0:
+		ScrollNumberP1 = TableSize
+	ChangeSprite(1,ScrollNumberP1)
+
+
+func _on_player_0_previous_choice_pressed() -> void:
+	ScrollNumberP0 -=1
+	if ScrollNumberP0 < 0:
+		ScrollNumberP0 = TableSize
+	ChangeSprite(0,ScrollNumberP0)
+
+
+func _on_player_0_next_choice_pressed() -> void:
+	ScrollNumberP0 +=1
+	if ScrollNumberP0 > TableSize:
+		ScrollNumberP0 = 0
+	ChangeSprite(0,ScrollNumberP0)
+
+var BotMode: int = 0
+func _on_player_0_previous_mode_pressed() -> void:
+	BotMode -= 1
+	CheckBotMode()
+	
+func CheckBotMode():
+	if BotMode < 0:
+		BotMode = 3
+	if BotMode > 3:
+			BotMode = 0
+	if BotMode == 0:
+		get_node("CanvasLayer/ControlesP0").texture = BotArray[0]
+	if BotMode == 1:
+		get_node("CanvasLayer/ControlesP0").texture =  BotArray[1]
+	if BotMode == 2:
+		get_node("CanvasLayer/ControlesP0").texture =  BotArray[2]
+	if BotMode == 3:
+		get_node("CanvasLayer/ControlesP0").texture =  BotArray[3]
+
+
+func _on_player_0_next_mode_pressed() -> void:
+	BotMode += 1
+	CheckBotMode()

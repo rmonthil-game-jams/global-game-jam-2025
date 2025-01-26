@@ -1,15 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://csx3amq4xxay5"]
+[gd_scene load_steps=14 format=3 uid="uid://csx3amq4xxay5"]
 
 [ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_gkc03"]
 [ext_resource type="Texture2D" uid="uid://01i8ak4s75ti" path="res://lise/bottle_front.png" id="2_kcndj"]
 [ext_resource type="Texture2D" uid="uid://hkb0d04h84gl" path="res://salome/bottle_1_front.png" id="3_36278"]
 [ext_resource type="Texture2D" uid="uid://bslgok4bln0lr" path="res://salome/bottle_2_front.png" id="4_eujdb"]
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="4_qmqsi"]
-[ext_resource type="Texture2D" uid="uid://m242mdr1ibxt" path="res://Elouann/Main1.png" id="5_7ei7x"]
-[ext_resource type="Texture2D" uid="uid://ol4i2igay4ca" path="res://Elouann/Bouteille2.png" id="5_iy4i2"]
 [ext_resource type="Texture2D" uid="uid://m2npewq27pwq" path="res://salome/bottle_3_front.png" id="5_j8xoc"]
 [ext_resource type="Texture2D" uid="uid://nvl437cdvv2h" path="res://Elouann/Ressources/FondEcran.png" id="5_jt4jh"]
-[ext_resource type="Texture2D" uid="uid://b5h60y0b4wxxw" path="res://Elouann/Chara/Chara1.png" id="8_t5seo"]
+[ext_resource type="Texture2D" uid="uid://f87xs6qm8fbn" path="res://Elouann/Chara/Chara1.png" id="8_t5seo"]
 [ext_resource type="Texture2D" uid="uid://cj83nqylsruy5" path="res://Elouann/Bouttons/BlackScreen.png" id="9_bd3ha"]
 
 [sub_resource type="Animation" id="Animation_fkf6o"]
@@ -63,6 +61,21 @@ tracks/3/keys = {
 "values": [Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_t1jy6"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_w0ftm"]
 length = 0.001
 tracks/0/type = "value"
@@ -112,21 +125,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_t1jy6"]
-resource_name = "FadeOut"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D3:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.7, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jiilk"]
@@ -191,10 +189,10 @@ vertical_alignment = 1
 
 [node name="ValidateP1" type="Label" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 118.0
-offset_top = 442.5
-offset_right = 383.0
-offset_bottom = 546.5
+offset_left = -103.704
+offset_top = 429.63
+offset_right = 161.296
+offset_bottom = 533.63
 scale = Vector2(1.01772, 1)
 theme = ExtResource("4_qmqsi")
 theme_override_font_sizes/font_size = 30
@@ -228,9 +226,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer"]
-offset_left = 50.0
-offset_top = 310.0
-offset_right = 105.0
+offset_left = 241.0
+offset_top = 285.0
+offset_right = 340.0
 offset_bottom = 414.0
 scale = Vector2(1.01772, 1)
 theme = ExtResource("4_qmqsi")
@@ -268,9 +266,9 @@ theme_override_font_sizes/font_size = 80
 text = ">"
 
 [node name="Label7" type="Label" parent="CanvasLayer"]
-offset_left = 50.0
+offset_left = 183.333
 offset_top = 392.0
-offset_right = 105.0
+offset_right = 238.333
 offset_bottom = 496.0
 scale = Vector2(1.01772, 1)
 theme = ExtResource("4_qmqsi")
@@ -308,26 +306,28 @@ theme_override_font_sizes/font_size = 40
 text = "D"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(891, 358.5)
-scale = Vector2(0.2053, 0.2053)
-texture = ExtResource("5_iy4i2")
+position = Vector2(865, 540)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_kcndj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(429.63, 525.926)
-scale = Vector2(0.211958, 0.211958)
-texture = ExtResource("5_iy4i2")
+position = Vector2(325, 540)
+scale = Vector2(-3.5, 3.5)
+texture = ExtResource("2_kcndj")
 
 [node name="Main1" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(906, 365)
-scale = Vector2(0.675355, 0.675355)
-texture = ExtResource("5_7ei7x")
+position = Vector2(1010, 466)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("8_t5seo")
 
 [node name="Main2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(250, 400)
-scale = Vector2(-3.5, 3.5)
+position = Vector2(178, 466)
+rotation = 3.14159
+scale = Vector2(3.5, -3.5)
 texture = ExtResource("8_t5seo")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(605.556, 344.009)
 scale = Vector2(7.60582, 7.13351)

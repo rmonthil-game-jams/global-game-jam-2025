@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=11 format=3 uid="uid://hulxhl5602n6"]
 
 [ext_resource type="Texture2D" uid="uid://8s2sg42bg450" path="res://Elouann/Bouttons/PlayNormal.png" id="1_jgx6e"]
-[ext_resource type="FontFile" uid="uid://c1fpj8o6nl28m" path="res://Elouann/Winter Drink.otf" id="1_v6jmm"]
 [ext_resource type="Texture2D" uid="uid://prig6bqv346c" path="res://Elouann/Bouttons/PlayHover.png" id="2_6y3cg"]
 [ext_resource type="Texture2D" uid="uid://q00w0dn3i0pf" path="res://Elouann/Bouttons/PlayClick.png" id="3_eax6e"]
+[ext_resource type="FontFile" uid="uid://487skyoer5km" path="res://Elouann/vhs-gothic.ttf" id="4_dth4t"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndpf4"]
 texture = ExtResource("1_jgx6e")
@@ -24,7 +24,7 @@ texture = ExtResource("1_jgx6e")
 texture = ExtResource("3_eax6e")
 
 [resource]
-default_font = ExtResource("1_v6jmm")
+default_font = ExtResource("4_dth4t")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/icon_hover_color = Color(0.589096, 0.589096, 0.589096, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dcofw8qvx1f84"]
+[gd_scene load_steps=26 format=3 uid="uid://dcofw8qvx1f84"]
 
 [ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_k11be"]
 [ext_resource type="Texture2D" uid="uid://cb814dnsc0ad4" path="res://Elouann/Ressources/Arrow.png" id="3_knuuf"]
@@ -14,8 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bhsp77kilvket" path="res://Elouann/Ressources/WASD.png" id="11_wdhkl"]
 [ext_resource type="PackedScene" uid="uid://byl4rab5kkypr" path="res://remi/fx/fx_clic.tscn" id="11_yeo0w"]
 [ext_resource type="Texture2D" uid="uid://bjasnaduik7oo" path="res://roxane/1.png" id="12_ok8hr"]
-[ext_resource type="Texture2D" uid="uid://bcj2p05l7dty3" path="res://more/character.png" id="12_x7c1g"]
+[ext_resource type="Texture2D" uid="uid://cb5ax0mnucrh3" path="res://more/character_1.png" id="12_p1bm8"]
 [ext_resource type="Texture2D" uid="uid://cj83nqylsruy5" path="res://Elouann/Bouttons/BlackScreen.png" id="13_3agxw"]
+[ext_resource type="Texture2D" uid="uid://0lh8nul7f5ft" path="res://more/character_0.png" id="13_53l8w"]
 [ext_resource type="Texture2D" uid="uid://66awn62jgq0r" path="res://Elouann/Bouttons/ExitNormal.png" id="17_ip31d"]
 [ext_resource type="Texture2D" uid="uid://b4mg5neln76u7" path="res://Elouann/Bouttons/ExitClick.png" id="18_quejp"]
 [ext_resource type="Texture2D" uid="uid://c2tw4y0fbagge" path="res://Elouann/Bouttons/ExitHover.png" id="19_4qj4u"]
@@ -401,24 +402,24 @@ vertical_alignment = 1
 [node name="P0Bear" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
 position = Vector2(263, 117)
-texture = ExtResource("12_x7c1g")
+texture = ExtResource("12_p1bm8")
 
 [node name="P1Bear" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
 position = Vector2(59, 117)
 rotation = -3.14159
 scale = Vector2(1, -1)
-texture = ExtResource("12_x7c1g")
+texture = ExtResource("13_53l8w")
 
 [node name="P0Chara" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(213, 145)
-texture = ExtResource("8_11fia")
+texture = ExtResource("9_syxvg")
 
 [node name="P1Chara" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(109, 142)
 rotation = -3.14159
 scale = Vector2(1, -1)
-texture = ExtResource("9_syxvg")
+texture = ExtResource("8_11fia")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
@@ -555,6 +556,7 @@ stretch_mode = 4
 [node name="FxClic" parent="CanvasLayer/TextureButton" instance=ExtResource("11_yeo0w")]
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(161.5, 100)
 scale = Vector2(2.17262, 2.26667)

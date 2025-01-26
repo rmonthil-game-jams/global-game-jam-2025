@@ -440,7 +440,7 @@ offset_bottom = 124.0
 scale = Vector2(0.341167, 0.335227)
 theme = ExtResource("7_52w1s")
 theme_override_font_sizes/font_size = 50
-text = "Bottle Selection"
+text = "Select Bottle"
 horizontal_alignment = 1
 vertical_alignment = 1
 

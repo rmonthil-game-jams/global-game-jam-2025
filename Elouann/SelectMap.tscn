@@ -110,7 +110,7 @@ offset_bottom = 124.0
 scale = Vector2(0.341167, 0.335227)
 theme = ExtResource("4_fx1su")
 theme_override_font_sizes/font_size = 50
-text = "Map Selection"
+text = "Select Map"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -118,4 +118,6 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/RandomButton" to="." method="_on_random_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

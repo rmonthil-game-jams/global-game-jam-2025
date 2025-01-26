@@ -32,6 +32,7 @@ func _input(event: InputEvent) -> void:
 				if ChosenMap <0:
 					ChosenMap = MapArraySize
 				get_node("CanvasLayer/Sprite2D3").texture = MapArray[ChosenMap]
+				get_node("CanvasLayer/MapName").text = MapNameArray[ChosenMap]
 				UiManager.SpriteMap = ChosenMap
 	if event is InputEventKey:
 		if not event.pressed:
@@ -40,6 +41,7 @@ func _input(event: InputEvent) -> void:
 				if ChosenMap > MapArraySize:
 					ChosenMap = 0
 				get_node("CanvasLayer/Sprite2D3").texture = MapArray[ChosenMap]
+				get_node("CanvasLayer/MapName").text = MapNameArray[ChosenMap]
 				UiManager.SpriteMap = ChosenMap
 	
 
@@ -50,3 +52,21 @@ func _on_random_button_pressed() -> void:
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://remi/game/game.tscn")
+
+
+func _on_button_2_pressed() -> void:
+	ChosenMap += 1
+	if ChosenMap > MapArraySize:
+		ChosenMap = 0
+	get_node("CanvasLayer/Sprite2D3").texture = MapArray[ChosenMap]
+	get_node("CanvasLayer/MapName").text = MapNameArray[ChosenMap]
+	UiManager.SpriteMap = ChosenMap
+
+
+func _on_button_pressed() -> void:
+	ChosenMap -= 1
+	if ChosenMap <0:
+		ChosenMap = MapArraySize
+	get_node("CanvasLayer/Sprite2D3").texture = MapArray[ChosenMap]
+	get_node("CanvasLayer/MapName").text = MapNameArray[ChosenMap]
+	UiManager.SpriteMap = ChosenMap

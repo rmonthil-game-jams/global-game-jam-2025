@@ -24,3 +24,7 @@ func _on_button_2_pressed() -> void:
 
 func _on_button_credit_back_pressed() -> void:
 	get_node("AnimationPlayer").play("FadeOut3")
+
+
+func _on_button_3_pressed() -> void:
+	get_tree().quit

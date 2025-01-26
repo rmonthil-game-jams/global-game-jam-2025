@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://cvnu4cqcqrikp"]
+[gd_scene load_steps=26 format=3 uid="uid://cvnu4cqcqrikp"]
 
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="1_jsfdf"]
 [ext_resource type="Script" path="res://Elouann/main_menu.gd" id="1_vj8ku"]
 [ext_resource type="FontFile" uid="uid://c1fpj8o6nl28m" path="res://Elouann/Winter Drink.otf" id="1_y7ehw"]
 [ext_resource type="Texture2D" uid="uid://b3msa8p5cnaxs" path="res://Elouann/Bouttons/CreditNormal.png" id="4_cy02q"]
+[ext_resource type="PackedScene" uid="uid://byl4rab5kkypr" path="res://remi/fx/fx_clic.tscn" id="4_wsoay"]
 [ext_resource type="Texture2D" uid="uid://doj38esgdjqbo" path="res://Elouann/Bouttons/CreditHover.png" id="5_db35w"]
 [ext_resource type="Texture2D" uid="uid://bee1t6d07okl7" path="res://Elouann/Bouttons/CreditsClick.png" id="6_gr360"]
 [ext_resource type="Texture2D" uid="uid://66awn62jgq0r" path="res://Elouann/Bouttons/ExitNormal.png" id="7_0ikyr"]
@@ -268,6 +269,8 @@ theme_override_font_sizes/font_size = 70
 text = "  "
 alignment = 0
 
+[node name="FxClic" parent="CanvasLayer/Button" instance=ExtResource("4_wsoay")]
+
 [node name="Button2" type="Button" parent="CanvasLayer"]
 offset_left = 751.852
 offset_top = 411.111
@@ -284,6 +287,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_de2xr")
 text = "  "
 alignment = 0
 
+[node name="FxClic" parent="CanvasLayer/Button2" instance=ExtResource("4_wsoay")]
+
 [node name="Button3" type="Button" parent="CanvasLayer"]
 offset_left = 785.185
 offset_top = 540.741
@@ -299,7 +304,12 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_xjjk3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_lyml0")
 alignment = 0
 
+[node name="FxClic" parent="CanvasLayer/Button3" instance=ExtResource("4_wsoay")]
+position = Vector2(-50.4485, -317.538)
+rotation = 0.0712632
+
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(600, 337.037)
 scale = Vector2(7.36332, 6.63139)

@@ -33,21 +33,21 @@ func _physics_process(delta: float) -> void:
 			# TODO: FX CONTACT (PARTICLES)
 			if not is_bottle_0_foaming:
 				var foam_duration: float = HIT_INTENSITY * (53.0/bottle_0.HEIGHT) * (bottle_0.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_0.linear_velocity - other_bottle.linear_velocity).length())
-				if foam_duration > 0.0:
+				if foam_duration >= 0.1:
 					is_bottle_0_foaming = true
 					get_tree().create_timer(foam_duration, false, true).timeout.connect(
 						_on_foam_end.bind(0)
 					)
 					# fx
-					if foam_duration >= 0.5:
+					if foam_duration >= 0.4:
 						var fx_good: Node2D = preload("res://remi/fx/fx_perfect.tscn").instantiate()
 						fx_good.position = 0.5 * (bottle_0.global_position + other_bottle.global_position)
 						bottle_0.get_parent().add_child(fx_good)
-					elif foam_duration >= 0.25:
+					elif foam_duration >= 0.2:
 						var fx_good: Node2D = preload("res://remi/fx/fx_awesome.tscn").instantiate()
 						fx_good.position = 0.5 * (bottle_0.global_position + other_bottle.global_position)
 						bottle_0.get_parent().add_child(fx_good)
-					elif foam_duration >= 0.125:
+					elif foam_duration >= 0.1:
 						var fx_good: Node2D = preload("res://remi/fx/fx_good.tscn").instantiate()
 						fx_good.position = 0.5 * (bottle_0.global_position + other_bottle.global_position)
 						bottle_0.get_parent().add_child(fx_good)
@@ -98,22 +98,22 @@ func _physics_process(delta: float) -> void:
 			# foam
 			if not is_bottle_1_foaming:
 				var foam_duration: float = HIT_INTENSITY * (53.0/bottle_1.HEIGHT) * (bottle_1.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_1.linear_velocity - other_bottle.linear_velocity).length())
-				if foam_duration > 0.0:
+				if foam_duration >= 0.1:
 					is_bottle_1_foaming = true
 					get_tree().create_timer(foam_duration, false, true).timeout.connect(
 						_on_foam_end.bind(1)
 					)
 					# fx
 					if not UiManager.VersusAI:
-						if foam_duration >= 0.5:
+						if foam_duration >= 0.4:
 							var fx_good: Node2D = preload("res://remi/fx/fx_perfect.tscn").instantiate()
 							fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
 							bottle_1.get_parent().add_child(fx_good)
-						elif foam_duration >= 0.25:
+						elif foam_duration >= 0.2:
 							var fx_good: Node2D = preload("res://remi/fx/fx_awesome.tscn").instantiate()
 							fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
 							bottle_1.get_parent().add_child(fx_good)
-						elif foam_duration >= 0.125:
+						elif foam_duration >= 0.1:
 							var fx_good: Node2D = preload("res://remi/fx/fx_good.tscn").instantiate()
 							fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
 							bottle_1.get_parent().add_child(fx_good)

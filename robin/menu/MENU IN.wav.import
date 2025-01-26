@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hg56lq2x74bn"
+path="res://.godot/imported/MENU IN.wav-e938758b478bb0b21255e5f684e40d80.sample"
+
+[deps]
+
+source_file="res://robin/menu/MENU IN.wav"
+dest_files=["res://.godot/imported/MENU IN.wav-e938758b478bb0b21255e5f684e40d80.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

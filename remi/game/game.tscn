@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bagd4it3fab80"]
+[gd_scene load_steps=11 format=3 uid="uid://bagd4it3fab80"]
 
 [ext_resource type="Script" path="res://remi/game/game.gd" id="1_hroc5"]
 [ext_resource type="PackedScene" uid="uid://b5yyp1kl4s686" path="res://remi/player/player_keyboard_0/player_keyboard_0.tscn" id="2_p0mod"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://qgv0w0vtp0wl" path="res://Elouann/Bot/bot.tscn" id="7_auw4w"]
 [ext_resource type="PackedScene" uid="uid://capl68uvrc72q" path="res://remi/player/player_gamepad_0/player_gamepad_0.tscn" id="8_jibrm"]
 [ext_resource type="PackedScene" uid="uid://v8pyfgbil01f" path="res://remi/player/player_gamepad_1/player_gamepad_1.tscn" id="9_xbfhp"]
+[ext_resource type="AudioStream" uid="uid://cubc53rhpb43u" path="res://robin/amb/AMBIANCE TAVERN.mp3" id="10_usm45"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_hroc5")
@@ -42,5 +43,10 @@ PLAYER_PATH = NodePath("../PlayerKeyboard1")
 [node name="FoamsUp" parent="Processes" instance=ExtResource("6_a55bu")]
 
 [node name="Bot" parent="Processes" instance=ExtResource("7_auw4w")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_usm45")
+volume_db = -12.0
+autoplay = true
 
 [connection signal="finished" from="Processes/Battle" to="." method="_on_battle_finished"]

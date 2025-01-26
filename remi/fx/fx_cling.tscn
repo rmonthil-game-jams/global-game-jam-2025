@@ -1,0 +1,34 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmh1pnln4qysg"]
+
+[ext_resource type="Script" path="res://remi/fx/fx_cling.gd" id="1_vq2ii"]
+[ext_resource type="AudioStream" uid="uid://dubqp42cn2dj" path="res://robin/BEER/GLING01.wav" id="2_yjcmj"]
+[ext_resource type="AudioStream" uid="uid://d3xl4g8kglli1" path="res://robin/BEER/GLING02.wav" id="3_mp3m1"]
+[ext_resource type="AudioStream" uid="uid://dk0f5m87356ek" path="res://robin/BEER/GLING03.wav" id="4_hcx5k"]
+[ext_resource type="AudioStream" uid="uid://de2vwf8s33fav" path="res://robin/BEER/GLING04.wav" id="5_qt76w"]
+[ext_resource type="AudioStream" uid="uid://borepeajht1im" path="res://robin/BEER/GLING05.wav" id="6_mpump"]
+[ext_resource type="AudioStream" uid="uid://df64eo2kkr43q" path="res://robin/BEER/GLING06.wav" id="7_kpwgt"]
+[ext_resource type="AudioStream" uid="uid://dyjqyvy8qxmwc" path="res://robin/BEER/GLING07.wav" id="8_05a1d"]
+[ext_resource type="AudioStream" uid="uid://cgd3xgrukaim5" path="res://robin/BEER/GLING08.wav" id="9_vx503"]
+[ext_resource type="AudioStream" uid="uid://21r0c0u54ndt" path="res://robin/BEER/GLING09.wav" id="10_aakyl"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tr0gh"]
+streams_count = 9
+stream_0/stream = ExtResource("2_yjcmj")
+stream_1/stream = ExtResource("3_mp3m1")
+stream_2/stream = ExtResource("4_hcx5k")
+stream_3/stream = ExtResource("5_qt76w")
+stream_4/stream = ExtResource("6_mpump")
+stream_5/stream = ExtResource("7_kpwgt")
+stream_6/stream = ExtResource("8_05a1d")
+stream_7/stream = ExtResource("9_vx503")
+stream_8/stream = ExtResource("10_aakyl")
+
+[node name="FxCling" type="Node2D"]
+z_index = 5
+script = ExtResource("1_vq2ii")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_tr0gh")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

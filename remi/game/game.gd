@@ -21,6 +21,12 @@ func set_up_arena(arena_id: int):
 	match arena_id:
 		0:
 			arena = preload("res://remi/arena/default/arena_default.tscn").instantiate()
+			PhysicsServer2D.area_set_param(get_viewport().find_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY, 392.0)
+			$AudioStreamPlayer.play()
+		1:
+			arena = preload("res://remi/arena/default/arena_space.tscn").instantiate()
+			PhysicsServer2D.area_set_param(get_viewport().find_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY, 392.0)
+			$AudioStreamPlayer.stop()
 	arena.name = "Arena"
 	$World.add_child(arena)
 
@@ -137,6 +143,11 @@ func _start_battle() -> void:
 		$Processes/CharacterController1.PLAYER_PATH = $Processes/CharacterController1.get_path_to($Processes/PlayerGamepad0)
 		if Input.get_connected_joypads().size() > 1:
 			$Processes/CharacterController0.PLAYER_PATH = $Processes/CharacterController0.get_path_to($Processes/PlayerGamepad1)
+		else:
+			$Processes/CharacterController0.PLAYER_PATH = $Processes/CharacterController0.get_path_to($Processes/PlayerKeyboard0)
+	else:
+		$Processes/CharacterController0.PLAYER_PATH = $Processes/CharacterController0.get_path_to($Processes/PlayerKeyboard0)
+		$Processes/CharacterController1.PLAYER_PATH = $Processes/CharacterController1.get_path_to($Processes/PlayerKeyboard1)
 	if UiManager.VersusAI:
 		$Processes/CharacterController0.PLAYER_PATH = $Processes/CharacterController0.get_path_to($Processes/Bot)
 	# freeze

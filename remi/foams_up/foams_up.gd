@@ -51,6 +51,14 @@ func _physics_process(delta: float) -> void:
 						var fx_good: Node2D = preload("res://remi/fx/fx_good.tscn").instantiate()
 						fx_good.position = 0.5 * (bottle_0.global_position + other_bottle.global_position)
 						bottle_0.get_parent().add_child(fx_good)
+					# fx cling
+					var fx_cling: Node2D = preload("res://remi/fx/fx_cling.tscn").instantiate()
+					fx_cling.position = bottle_0.get_node("Fx").global_position
+					bottle_0.get_parent().add_child(fx_cling)
+					# fx foam
+					var fx_foam: Node2D = preload("res://remi/fx/fx_foam.tscn").instantiate()
+					fx_foam.position = bottle_0.get_node("Fx").global_position
+					bottle_0.get_parent().add_child(fx_foam)
 					# anim
 					for fluid_part in bottle_0.get_node("Area2DFluid").get_overlapping_bodies():
 						# init
@@ -66,9 +74,10 @@ func _physics_process(delta: float) -> void:
 						# end
 						var fluid_part_area_hit_box: Area2D = fluid_part.get_node("Area2DHitBox")
 						fluid_part_area_hit_box.monitoring = true
-						fluid_part_area_hit_box.area_exited.connect(
-							_on_fluid_part_foam_end.bind(fluid_part)
-						)
+						if not fluid_part_area_hit_box.area_exited.is_connected(_on_fluid_part_foam_end):
+							fluid_part_area_hit_box.area_exited.connect(
+								_on_fluid_part_foam_end.bind(fluid_part)
+							)
 		if is_bottle_0_foaming:
 			for fluid_part in bottle_0.get_node("Area2DFluid").get_overlapping_bodies():
 				fluid_part.apply_central_impulse(fluid_part.mass * FOAM_ACCELERATION * delta * -bottle_0.global_transform.y)
@@ -86,6 +95,7 @@ func _physics_process(delta: float) -> void:
 			get_tree().create_timer(STUN_DELAY, false, true).timeout.connect(
 				_on_stun_end.bind(1)
 			)
+			# foam
 			if not is_bottle_1_foaming:
 				var foam_duration: float = HIT_INTENSITY * (bottle_1.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_1.linear_velocity - other_bottle.linear_velocity).length())
 				if foam_duration > 0.0:
@@ -94,18 +104,27 @@ func _physics_process(delta: float) -> void:
 						_on_foam_end.bind(1)
 					)
 					# fx
-					if foam_duration >= 0.5:
-						var fx_good: Node2D = preload("res://remi/fx/fx_perfect.tscn").instantiate()
-						fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
-						bottle_1.get_parent().add_child(fx_good)
-					elif foam_duration >= 0.25:
-						var fx_good: Node2D = preload("res://remi/fx/fx_awesome.tscn").instantiate()
-						fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
-						bottle_1.get_parent().add_child(fx_good)
-					elif foam_duration >= 0.125:
-						var fx_good: Node2D = preload("res://remi/fx/fx_good.tscn").instantiate()
-						fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
-						bottle_1.get_parent().add_child(fx_good)
+					if not UiManager.VersusAI:
+						if foam_duration >= 0.5:
+							var fx_good: Node2D = preload("res://remi/fx/fx_perfect.tscn").instantiate()
+							fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
+							bottle_1.get_parent().add_child(fx_good)
+						elif foam_duration >= 0.25:
+							var fx_good: Node2D = preload("res://remi/fx/fx_awesome.tscn").instantiate()
+							fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
+							bottle_1.get_parent().add_child(fx_good)
+						elif foam_duration >= 0.125:
+							var fx_good: Node2D = preload("res://remi/fx/fx_good.tscn").instantiate()
+							fx_good.position = 0.5 * (bottle_1.global_position + other_bottle.global_position)
+							bottle_1.get_parent().add_child(fx_good)
+					# fx cling
+					var fx_cling: Node2D = preload("res://remi/fx/fx_cling.tscn").instantiate()
+					fx_cling.position = bottle_1.get_node("Fx").global_position
+					bottle_1.get_parent().add_child(fx_cling)
+					# fx foam
+					var fx_foam: Node2D = preload("res://remi/fx/fx_foam.tscn").instantiate()
+					fx_foam.position = bottle_1.get_node("Fx").global_position
+					bottle_1.get_parent().add_child(fx_foam)
 					# anim
 					for fluid_part in bottle_1.get_node("Area2DFluid").get_overlapping_bodies():
 						# init

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgl3ye6mrhjp6"]
+
+[ext_resource type="AudioStream" uid="uid://ce1exg6cgxrf0" path="res://robin/foams_up_ost.mp3" id="1_mm12e"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_mm12e")
+volume_db = -6.0
+autoplay = true

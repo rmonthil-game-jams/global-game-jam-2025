@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="1_jsfdf"]
 [ext_resource type="Script" path="res://Elouann/main_menu.gd" id="1_vj8ku"]
-[ext_resource type="Texture2D" uid="uid://cufo3unim0u3" path="res://lise/main-menu-back.png" id="2_hrh51"]
+[ext_resource type="Texture2D" uid="uid://c5r7m2ka4cm5i" path="res://more/back.png" id="2_3rfnn"]
 [ext_resource type="Texture2D" uid="uid://dg50hohdm6qgd" path="res://lise/main-menu-fairy.png" id="3_g2yh3"]
 [ext_resource type="Texture2D" uid="uid://3r0fl6bcpk58" path="res://lise/main-menu-tree.png" id="4_0rujp"]
 [ext_resource type="Texture2D" uid="uid://b3msa8p5cnaxs" path="res://Elouann/Bouttons/CreditNormal.png" id="4_cy02q"]
@@ -11,23 +11,23 @@
 [ext_resource type="PackedScene" uid="uid://byl4rab5kkypr" path="res://remi/fx/fx_clic.tscn" id="4_wsoay"]
 [ext_resource type="Texture2D" uid="uid://doj38esgdjqbo" path="res://Elouann/Bouttons/CreditHover.png" id="5_db35w"]
 [ext_resource type="Texture2D" uid="uid://q00w0dn3i0pf" path="res://Elouann/Bouttons/PlayClick.png" id="5_gog1h"]
+[ext_resource type="Texture2D" uid="uid://5vw8ry02sehe" path="res://more/girl.png" id="5_gqial"]
 [ext_resource type="Texture2D" uid="uid://bee1t6d07okl7" path="res://Elouann/Bouttons/CreditsClick.png" id="6_gr360"]
 [ext_resource type="Texture2D" uid="uid://prig6bqv346c" path="res://Elouann/Bouttons/PlayHover.png" id="6_q1bvv"]
 [ext_resource type="Texture2D" uid="uid://66awn62jgq0r" path="res://Elouann/Bouttons/ExitNormal.png" id="7_0ikyr"]
 [ext_resource type="Texture2D" uid="uid://c2tw4y0fbagge" path="res://Elouann/Bouttons/ExitHover.png" id="8_vwnyo"]
 [ext_resource type="Texture2D" uid="uid://b4mg5neln76u7" path="res://Elouann/Bouttons/ExitClick.png" id="9_nbc38"]
 [ext_resource type="Texture2D" uid="uid://cj83nqylsruy5" path="res://Elouann/Bouttons/BlackScreen.png" id="10_klad5"]
-[ext_resource type="Texture2D" uid="uid://hgx4eps3sqqx" path="res://Elouann/Ressources/M.png" id="14_k5w3k"]
-[ext_resource type="Texture2D" uid="uid://byiv83re2mwl4" path="res://Elouann/Ressources/P.png" id="15_7eijf"]
-[ext_resource type="Texture2D" uid="uid://64jgdehascnd" path="res://Elouann/Ressources/S.png" id="16_tqm4s"]
-[ext_resource type="Texture2D" uid="uid://c3vtkkr0kxegi" path="res://Elouann/Ressources/U.png" id="17_in7xr"]
-[ext_resource type="Texture2D" uid="uid://dtm6bqahs8307" path="res://Elouann/Ressources/A.png" id="18_0pxle"]
-[ext_resource type="Texture2D" uid="uid://df7ovbpentuy6" path="res://Elouann/Ressources/F.png" id="19_yckxu"]
-[ext_resource type="Texture2D" uid="uid://v2w1kx24d5yu" path="res://Elouann/Ressources/O.png" id="20_r7vxq"]
-[ext_resource type="Texture2D" uid="uid://bfqleb3787fds" path="res://Elouann/Ressources/CreditSalleDeBain.png" id="25_3jlwo"]
+[ext_resource type="Texture2D" uid="uid://dyifnboqxfhdd" path="res://more/m.png" id="15_1s1hj"]
+[ext_resource type="Texture2D" uid="uid://dxv6q1oc3dsmd" path="res://more/p.png" id="16_b5bel"]
+[ext_resource type="Texture2D" uid="uid://5488lyjyfwa1" path="res://more/s.png" id="17_pyayj"]
+[ext_resource type="Texture2D" uid="uid://dmwjmt7b6eehd" path="res://more/u.png" id="18_qxjyx"]
+[ext_resource type="Texture2D" uid="uid://cnsk2mdrbqmi0" path="res://more/a.png" id="19_nmei3"]
+[ext_resource type="Texture2D" uid="uid://c3auo4yo4nnk8" path="res://more/f.png" id="20_rj2ih"]
+[ext_resource type="Texture2D" uid="uid://xw2dfwsa5j7v" path="res://more/o.png" id="21_smyhn"]
+[ext_resource type="Texture2D" uid="uid://df6v8wklbw8q7" path="res://more/bathroom.png" id="25_04chm"]
 [ext_resource type="FontFile" uid="uid://487skyoer5km" path="res://Elouann/vhs-gothic.ttf" id="26_dwyib"]
-[ext_resource type="Texture2D" uid="uid://cgpp2gycwv7oh" path="res://Elouann/Ressources/Womer.png" id="26_u7m6c"]
-[ext_resource type="Texture2D" uid="uid://bcef0qas4aecw" path="res://Elouann/Ressources/FemmeBain.png" id="27_7w0md"]
+[ext_resource type="Texture2D" uid="uid://l7vm564sx7f6" path="res://more/bubble.png" id="28_1e860"]
 
 [sub_resource type="Animation" id="Animation_7shdg"]
 resource_name = "FadeIn"
@@ -256,6 +256,54 @@ tracks/11/keys = {
 "update": 0,
 "values": [Vector2(269, 32), Vector2(269, 34), Vector2(269, 32)]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/CreditRoom/Bubble3:modulate")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/CreditRoom/Bubble2:modulate")
+tracks/13/interp = 2
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/CreditRoom/Bubble:modulate")
+tracks/14/interp = 2
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CanvasLayer/CreditRoom/Bubble4:modulate")
+tracks/15/interp = 2
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_g2agm"]
 length = 0.001
@@ -415,6 +463,54 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(269, 32)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/CreditRoom/Bubble3:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/CreditRoom/Bubble2:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CanvasLayer/CreditRoom/Bubble:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("CanvasLayer/CreditRoom/Bubble4:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6y1cu"]
 _data = {
@@ -437,7 +533,7 @@ anchors_preset = 0
 
 [node name="BackGround" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(160, 90)
-texture = ExtResource("2_hrh51")
+texture = ExtResource("2_3rfnn")
 
 [node name="Main-menu-tree" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(159, 90)
@@ -448,15 +544,16 @@ position = Vector2(272, 71)
 texture = ExtResource("4_n8s5j")
 
 [node name="Womer" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(51, 113)
+position = Vector2(52, 112)
 scale = Vector2(0.634839, 0.634839)
-texture = ExtResource("26_u7m6c")
+texture = ExtResource("5_gqial")
 
 [node name="Main-menu-fairy" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(211.5, 114.5)
 texture = ExtResource("3_g2yh3")
 
 [node name="Button" type="TextureButton" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 209.0
 offset_top = 118.0
 offset_right = 269.0
@@ -472,6 +569,7 @@ stretch_mode = 4
 [node name="FxClic" parent="CanvasLayer/Button" instance=ExtResource("4_wsoay")]
 
 [node name="Button2" type="TextureButton" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 173.0
 offset_top = 133.0
 offset_right = 223.0
@@ -494,40 +592,34 @@ offset_bottom = 40.0
 
 [node name="M" type="Sprite2D" parent="CanvasLayer/Title"]
 position = Vector2(208, 34)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_k5w3k")
+texture = ExtResource("15_1s1hj")
 
 [node name="P" type="Sprite2D" parent="CanvasLayer/Title"]
 position = Vector2(269, 32)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_7eijf")
+texture = ExtResource("16_b5bel")
 
 [node name="S" type="Sprite2D" parent="CanvasLayer/Title"]
 position = Vector2(227, 37)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_tqm4s")
+texture = ExtResource("17_pyayj")
 
 [node name="U" type="Sprite2D" parent="CanvasLayer/Title"]
 position = Vector2(251, 33)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_in7xr")
+texture = ExtResource("18_qxjyx")
 
 [node name="A" type="Sprite2D" parent="CanvasLayer/Title"]
 position = Vector2(188, 33)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("18_0pxle")
+texture = ExtResource("19_nmei3")
 
 [node name="F" type="Sprite2D" parent="CanvasLayer/Title"]
 position = Vector2(153, 36)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("19_yckxu")
+texture = ExtResource("20_rj2ih")
 
 [node name="O" type="Sprite2D" parent="CanvasLayer/Title"]
 position = Vector2(167, 35)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("20_r7vxq")
+texture = ExtResource("21_smyhn")
 
 [node name="Button3" type="TextureButton" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 171.0
 offset_top = 152.0
 offset_right = 221.0
@@ -551,7 +643,7 @@ anchors_preset = 0
 
 [node name="CreditBackground" type="Sprite2D" parent="CanvasLayer/CreditRoom"]
 position = Vector2(160, 90)
-texture = ExtResource("25_3jlwo")
+texture = ExtResource("25_04chm")
 
 [node name="Label" type="Label" parent="CanvasLayer/CreditRoom"]
 layout_mode = 0
@@ -609,8 +701,8 @@ theme_override_constants/shadow_outline_size = 1
 theme_override_fonts/font = ExtResource("26_dwyib")
 theme_override_font_sizes/font_size = 5
 text = "Developer :
-- Elouann Giacomoni
-- Rémi Monthiller"
+- Rémi Monthiller
+- Elouann Giacomoni"
 
 [node name="ButtonCreditBack" type="TextureButton" parent="CanvasLayer/CreditRoom"]
 layout_mode = 0
@@ -624,9 +716,24 @@ texture_hover = ExtResource("6_q1bvv")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="FemmeBain" type="Sprite2D" parent="CanvasLayer/CreditRoom"]
-position = Vector2(156, 94)
-texture = ExtResource("27_7w0md")
+[node name="Bubble" type="Sprite2D" parent="CanvasLayer/CreditRoom"]
+position = Vector2(209, 89)
+texture = ExtResource("28_1e860")
+
+[node name="Bubble2" type="Sprite2D" parent="CanvasLayer/CreditRoom"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(197, 73)
+texture = ExtResource("28_1e860")
+
+[node name="Bubble3" type="Sprite2D" parent="CanvasLayer/CreditRoom"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(212, 60)
+texture = ExtResource("28_1e860")
+
+[node name="Bubble4" type="Sprite2D" parent="CanvasLayer/CreditRoom"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(199, 49)
+texture = ExtResource("28_1e860")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)

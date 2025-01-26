@@ -1,7 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://dcofw8qvx1f84"]
+[gd_scene load_steps=25 format=3 uid="uid://dcofw8qvx1f84"]
 
 [ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_k11be"]
-[ext_resource type="Texture2D" uid="uid://docecxbso4f6r" path="res://Elouann/Chara/CharaOgre.png" id="2_0u8dh"]
 [ext_resource type="Texture2D" uid="uid://cb814dnsc0ad4" path="res://Elouann/Ressources/Arrow.png" id="3_knuuf"]
 [ext_resource type="Texture2D" uid="uid://bxmn8jpopx3kc" path="res://Elouann/Ressources/ArrowHover.png" id="4_5vuy6"]
 [ext_resource type="Texture2D" uid="uid://bslgok4bln0lr" path="res://salome/bottle_2_front.png" id="4_d8gu3"]
@@ -12,10 +11,10 @@
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="7_52w1s"]
 [ext_resource type="Texture2D" uid="uid://01i8ak4s75ti" path="res://lise/bottle_front.png" id="8_11fia"]
 [ext_resource type="Texture2D" uid="uid://hkb0d04h84gl" path="res://salome/bottle_1_front.png" id="9_syxvg"]
-[ext_resource type="Texture2D" uid="uid://f87xs6qm8fbn" path="res://Elouann/Chara/Chara1.png" id="10_hhiq2"]
 [ext_resource type="Texture2D" uid="uid://bhsp77kilvket" path="res://Elouann/Ressources/WASD.png" id="11_wdhkl"]
 [ext_resource type="PackedScene" uid="uid://byl4rab5kkypr" path="res://remi/fx/fx_clic.tscn" id="11_yeo0w"]
 [ext_resource type="Texture2D" uid="uid://bjasnaduik7oo" path="res://roxane/1.png" id="12_ok8hr"]
+[ext_resource type="Texture2D" uid="uid://bcj2p05l7dty3" path="res://more/character.png" id="12_x7c1g"]
 [ext_resource type="Texture2D" uid="uid://cj83nqylsruy5" path="res://Elouann/Bouttons/BlackScreen.png" id="13_3agxw"]
 [ext_resource type="Texture2D" uid="uid://66awn62jgq0r" path="res://Elouann/Bouttons/ExitNormal.png" id="17_ip31d"]
 [ext_resource type="Texture2D" uid="uid://b4mg5neln76u7" path="res://Elouann/Bouttons/ExitClick.png" id="18_quejp"]
@@ -347,6 +346,7 @@ texture = ExtResource("6_n30ka")
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 141.0
 offset_top = 151.0
 offset_right = 192.0
@@ -359,6 +359,7 @@ alignment = 0
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_top = 174.0
 offset_right = 360.0
 offset_bottom = 279.0
@@ -371,6 +372,7 @@ vertical_alignment = 1
 
 [node name="Decompte" type="Label" parent="CanvasLayer"]
 visible = false
+layout_mode = 0
 offset_left = 425.0
 offset_top = 522.0
 offset_right = 690.0
@@ -384,6 +386,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 820.0
 offset_top = 174.0
 offset_right = 1180.0
@@ -397,22 +400,22 @@ vertical_alignment = 1
 
 [node name="P0Bear" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
-position = Vector2(269, 123)
-texture = ExtResource("2_0u8dh")
+position = Vector2(263, 117)
+texture = ExtResource("12_x7c1g")
 
 [node name="P1Bear" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
-position = Vector2(51, 123)
+position = Vector2(59, 117)
 rotation = -3.14159
 scale = Vector2(1, -1)
-texture = ExtResource("10_hhiq2")
+texture = ExtResource("12_x7c1g")
 
 [node name="P0Chara" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(228, 145)
+position = Vector2(213, 145)
 texture = ExtResource("8_11fia")
 
 [node name="P1Chara" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(90, 145)
+position = Vector2(109, 142)
 rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("9_syxvg")
@@ -423,10 +426,11 @@ libraries = {
 }
 
 [node name="Player1PreviousChoice" type="TextureButton" parent="CanvasLayer"]
-offset_left = 64.0
-offset_top = 120.0
-offset_right = 79.0
-offset_bottom = 135.0
+layout_mode = 0
+offset_left = 81.0
+offset_top = 108.0
+offset_right = 100.0
+offset_bottom = 127.0
 texture_normal = ExtResource("4_5vuy6")
 texture_pressed = ExtResource("4_5vuy6")
 texture_hover = ExtResource("3_knuuf")
@@ -436,6 +440,7 @@ texture_hover = ExtResource("3_knuuf")
 [node name="Player0PreviousMode" type="TextureButton" parent="CanvasLayer"]
 visible = false
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 185.0
 offset_top = 70.0
 offset_right = 200.0
@@ -472,6 +477,7 @@ horizontal_alignment = 1
 [node name="Player0NextMode" type="TextureButton" parent="CanvasLayer"]
 visible = false
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 258.0
 offset_top = 70.0
 offset_right = 273.0
@@ -484,10 +490,11 @@ texture_hover = ExtResource("3_knuuf")
 [node name="FxClic" parent="CanvasLayer/Player0NextMode" instance=ExtResource("11_yeo0w")]
 
 [node name="Player1NextChoice" type="TextureButton" parent="CanvasLayer"]
-offset_left = 119.0
-offset_top = 120.0
-offset_right = 134.0
-offset_bottom = 135.0
+layout_mode = 0
+offset_left = 141.0
+offset_top = 108.0
+offset_right = 160.0
+offset_bottom = 127.0
 scale = Vector2(-1, 1)
 texture_normal = ExtResource("4_5vuy6")
 texture_pressed = ExtResource("4_5vuy6")
@@ -496,10 +503,11 @@ texture_hover = ExtResource("3_knuuf")
 [node name="FxClic" parent="CanvasLayer/Player1NextChoice" instance=ExtResource("11_yeo0w")]
 
 [node name="Player0PreviousChoice" type="TextureButton" parent="CanvasLayer"]
-offset_left = 201.0
-offset_top = 120.0
-offset_right = 216.0
-offset_bottom = 135.0
+layout_mode = 0
+offset_left = 180.0
+offset_top = 108.0
+offset_right = 199.0
+offset_bottom = 127.0
 texture_normal = ExtResource("4_5vuy6")
 texture_pressed = ExtResource("4_5vuy6")
 texture_hover = ExtResource("3_knuuf")
@@ -507,10 +515,11 @@ texture_hover = ExtResource("3_knuuf")
 [node name="FxClic" parent="CanvasLayer/Player0PreviousChoice" instance=ExtResource("11_yeo0w")]
 
 [node name="Player0NextChoice" type="TextureButton" parent="CanvasLayer"]
-offset_left = 253.0
-offset_top = 120.0
-offset_right = 272.0
-offset_bottom = 139.0
+layout_mode = 0
+offset_left = 241.0
+offset_top = 108.0
+offset_right = 260.0
+offset_bottom = 127.0
 scale = Vector2(-1, 1)
 texture_normal = ExtResource("4_5vuy6")
 texture_pressed = ExtResource("4_5vuy6")
@@ -532,6 +541,7 @@ scale = Vector2(3.5, 1)
 texture = ExtResource("12_ok8hr")
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 11.0
 offset_right = 46.0
@@ -541,6 +551,8 @@ texture_pressed = ExtResource("18_quejp")
 texture_hover = ExtResource("19_4qj4u")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="FxClic" parent="CanvasLayer/TextureButton" instance=ExtResource("11_yeo0w")]
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)

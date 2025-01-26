@@ -6,12 +6,12 @@
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="4_fx1su"]
 [ext_resource type="Texture2D" uid="uid://01i8ak4s75ti" path="res://lise/bottle_front.png" id="4_s52qj"]
 [ext_resource type="Texture2D" uid="uid://cbxyirn3gkrsf" path="res://Elouann/Ressources/interoghover.png" id="4_uue6x"]
-[ext_resource type="Texture2D" uid="uid://f87xs6qm8fbn" path="res://Elouann/Chara/Chara1.png" id="4_uxudi"]
 [ext_resource type="Texture2D" uid="uid://cn0xg6qnkcrdr" path="res://Elouann/Ressources/Interogclick.png" id="5_l2v53"]
 [ext_resource type="Texture2D" uid="uid://bxmn8jpopx3kc" path="res://Elouann/Ressources/ArrowHover.png" id="6_aox6m"]
 [ext_resource type="Texture2D" uid="uid://bokhnehcv40j" path="res://Elouann/Ressources/interognormal.png" id="6_gcnxc"]
 [ext_resource type="PackedScene" uid="uid://byl4rab5kkypr" path="res://remi/fx/fx_clic.tscn" id="7_boxq7"]
 [ext_resource type="Texture2D" uid="uid://cb814dnsc0ad4" path="res://Elouann/Ressources/Arrow.png" id="7_ruvsw"]
+[ext_resource type="Texture2D" uid="uid://bcj2p05l7dty3" path="res://more/character.png" id="10_k45jd"]
 [ext_resource type="Texture2D" uid="uid://66awn62jgq0r" path="res://Elouann/Bouttons/ExitNormal.png" id="13_icniv"]
 [ext_resource type="Texture2D" uid="uid://b4mg5neln76u7" path="res://Elouann/Bouttons/ExitClick.png" id="14_5xqxj"]
 [ext_resource type="Texture2D" uid="uid://c2tw4y0fbagge" path="res://Elouann/Bouttons/ExitHover.png" id="15_85vl3"]
@@ -33,21 +33,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_fiwiu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D4:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_fwfhf"]
 resource_name = "FadeOut"
 length = 0.3
@@ -62,6 +47,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fiwiu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D4:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1d2a3"]
@@ -87,6 +87,7 @@ position = Vector2(160, 90)
 texture = ExtResource("2_h7tnh")
 
 [node name="RandomButton" type="TextureButton" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 145.0
 offset_top = 74.0
 offset_right = 175.0
@@ -98,10 +99,11 @@ texture_hover = ExtResource("4_uue6x")
 [node name="FxClic" parent="CanvasLayer/RandomButton" instance=ExtResource("7_boxq7")]
 
 [node name="StartButton" type="Button" parent="CanvasLayer"]
-offset_left = 122.0
-offset_top = 146.0
-offset_right = 542.0
-offset_bottom = 273.0
+layout_mode = 0
+offset_left = 125.0
+offset_top = 109.0
+offset_right = 545.0
+offset_bottom = 236.0
 scale = Vector2(0.198022, 0.198022)
 theme = ExtResource("4_fx1su")
 theme_override_font_sizes/font_size = 70
@@ -110,6 +112,7 @@ alignment = 0
 [node name="FxClic" parent="CanvasLayer/StartButton" instance=ExtResource("7_boxq7")]
 
 [node name="MapName" type="Label" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 86.0
 offset_top = 47.0
 offset_right = 230.0
@@ -122,24 +125,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Main1" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(228, 145)
+position = Vector2(211, 148)
 texture = ExtResource("4_s52qj")
 
 [node name="Main2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(90, 145)
+position = Vector2(112, 145)
 texture = ExtResource("4_s52qj")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(270, 123)
-texture = ExtResource("4_uxudi")
+position = Vector2(261, 118)
+texture = ExtResource("10_k45jd")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(50, 123)
+position = Vector2(60, 118)
 rotation = -3.14159
 scale = Vector2(1, -1)
-texture = ExtResource("4_uxudi")
+texture = ExtResource("10_k45jd")
 
 [node name="Button" type="TextureButton" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 97.0
 offset_top = 55.0
 offset_right = 116.0
@@ -151,6 +155,7 @@ texture_hover = ExtResource("7_ruvsw")
 [node name="FxClic" parent="CanvasLayer/Button" instance=ExtResource("7_boxq7")]
 
 [node name="Button2" type="TextureButton" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 220.0
 offset_top = 55.0
 offset_right = 239.0
@@ -185,6 +190,7 @@ text = "Select Map"
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 11.0
 offset_right = 46.0
@@ -194,6 +200,8 @@ texture_pressed = ExtResource("14_5xqxj")
 texture_hover = ExtResource("15_85vl3")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="FxClic" parent="CanvasLayer/TextureButton" instance=ExtResource("7_boxq7")]
 
 [node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(161.665, 91.2596)

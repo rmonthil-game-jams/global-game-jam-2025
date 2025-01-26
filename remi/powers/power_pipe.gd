@@ -10,6 +10,7 @@ func _ready():
 func _run():
 	await get_tree().create_timer(randf_range(4.0, 12.0)).timeout
 	# down
+	$SoudStart.play()
 	if tween:
 		tween.kill()
 	tween = create_tween()
@@ -21,6 +22,7 @@ func _run():
 	await get_tree().create_timer(randf_range(2.0, 4.0)).timeout
 	$Source.stop()
 	# up
+	$SoudEnd.play()
 	if tween:
 		tween.kill()
 	tween = create_tween()
@@ -28,3 +30,6 @@ func _run():
 	await tween.finished
 	# run
 	_run.call_deferred()
+
+func _on_source_spawned() -> void:
+	$SoundFlow.play()

@@ -7,6 +7,8 @@ extends Marker2D
 @export var INTERVAL: float
 @export var N: int
 
+signal spawned
+
 # output
 var is_running: bool = false
 
@@ -24,6 +26,7 @@ func _source() -> void:
 			instance.position = global_position + Vector2.RIGHT.rotated(randf_range(0.0, TAU)) * randf_range(0.0, 1.0)
 			instance.linear_velocity = VELOCITY
 			parent.add_child(instance)
+		spawned.emit()
 		# again
 		await get_tree().create_timer(randf_range(0.5 * INTERVAL, INTERVAL)).timeout
 		_source.call_deferred()

@@ -40,6 +40,8 @@ func set_up_hand_0(hand_id: int):
 			hand_0 = preload("res://remi/hand/hand_0.tscn").instantiate()
 		1:
 			hand_0 = preload("res://remi/hand/hand_1.tscn").instantiate()
+		2:
+			hand_0 = preload("res://remi/hand/hand_2.tscn").instantiate()
 	hand_0.name = "Hand0"
 	hand_0.position.x = 0.5 * HAND_SPACING
 	hand_0.position.y = 0.0
@@ -55,6 +57,8 @@ func set_up_hand_1(hand_id: int):
 			hand_1 = preload("res://remi/hand/hand_0.tscn").instantiate()
 		1:
 			hand_1 = preload("res://remi/hand/hand_1.tscn").instantiate()
+		2:
+			hand_1 = preload("res://remi/hand/hand_2.tscn").instantiate()
 	hand_1.name = "Hand1"
 	hand_1.position.x = -0.5 * HAND_SPACING
 	hand_1.position.y = 0.0

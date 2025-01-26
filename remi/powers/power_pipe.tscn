@@ -30,7 +30,7 @@ VELOCITY = Vector2(0, 64)
 INTERVAL = 0.125
 N = 3
 
-[node name="SoudStart" type="AudioStreamPlayer2D" parent="."]
+[node name="SoundStart" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_1ael4")
 
 [node name="SoundEnd" type="AudioStreamPlayer2D" parent="."]

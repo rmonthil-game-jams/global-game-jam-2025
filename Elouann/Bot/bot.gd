@@ -5,8 +5,8 @@ extends Node
 
 # output
 var direction: Vector2 = Vector2.ZERO
-var Attack: bool = true
-var Defend: bool = false
+var Attack: bool = false
+var Defend: bool = true
 
 var DodgeSkills: Vector2 = Vector2(0,0)
 var SlamSkill: bool = false
@@ -27,30 +27,28 @@ func _process(delta: float) -> void:
 		DodgeSkills = Vector2(2,1)
 		BoostStats = 1.5
 	if Attack:
-		if DistanceToTarget().y > 0.9 and game.hand_0.position.x < 0:
-			direction.x = 2 * DodgeSkills.x
-			direction.y = -0.5 * DodgeSkills.y
-			$Timer.stop()
-			Attack = true
-			Defend = false
-			$Timer.start()
-			
-		if DistanceToTarget().y > -0.9 and SlamSkill:
-			direction.x = 2 * DodgeSkills.x
-			direction.y = 0.5 * DodgeSkills.y
+		if abs(DistanceToTarget().x) < 0.25 and DistanceToTarget().y > 0.75:
+			if game.hand_0.position.x < 0:
+				direction.x = 2 * DodgeSkills.x
+				direction.y = -0.5 * DodgeSkills.y
+				$Timer.stop()
+				Attack = true
+				Defend = false
+				$Timer.start()
+			else:
+				direction.x = -2 * DodgeSkills.x
+				direction.y = -0.5 * DodgeSkills.y
+				$Timer.stop()
+				Attack = true
+				Defend = false
+				$Timer.start()
+		elif abs(DistanceToTarget().x) < 0.25 and DistanceToTarget().y > -0.75 and SlamSkill:
+			direction.x = 0.0
+			direction.y = DodgeSkills.y
 			$Timer.stop()
 			Attack = false
 			Defend = true
 			$Timer.start()
-			
-		elif  DistanceToTarget().y > 0.9 and game.hand_0.position.x > 0:
-			direction.x = -2
-			direction.y = -0.5
-			$Timer.stop()
-			Attack = true
-			Defend = false
-			$Timer.start()
-
 		else:
 			direction.x = DistanceToTarget().x
 			direction.y = -DistanceToTarget().y-randi_range(0.5,1.5)
@@ -63,13 +61,12 @@ func _process(delta: float) -> void:
 func DistanceToTarget():
 	var BotPosition: Vector2 = game.hand_0.position
 	var PlayerPosition: Vector2 = game.hand_1.position
-	var Direction: Vector2 = (BotPosition - PlayerPosition).normalized()*BoostStats
+	var Direction: Vector2 = (BotPosition - PlayerPosition).normalized() * BoostStats
 	Direction.x = -Direction.x
 	return(Direction)
 
 
 func _on_timer_timeout() -> void:
-	
 	if Attack:
 		$Timer.wait_time = randf_range(1,2.5)
 		Attack = false

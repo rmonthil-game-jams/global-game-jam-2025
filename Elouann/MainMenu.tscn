@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cvnu4cqcqrikp"]
+[gd_scene load_steps=37 format=3 uid="uid://cvnu4cqcqrikp"]
 
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="1_jsfdf"]
 [ext_resource type="Script" path="res://Elouann/main_menu.gd" id="1_vj8ku"]
@@ -27,10 +27,11 @@
 [ext_resource type="Texture2D" uid="uid://bfqleb3787fds" path="res://Elouann/Ressources/CreditSalleDeBain.png" id="25_3jlwo"]
 [ext_resource type="FontFile" uid="uid://487skyoer5km" path="res://Elouann/vhs-gothic.ttf" id="26_dwyib"]
 [ext_resource type="Texture2D" uid="uid://cgpp2gycwv7oh" path="res://Elouann/Ressources/Womer.png" id="26_u7m6c"]
+[ext_resource type="Texture2D" uid="uid://bcef0qas4aecw" path="res://Elouann/Ressources/FemmeBain.png" id="27_7w0md"]
 
 [sub_resource type="Animation" id="Animation_7shdg"]
 resource_name = "FadeIn"
-length = 3.0
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -66,7 +67,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("CanvasLayer/Sprite2D:modulate")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0.7, 1),
@@ -85,7 +86,7 @@ tracks/0/path = NodePath("CanvasLayer/Sprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333334, 0.5),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -426,10 +427,13 @@ _data = {
 "RESET": SubResource("Animation_g2agm")
 }
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_vj8ku")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="Control" parent="."]
+anchors_preset = 0
 
 [node name="BackGround" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(160, 90)
@@ -551,13 +555,14 @@ texture = ExtResource("25_3jlwo")
 
 [node name="Label" type="Label" parent="CanvasLayer/CreditRoom"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 15.0
-offset_right = 77.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 15.0
+offset_top = 7.0
+offset_right = 81.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.301961, 0.168627, 0.196078, 1)
+theme_override_constants/shadow_outline_size = 1
 theme_override_fonts/font = ExtResource("26_dwyib")
-theme_override_font_sizes/font_size = 7
+theme_override_font_sizes/font_size = 5
 text = "Artistes :
 - Inès Chmourrane
 - Lise Carton
@@ -566,26 +571,28 @@ text = "Artistes :
 
 [node name="Label2" type="Label" parent="CanvasLayer/CreditRoom"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 77.0
-offset_right = 152.0
-offset_bottom = 118.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 15.0
+offset_top = 54.0
+offset_right = 157.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.301961, 0.168627, 0.196078, 1)
+theme_override_constants/shadow_outline_size = 1
 theme_override_fonts/font = ExtResource("26_dwyib")
-theme_override_font_sizes/font_size = 7
+theme_override_font_sizes/font_size = 5
 text = "Sound Designer/Compositor :
 - Robin Brech
 - Sylvain Debrock"
 
 [node name="Label3" type="Label" parent="CanvasLayer/CreditRoom"]
 layout_mode = 0
-offset_left = 116.0
-offset_top = 16.0
-offset_right = 216.0
-offset_bottom = 70.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 15.0
+offset_top = 83.0
+offset_right = 115.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0.301961, 0.168627, 0.196078, 1)
+theme_override_constants/shadow_outline_size = 1
 theme_override_fonts/font = ExtResource("26_dwyib")
-theme_override_font_sizes/font_size = 7
+theme_override_font_sizes/font_size = 5
 text = "Designer :
 - Roxane Jacquot
 - Elouann Giacomoni
@@ -593,13 +600,14 @@ text = "Designer :
 
 [node name="Label4" type="Label" parent="CanvasLayer/CreditRoom"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 116.0
-offset_right = 88.0
-offset_bottom = 158.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 15.0
+offset_top = 122.0
+offset_right = 91.0
+offset_bottom = 164.0
+theme_override_colors/font_color = Color(0.301961, 0.168627, 0.196078, 1)
+theme_override_constants/shadow_outline_size = 1
 theme_override_fonts/font = ExtResource("26_dwyib")
-theme_override_font_sizes/font_size = 7
+theme_override_font_sizes/font_size = 5
 text = "Developer :
 - Elouann Giacomoni
 - Rémi Monthiller"
@@ -616,6 +624,10 @@ texture_hover = ExtResource("6_q1bvv")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="FemmeBain" type="Sprite2D" parent="CanvasLayer/CreditRoom"]
+position = Vector2(156, 94)
+texture = ExtResource("27_7w0md")
+
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(163.241, 93.9445)
@@ -626,7 +638,6 @@ texture = ExtResource("10_klad5")
 libraries = {
 "": SubResource("AnimationLibrary_6y1cu")
 }
-autoplay = "Idle"
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {

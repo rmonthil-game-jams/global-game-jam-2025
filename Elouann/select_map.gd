@@ -8,6 +8,8 @@ extends Control
 var ChosenMap: int = 0
 
 func _ready() -> void:
+	var ChosenMap: int = 0
+	UiManager.SpriteMap = ChosenMap
 	get_node("CanvasLayer/Sprite2D").texture = UiManager.SavedSprite0
 	get_node("CanvasLayer/Sprite2D2").texture = UiManager.SavedSprite1
 	get_node("CanvasLayer/Main1").texture = UiManager.SavedBottle0
@@ -51,7 +53,8 @@ func _on_random_button_pressed() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://remi/game/game.tscn")
+	$CanvasLayer/AnimationPlayer.play("FadeOut")
+	
 
 
 func _on_button_2_pressed() -> void:
@@ -70,3 +73,12 @@ func _on_button_pressed() -> void:
 	get_node("CanvasLayer/Sprite2D3").texture = MapArray[ChosenMap]
 	get_node("CanvasLayer/MapName").text = MapNameArray[ChosenMap]
 	UiManager.SpriteMap = ChosenMap
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "FadeOut":
+		get_tree().change_scene_to_file("res://remi/game/game.tscn")
+
+
+func _on_texture_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Elouann/MainMenu.tscn")

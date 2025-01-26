@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ltxhurpewfgk"]
+[gd_scene load_steps=3 format=3 uid="uid://ltxhurpewfgk"]
 
 [ext_resource type="Script" path="res://remi/fx/fx_perfect.gd" id="1_rnkhb"]
+[ext_resource type="AudioStream" uid="uid://b8ufv3j04q8ms" path="res://robin/VOX/PERFECT.wav" id="2_tcl0t"]
 
 [node name="FxPerfect" type="Node2D"]
 z_index = 5
@@ -22,3 +23,7 @@ theme_override_font_sizes/font_size = 12
 text = "Perfect !"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_tcl0t")
+autoplay = true

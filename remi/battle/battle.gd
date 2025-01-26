@@ -24,9 +24,10 @@ func _process(delta: float) -> void:
 					is_bottle_0_safe = false
 					bottle_0_got_unsafe.emit()
 					# fx
-					var fx_empty: Node2D = preload("res://remi/fx/fx_empty.tscn").instantiate()
-					fx_empty.position = bottle_0.get_node("Fx").global_position
-					bottle_0.get_parent().add_child(fx_empty)
+					if not UiManager.VersusAI:
+						var fx_empty: Node2D = preload("res://remi/fx/fx_empty.tscn").instantiate()
+						fx_empty.position = bottle_0.get_node("Fx").global_position
+						bottle_0.get_parent().add_child(fx_empty)
 					# animation unsafe
 					if bottle_0.tween_ui_modulate:
 						bottle_0.tween_ui_modulate.kill()
@@ -40,9 +41,10 @@ func _process(delta: float) -> void:
 					is_bottle_0_safe = true
 					bottle_0_got_safe.emit()
 					# fx
-					var fx_refilled: Node2D = preload("res://remi/fx/fx_refilled.tscn").instantiate()
-					fx_refilled.position = bottle_0.get_node("Fx").global_position
-					bottle_0.get_parent().add_child(fx_refilled)
+					if not UiManager.VersusAI:
+						var fx_refilled: Node2D = preload("res://remi/fx/fx_refilled.tscn").instantiate()
+						fx_refilled.position = bottle_0.get_node("Fx").global_position
+						bottle_0.get_parent().add_child(fx_refilled)
 					# animation unsafe
 					if bottle_0.tween_ui_modulate:
 						bottle_0.tween_ui_modulate.kill()
@@ -84,6 +86,10 @@ func _on_bottle_0_unsafe_animation_finished():
 	is_finishing = true
 	var bottle_0: RigidBody2D = get_node(BOTTLE_0_PATH)
 	var hand_0: RigidBody2D = bottle_0.get_node(bottle_0.HAND_PATH)
+	# fx break
+	var fx_break: Node2D = preload("res://remi/fx/fx_break.tscn").instantiate()
+	fx_break.position = bottle_0.get_node("Fx").global_position
+	bottle_0.get_parent().add_child(fx_break)
 	# fade to black
 	if bottle_0.tween_ui_modulate:
 		bottle_0.tween_ui_modulate.kill()
@@ -110,6 +116,10 @@ func _on_bottle_1_unsafe_animation_finished():
 	is_finishing = true
 	var bottle_1: RigidBody2D = get_node(BOTTLE_1_PATH)
 	var hand_1: RigidBody2D = bottle_1.get_node(bottle_1.HAND_PATH)
+	# fx break
+	var fx_break: Node2D = preload("res://remi/fx/fx_break.tscn").instantiate()
+	fx_break.position = bottle_1.get_node("Fx").global_position
+	bottle_1.get_parent().add_child(fx_break)
 	# fade to black
 	if bottle_1.tween_ui_modulate:
 		bottle_1.tween_ui_modulate.kill()

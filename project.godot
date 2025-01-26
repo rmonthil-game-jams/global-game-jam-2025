@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 UiManager="*res://Elouann/ui_manager.tscn"
+MusicPlayer="*res://remi/music/MusicPlayer.tscn"
 
 [display]
 

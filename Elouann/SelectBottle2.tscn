@@ -1,23 +1,24 @@
-[gd_scene load_steps=25 format=3 uid="uid://wuhwir40toyn"]
+[gd_scene load_steps=26 format=3 uid="uid://dcofw8qvx1f84"]
 
-[ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_bfoi2"]
-[ext_resource type="Texture2D" uid="uid://f87xs6qm8fbn" path="res://Elouann/Chara/Chara1.png" id="2_4n8k8"]
-[ext_resource type="Texture2D" uid="uid://docecxbso4f6r" path="res://Elouann/Chara/CharaOgre.png" id="3_kd8am"]
-[ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="3_nflbn"]
-[ext_resource type="Texture2D" uid="uid://botf2ybcg00yw" path="res://ines/arena_0.png" id="3_o6mm4"]
-[ext_resource type="Texture2D" uid="uid://crquvdi6xa0f6" path="res://Elouann/Ressources/ROBOTO_Happy.png" id="4_d21gf"]
-[ext_resource type="Texture2D" uid="uid://01i8ak4s75ti" path="res://lise/bottle_front.png" id="5_3j1s4"]
-[ext_resource type="Texture2D" uid="uid://cfofe5dboj7id" path="res://Elouann/Ressources/ROBOTO_Mouais.png" id="5_q8fve"]
-[ext_resource type="Texture2D" uid="uid://bagbrlvktvhr1" path="res://Elouann/Ressources/ROBOTO_THERMINATOR.png" id="6_6uj6o"]
-[ext_resource type="Texture2D" uid="uid://cj83nqylsruy5" path="res://Elouann/Bouttons/BlackScreen.png" id="6_7kmyv"]
-[ext_resource type="Texture2D" uid="uid://hkb0d04h84gl" path="res://salome/bottle_1_front.png" id="6_bhtpt"]
-[ext_resource type="Texture2D" uid="uid://bxmn8jpopx3kc" path="res://Elouann/Ressources/ArrowHover.png" id="9_h85lq"]
-[ext_resource type="Texture2D" uid="uid://cb814dnsc0ad4" path="res://Elouann/Ressources/Arrow.png" id="10_vynst"]
-[ext_resource type="Texture2D" uid="uid://bhsp77kilvket" path="res://Elouann/Ressources/WASD.png" id="11_6b62n"]
-[ext_resource type="Texture2D" uid="uid://n1ojtiwbesi" path="res://Elouann/Ressources/ArrowsLastVersion.png" id="14_ai65n"]
+[ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_k11be"]
+[ext_resource type="Texture2D" uid="uid://docecxbso4f6r" path="res://Elouann/Chara/CharaOgre.png" id="2_0u8dh"]
+[ext_resource type="Texture2D" uid="uid://cb814dnsc0ad4" path="res://Elouann/Ressources/Arrow.png" id="3_knuuf"]
+[ext_resource type="Texture2D" uid="uid://bxmn8jpopx3kc" path="res://Elouann/Ressources/ArrowHover.png" id="4_5vuy6"]
+[ext_resource type="Texture2D" uid="uid://bslgok4bln0lr" path="res://salome/bottle_2_front.png" id="4_d8gu3"]
+[ext_resource type="Texture2D" uid="uid://nvl437cdvv2h" path="res://Elouann/Ressources/FondEcran.png" id="5_gkf2l"]
+[ext_resource type="Texture2D" uid="uid://m2npewq27pwq" path="res://salome/bottle_3_front.png" id="5_hqu4n"]
+[ext_resource type="Texture2D" uid="uid://botf2ybcg00yw" path="res://ines/arena_0.png" id="6_n30ka"]
+[ext_resource type="Texture2D" uid="uid://n1ojtiwbesi" path="res://Elouann/Ressources/ArrowsLastVersion.png" id="6_suooe"]
+[ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="7_52w1s"]
+[ext_resource type="Texture2D" uid="uid://01i8ak4s75ti" path="res://lise/bottle_front.png" id="8_11fia"]
+[ext_resource type="Texture2D" uid="uid://hkb0d04h84gl" path="res://salome/bottle_1_front.png" id="9_syxvg"]
+[ext_resource type="Texture2D" uid="uid://f87xs6qm8fbn" path="res://Elouann/Chara/Chara1.png" id="10_hhiq2"]
+[ext_resource type="Texture2D" uid="uid://bhsp77kilvket" path="res://Elouann/Ressources/WASD.png" id="11_wdhkl"]
+[ext_resource type="Texture2D" uid="uid://bjasnaduik7oo" path="res://roxane/1.png" id="12_ok8hr"]
+[ext_resource type="Texture2D" uid="uid://cj83nqylsruy5" path="res://Elouann/Bouttons/BlackScreen.png" id="13_3agxw"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h0mvw"]
-load_path = "res://.godot/imported/Chara1.png-cd1384c826130d045eaa8b314c8def52.ctex"
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_op5re"]
+load_path = "res://.godot/imported/WASD.png-7d40d6f555c5767e3101442537e2fd6d.ctex"
 
 [sub_resource type="Animation" id="Animation_v8s1o"]
 resource_name = "FadeIn"
@@ -313,30 +314,30 @@ _data = {
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvd3o"]
-texture = ExtResource("9_h85lq")
+texture = ExtResource("4_5vuy6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bvy0"]
-texture = ExtResource("9_h85lq")
+texture = ExtResource("4_5vuy6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tjjh0"]
-texture = ExtResource("10_vynst")
+texture = ExtResource("3_knuuf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j67ci"]
-texture = ExtResource("10_vynst")
+texture = ExtResource("3_knuuf")
 
-[node name="SelectChara" type="Control"]
+[node name="SelectBottle2" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_bfoi2")
-TableChara = [SubResource("CompressedTexture2D_h0mvw"), ExtResource("3_kd8am")]
-BotArray = [ExtResource("14_ai65n"), ExtResource("4_d21gf"), ExtResource("5_q8fve"), ExtResource("6_6uj6o")]
+script = ExtResource("1_k11be")
+TableChara = [ExtResource("8_11fia"), ExtResource("9_syxvg"), ExtResource("4_d8gu3"), ExtResource("5_hqu4n")]
+BotArray = [ExtResource("6_suooe"), ExtResource("4_5vuy6"), ExtResource("5_gkf2l"), SubResource("CompressedTexture2D_op5re")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="FondEcran" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
 position = Vector2(160, 90)
-texture = ExtResource("3_o6mm4")
+texture = ExtResource("6_n30ka")
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -344,7 +345,7 @@ offset_left = 141.0
 offset_top = 151.0
 offset_right = 192.0
 offset_bottom = 170.0
-theme = ExtResource("3_nflbn")
+theme = ExtResource("7_52w1s")
 theme_override_font_sizes/font_size = 30
 alignment = 0
 
@@ -354,7 +355,7 @@ offset_top = 174.0
 offset_right = 360.0
 offset_bottom = 279.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("7_52w1s")
 theme_override_font_sizes/font_size = 40
 text = "Player 1"
 horizontal_alignment = 1
@@ -367,7 +368,7 @@ offset_top = 522.0
 offset_right = 690.0
 offset_bottom = 626.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("7_52w1s")
 theme_override_font_sizes/font_size = 30
 text = "Decompte"
 horizontal_alignment = 1
@@ -380,7 +381,7 @@ offset_top = 174.0
 offset_right = 1180.0
 offset_bottom = 279.0
 scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("7_52w1s")
 theme_override_font_sizes/font_size = 40
 text = "Player 2"
 horizontal_alignment = 1
@@ -388,27 +389,27 @@ vertical_alignment = 1
 
 [node name="P0Bear" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
-position = Vector2(228, 140)
+position = Vector2(269, 123)
 rotation = -3.14159
-scale = Vector2(1, -1)
-texture = ExtResource("5_3j1s4")
+scale = Vector2(-1, -1)
+texture = ExtResource("2_0u8dh")
 
 [node name="P1Bear" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
-position = Vector2(92, 140)
-rotation = -3.14159
-scale = Vector2(1, -1)
-texture = ExtResource("6_bhtpt")
-
-[node name="P0Chara" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(269, 123)
-texture = ExtResource("3_kd8am")
-
-[node name="P1Chara" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(51, 123)
 rotation = -3.14159
 scale = Vector2(1, -1)
-texture = ExtResource("2_4n8k8")
+texture = ExtResource("10_hhiq2")
+
+[node name="P0Chara" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(229, 139)
+texture = ExtResource("8_11fia")
+
+[node name="P1Chara" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(90, 143)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("9_syxvg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
@@ -425,10 +426,11 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_1bvy0")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tjjh0")
 
 [node name="Player0PreviousMode" type="Button" parent="CanvasLayer"]
+visible = false
 modulate = Color(1, 1, 1, 0)
-offset_left = 164.0
+offset_left = 185.0
 offset_top = 70.0
-offset_right = 179.0
+offset_right = 200.0
 offset_bottom = 85.0
 theme_override_styles/hover = SubResource("StyleBoxTexture_mvd3o")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_1bvy0")
@@ -441,13 +443,14 @@ offset_top = 7.0
 offset_right = 815.0
 offset_bottom = 124.0
 scale = Vector2(0.341167, 0.335227)
-theme = ExtResource("3_nflbn")
+theme = ExtResource("7_52w1s")
 theme_override_font_sizes/font_size = 50
 text = "Choose your 
-character"
+Bear"
 horizontal_alignment = 1
 
 [node name="Player0NextMode" type="Button" parent="CanvasLayer"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 258.0
 offset_top = 70.0
@@ -488,21 +491,24 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_1bvy0")
 theme_override_styles/normal = SubResource("StyleBoxTexture_j67ci")
 
 [node name="ControlesP1" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(92, 85)
 scale = Vector2(0.744444, 0.744444)
-texture = ExtResource("11_6b62n")
+texture = ExtResource("11_wdhkl")
 
 [node name="ControlesP0" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 modulate = Color(1, 1, 1, 0)
-position = Vector2(212, 76)
-texture = ExtResource("14_ai65n")
+position = Vector2(222.5, 76)
+scale = Vector2(3.5, 1)
+texture = ExtResource("12_ok8hr")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(161.5, 100)
 scale = Vector2(2.17262, 2.26667)
-texture = ExtResource("6_7kmyv")
+texture = ExtResource("13_3agxw")
 
 [node name="Timer" type="Timer" parent="."]
 

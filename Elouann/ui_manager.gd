@@ -13,3 +13,5 @@ var SavedBottle1: Texture
 var SpriteMap: int
 
 var VersusAI: bool = false
+
+var BotLevel: int = 0

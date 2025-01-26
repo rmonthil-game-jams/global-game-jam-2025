@@ -18,9 +18,9 @@ func _ready() -> void:
 	get_node("Timer").one_shot = true
 	if UiManager.VersusAI:
 		AutoSelect()
-	if name == "SelectBottle":
-		get_node("CanvasLayer/Main1").texture = UiManager.SavedSprite0
-		get_node("CanvasLayer/Main2").texture = UiManager.SavedSprite1
+	if name == "SelectBottle2":
+		get_node("CanvasLayer/P0Bear").texture = UiManager.SavedSprite0
+		get_node("CanvasLayer/P1Bear").texture = UiManager.SavedSprite1
 
 func _on_timer_timeout():
 	if name == "SelectChara":
@@ -28,8 +28,8 @@ func _on_timer_timeout():
 		UiManager.SpriteP1 = ScrollNumberP1
 		UiManager.SavedSprite0 = TableChara[ScrollNumberP0]
 		UiManager.SavedSprite1 = TableChara[ScrollNumberP1]
-		get_tree().change_scene_to_file("res://Elouann/SelectBottle.tscn")
-	if name == "SelectBottle":
+		get_tree().change_scene_to_file("res://Elouann/SelectBottle2.tscn")
+	if name == "SelectBottle2":
 		UiManager.Bottle0 = ScrollNumberP0
 		UiManager.Bottle1 = ScrollNumberP1
 		UiManager.SavedBottle0 = TableChara[ScrollNumberP0]
@@ -165,12 +165,20 @@ func CheckBotMode():
 			BotMode = 0
 	if BotMode == 0:
 		get_node("CanvasLayer/ControlesP0").texture = BotArray[0]
+		UiManager.BotLevel = 0
+		UiManager.VersusAI = false
 	if BotMode == 1:
 		get_node("CanvasLayer/ControlesP0").texture =  BotArray[1]
+		UiManager.BotLevel = 1
+		UiManager.VersusAI = true
 	if BotMode == 2:
 		get_node("CanvasLayer/ControlesP0").texture =  BotArray[2]
+		UiManager.BotLevel = 2
+		UiManager.VersusAI = true
 	if BotMode == 3:
 		get_node("CanvasLayer/ControlesP0").texture =  BotArray[3]
+		UiManager.BotLevel = 3
+		UiManager.VersusAI = true
 
 
 func _on_player_0_next_mode_pressed() -> void:

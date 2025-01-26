@@ -8,10 +8,10 @@ extends Control
 var ChosenMap: int = 0
 
 func _ready() -> void:
-	get_node("CanvasLayer/Main1").texture = UiManager.SavedSprite0
-	get_node("CanvasLayer/Main2").texture = UiManager.SavedSprite1
-	get_node("CanvasLayer/Sprite2D").texture = UiManager.SavedBottle0
-	get_node("CanvasLayer/Sprite2D2").texture = UiManager.SavedBottle1
+	get_node("CanvasLayer/Sprite2D").texture = UiManager.SavedSprite0
+	get_node("CanvasLayer/Sprite2D2").texture = UiManager.SavedSprite1
+	get_node("CanvasLayer/Main1").texture = UiManager.SavedBottle0
+	get_node("CanvasLayer/Main2").texture = UiManager.SavedBottle1
 
 func GetRandomMap():
 	ChosenMap = randi_range(0,MapArraySize)

@@ -31,8 +31,8 @@ func _process(delta: float) -> void:
 			direction.x = 2 * DodgeSkills.x
 			direction.y = -0.5 * DodgeSkills.y
 			$Timer.stop()
-			Attack = false
-			Defend = true
+			Attack = true
+			Defend = false
 			$Timer.start()
 			
 		if DistanceToTarget().y > -0.9 and SlamSkill:
@@ -47,8 +47,8 @@ func _process(delta: float) -> void:
 			direction.x = -2
 			direction.y = -0.5
 			$Timer.stop()
-			Attack = false
-			Defend = true
+			Attack = true
+			Defend = false
 			$Timer.start()
 
 		else:

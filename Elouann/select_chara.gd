@@ -1,6 +1,6 @@
 extends Control
 
-var ScrollNumberP0: int = 0
+var ScrollNumberP0: int = 1
 var ScrollNumberP1: int = 0
 
 var LockP0: bool = true

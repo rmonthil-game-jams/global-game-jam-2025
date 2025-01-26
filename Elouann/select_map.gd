@@ -14,7 +14,12 @@ func _ready() -> void:
 	get_node("CanvasLayer/Main2").texture = UiManager.SavedBottle1
 
 func GetRandomMap():
+	var TempInt: int = ChosenMap
 	ChosenMap = randi_range(0,MapArraySize)
+	if ChosenMap == TempInt:
+		ChosenMap += 1
+		if ChosenMap > MapArraySize:
+			ChosenMap = 0
 	get_node("CanvasLayer/Sprite2D3").texture = MapArray[ChosenMap]
 	get_node("CanvasLayer/MapName").text = MapNameArray[ChosenMap]
 	UiManager.SpriteMap = ChosenMap

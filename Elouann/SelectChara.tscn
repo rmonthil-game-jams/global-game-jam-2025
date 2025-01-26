@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://wuhwir40toyn"]
+[gd_scene load_steps=23 format=3 uid="uid://wuhwir40toyn"]
 
 [ext_resource type="Script" path="res://Elouann/select_chara.gd" id="1_bfoi2"]
 [ext_resource type="Texture2D" uid="uid://f87xs6qm8fbn" path="res://Elouann/Chara/Chara1.png" id="2_4n8k8"]
+[ext_resource type="Texture2D" uid="uid://bfm5ev0w2utnb" path="res://Elouann/Chara/Chara3.png" id="3_0um0t"]
 [ext_resource type="Texture2D" uid="uid://docecxbso4f6r" path="res://Elouann/Chara/CharaOgre.png" id="3_kd8am"]
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="3_nflbn"]
 [ext_resource type="Texture2D" uid="uid://botf2ybcg00yw" path="res://ines/arena_0.png" id="3_o6mm4"]
@@ -15,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cb814dnsc0ad4" path="res://Elouann/Ressources/Arrow.png" id="10_vynst"]
 [ext_resource type="Texture2D" uid="uid://bhsp77kilvket" path="res://Elouann/Ressources/WASD.png" id="11_6b62n"]
 [ext_resource type="Texture2D" uid="uid://n1ojtiwbesi" path="res://Elouann/Ressources/ArrowsLastVersion.png" id="14_ai65n"]
+[ext_resource type="PackedScene" uid="uid://byl4rab5kkypr" path="res://remi/fx/fx_clic.tscn" id="14_s5sdh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h0mvw"]
 load_path = "res://.godot/imported/Chara1.png-cd1384c826130d045eaa8b314c8def52.ctex"
@@ -312,23 +314,11 @@ _data = {
 "RESET": SubResource("Animation_umbuw")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvd3o"]
-texture = ExtResource("9_h85lq")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bvy0"]
-texture = ExtResource("9_h85lq")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tjjh0"]
-texture = ExtResource("10_vynst")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j67ci"]
-texture = ExtResource("10_vynst")
-
 [node name="SelectChara" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_bfoi2")
-TableChara = [SubResource("CompressedTexture2D_h0mvw"), ExtResource("3_kd8am")]
+TableChara = [SubResource("CompressedTexture2D_h0mvw"), ExtResource("3_kd8am"), ExtResource("3_0um0t")]
 BotArray = [ExtResource("14_ai65n"), ExtResource("4_d21gf"), ExtResource("5_q8fve"), ExtResource("6_6uj6o")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -347,18 +337,6 @@ offset_bottom = 170.0
 theme = ExtResource("3_nflbn")
 theme_override_font_sizes/font_size = 30
 alignment = 0
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0)
-offset_top = 174.0
-offset_right = 360.0
-offset_bottom = 279.0
-scale = Vector2(1.01772, 1)
-theme = ExtResource("3_nflbn")
-theme_override_font_sizes/font_size = 40
-text = "Player 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Decompte" type="Label" parent="CanvasLayer"]
 visible = false
@@ -388,14 +366,14 @@ vertical_alignment = 1
 
 [node name="P0Bear" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
-position = Vector2(228, 140)
+position = Vector2(228, 145)
 rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("5_3j1s4")
 
 [node name="P1Bear" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
-position = Vector2(92, 140)
+position = Vector2(92, 145)
 rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("6_bhtpt")
@@ -415,24 +393,28 @@ libraries = {
 "": SubResource("AnimationLibrary_svrtl")
 }
 
-[node name="Player1PreviousChoice" type="Button" parent="CanvasLayer"]
+[node name="Player1PreviousChoice" type="TextureButton" parent="CanvasLayer"]
 offset_left = 64.0
 offset_top = 120.0
 offset_right = 79.0
 offset_bottom = 135.0
-theme_override_styles/hover = SubResource("StyleBoxTexture_mvd3o")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1bvy0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_tjjh0")
+texture_normal = ExtResource("9_h85lq")
+texture_pressed = ExtResource("9_h85lq")
+texture_hover = ExtResource("10_vynst")
 
-[node name="Player0PreviousMode" type="Button" parent="CanvasLayer"]
+[node name="FxClic" parent="CanvasLayer/Player1PreviousChoice" instance=ExtResource("14_s5sdh")]
+
+[node name="Player0PreviousMode" type="TextureButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 164.0
-offset_top = 70.0
-offset_right = 179.0
-offset_bottom = 85.0
-theme_override_styles/hover = SubResource("StyleBoxTexture_mvd3o")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1bvy0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_j67ci")
+offset_top = 75.0
+offset_right = 183.0
+offset_bottom = 94.0
+texture_normal = ExtResource("9_h85lq")
+texture_pressed = ExtResource("9_h85lq")
+texture_hover = ExtResource("10_vynst")
+
+[node name="FxClic" parent="CanvasLayer/Player0PreviousMode" instance=ExtResource("14_s5sdh")]
 
 [node name="Label11" type="Label" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -447,54 +429,61 @@ text = "Choose your
 character"
 horizontal_alignment = 1
 
-[node name="Player0NextMode" type="Button" parent="CanvasLayer"]
+[node name="Player0NextMode" type="TextureButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 258.0
-offset_top = 70.0
-offset_right = 273.0
-offset_bottom = 85.0
+offset_left = 259.0
+offset_top = 75.0
+offset_right = 278.0
+offset_bottom = 94.0
 scale = Vector2(-1, 1)
-theme_override_styles/hover = SubResource("StyleBoxTexture_mvd3o")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1bvy0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_j67ci")
+texture_normal = ExtResource("9_h85lq")
+texture_pressed = ExtResource("9_h85lq")
+texture_hover = ExtResource("10_vynst")
 
-[node name="Player1NextChoice" type="Button" parent="CanvasLayer"]
+[node name="FxClic" parent="CanvasLayer/Player0NextMode" instance=ExtResource("14_s5sdh")]
+
+[node name="Player1NextChoice" type="TextureButton" parent="CanvasLayer"]
 offset_left = 119.0
 offset_top = 120.0
 offset_right = 134.0
 offset_bottom = 135.0
 scale = Vector2(-1, 1)
-theme_override_styles/hover = SubResource("StyleBoxTexture_mvd3o")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1bvy0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_j67ci")
+texture_normal = ExtResource("9_h85lq")
+texture_pressed = ExtResource("9_h85lq")
+texture_hover = ExtResource("10_vynst")
 
-[node name="Player0PreviousChoice" type="Button" parent="CanvasLayer"]
+[node name="FxClic" parent="CanvasLayer/Player1NextChoice" instance=ExtResource("14_s5sdh")]
+
+[node name="Player0PreviousChoice" type="TextureButton" parent="CanvasLayer"]
 offset_left = 201.0
 offset_top = 120.0
 offset_right = 216.0
 offset_bottom = 135.0
-theme_override_styles/hover = SubResource("StyleBoxTexture_mvd3o")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1bvy0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_j67ci")
+texture_normal = ExtResource("9_h85lq")
+texture_pressed = ExtResource("9_h85lq")
+texture_hover = ExtResource("10_vynst")
 
-[node name="Player0NextChoice" type="Button" parent="CanvasLayer"]
-offset_left = 250.0
+[node name="FxClic" parent="CanvasLayer/Player0PreviousChoice" instance=ExtResource("14_s5sdh")]
+
+[node name="Player0NextChoice" type="TextureButton" parent="CanvasLayer"]
+offset_left = 253.0
 offset_top = 120.0
-offset_right = 265.0
-offset_bottom = 135.0
+offset_right = 272.0
+offset_bottom = 139.0
 scale = Vector2(-1, 1)
-theme_override_styles/hover = SubResource("StyleBoxTexture_mvd3o")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1bvy0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_j67ci")
+texture_normal = ExtResource("9_h85lq")
+texture_pressed = ExtResource("9_h85lq")
+texture_hover = ExtResource("10_vynst")
 
 [node name="ControlesP1" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(92, 85)
+position = Vector2(91, 85)
 scale = Vector2(0.744444, 0.744444)
 texture = ExtResource("11_6b62n")
 
 [node name="ControlesP0" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(212, 76)
+position = Vector2(211, 85)
+scale = Vector2(0.736764, 0.736764)
 texture = ExtResource("14_ai65n")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]

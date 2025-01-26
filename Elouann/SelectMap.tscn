@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://capbmd3qpxsd2"]
+[gd_scene load_steps=13 format=3 uid="uid://capbmd3qpxsd2"]
 
 [ext_resource type="Script" path="res://Elouann/select_map.gd" id="1_11kat"]
 [ext_resource type="Texture2D" uid="uid://botf2ybcg00yw" path="res://ines/arena_0.png" id="2_h7tnh"]
+[ext_resource type="Texture2D" uid="uid://d4g5yrb7nc66a" path="res://ines/arena_1.png" id="3_f2fm0"]
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="4_fx1su"]
 [ext_resource type="Texture2D" uid="uid://01i8ak4s75ti" path="res://lise/bottle_front.png" id="4_s52qj"]
 [ext_resource type="Texture2D" uid="uid://cbxyirn3gkrsf" path="res://Elouann/Ressources/interoghover.png" id="4_uue6x"]
@@ -9,32 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://cn0xg6qnkcrdr" path="res://Elouann/Ressources/Interogclick.png" id="5_l2v53"]
 [ext_resource type="Texture2D" uid="uid://bxmn8jpopx3kc" path="res://Elouann/Ressources/ArrowHover.png" id="6_aox6m"]
 [ext_resource type="Texture2D" uid="uid://bokhnehcv40j" path="res://Elouann/Ressources/interognormal.png" id="6_gcnxc"]
+[ext_resource type="PackedScene" uid="uid://byl4rab5kkypr" path="res://remi/fx/fx_clic.tscn" id="7_boxq7"]
 [ext_resource type="Texture2D" uid="uid://cb814dnsc0ad4" path="res://Elouann/Ressources/Arrow.png" id="7_ruvsw"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhku1"]
-texture = ExtResource("4_uue6x")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hkuds"]
-texture = ExtResource("5_l2v53")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vw405"]
-texture = ExtResource("6_gcnxc")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fy762"]
-texture = ExtResource("6_aox6m")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7pupy"]
-texture = ExtResource("6_aox6m")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h0e13"]
-texture = ExtResource("7_ruvsw")
 
 [node name="SelectMap" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_11kat")
-MapArray = [ExtResource("2_h7tnh")]
-MapNameArray = ["Crouded Bar"]
+MapArray = [ExtResource("2_h7tnh"), ExtResource("3_f2fm0")]
+MapNameArray = ["Crowded Bar", "Space"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -43,17 +27,16 @@ modulate = Color(0.5, 0.5, 0.5, 1)
 position = Vector2(160, 90)
 texture = ExtResource("2_h7tnh")
 
-[node name="RandomButton" type="Button" parent="CanvasLayer"]
+[node name="RandomButton" type="TextureButton" parent="CanvasLayer"]
 offset_left = 145.0
 offset_top = 74.0
 offset_right = 175.0
 offset_bottom = 104.0
-theme = ExtResource("4_fx1su")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxTexture_dhku1")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_hkuds")
-theme_override_styles/normal = SubResource("StyleBoxTexture_vw405")
-alignment = 0
+texture_normal = ExtResource("6_gcnxc")
+texture_pressed = ExtResource("5_l2v53")
+texture_hover = ExtResource("4_uue6x")
+
+[node name="FxClic" parent="CanvasLayer/RandomButton" instance=ExtResource("7_boxq7")]
 
 [node name="StartButton" type="Button" parent="CanvasLayer"]
 offset_left = 122.0
@@ -63,8 +46,9 @@ offset_bottom = 273.0
 scale = Vector2(0.198022, 0.198022)
 theme = ExtResource("4_fx1su")
 theme_override_font_sizes/font_size = 70
-text = "   Start"
 alignment = 0
+
+[node name="FxClic" parent="CanvasLayer/StartButton" instance=ExtResource("7_boxq7")]
 
 [node name="MapName" type="Label" parent="CanvasLayer"]
 offset_left = 86.0
@@ -74,16 +58,16 @@ offset_bottom = 81.0
 scale = Vector2(1.01772, 1)
 theme = ExtResource("4_fx1su")
 theme_override_font_sizes/font_size = 10
-text = "Map name"
+text = "Crowded Bar"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Main1" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(91, 149)
+position = Vector2(228, 145)
 texture = ExtResource("4_s52qj")
 
 [node name="Main2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(229, 150)
+position = Vector2(90, 145)
 texture = ExtResource("4_s52qj")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
@@ -95,24 +79,28 @@ position = Vector2(50, 123)
 scale = Vector2(-1, 1)
 texture = ExtResource("4_uxudi")
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 108.0
-offset_top = 57.0
-offset_right = 123.0
-offset_bottom = 72.0
-theme_override_styles/hover = SubResource("StyleBoxTexture_fy762")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_7pupy")
-theme_override_styles/normal = SubResource("StyleBoxTexture_h0e13")
+[node name="Button" type="TextureButton" parent="CanvasLayer"]
+offset_left = 97.0
+offset_top = 55.0
+offset_right = 116.0
+offset_bottom = 74.0
+texture_normal = ExtResource("6_aox6m")
+texture_pressed = ExtResource("6_aox6m")
+texture_hover = ExtResource("7_ruvsw")
 
-[node name="Button2" type="Button" parent="CanvasLayer"]
-offset_left = 209.0
-offset_top = 57.0
-offset_right = 224.0
-offset_bottom = 72.0
+[node name="FxClic" parent="CanvasLayer/Button" instance=ExtResource("7_boxq7")]
+
+[node name="Button2" type="TextureButton" parent="CanvasLayer"]
+offset_left = 220.0
+offset_top = 55.0
+offset_right = 239.0
+offset_bottom = 74.0
 scale = Vector2(-1, 1)
-theme_override_styles/hover = SubResource("StyleBoxTexture_fy762")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_7pupy")
-theme_override_styles/normal = SubResource("StyleBoxTexture_h0e13")
+texture_normal = ExtResource("6_aox6m")
+texture_pressed = ExtResource("6_aox6m")
+texture_hover = ExtResource("7_ruvsw")
+
+[node name="FxClic" parent="CanvasLayer/Button2" instance=ExtResource("7_boxq7")]
 
 [node name="Label11" type="Label" parent="CanvasLayer"]
 offset_left = 27.0
@@ -122,12 +110,14 @@ offset_bottom = 124.0
 scale = Vector2(0.341167, 0.335227)
 theme = ExtResource("4_fx1su")
 theme_override_font_sizes/font_size = 50
-text = "Choose your 
-Map"
+text = "Select Map"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="pressed" from="CanvasLayer/RandomButton" to="." method="_on_random_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

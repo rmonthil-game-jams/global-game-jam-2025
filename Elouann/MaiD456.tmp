@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cvnu4cqcqrikp"]
+[gd_scene load_steps=33 format=3 uid="uid://cvnu4cqcqrikp"]
 
 [ext_resource type="Theme" uid="uid://hulxhl5602n6" path="res://Elouann/FontTheme.tres" id="1_jsfdf"]
 [ext_resource type="Script" path="res://Elouann/main_menu.gd" id="1_vj8ku"]
@@ -25,8 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://df7ovbpentuy6" path="res://Elouann/Ressources/F.png" id="19_yckxu"]
 [ext_resource type="Texture2D" uid="uid://v2w1kx24d5yu" path="res://Elouann/Ressources/O.png" id="20_r7vxq"]
 [ext_resource type="Texture2D" uid="uid://bfqleb3787fds" path="res://Elouann/Ressources/CreditSalleDeBain.png" id="25_3jlwo"]
-[ext_resource type="FontFile" uid="uid://487skyoer5km" path="res://Elouann/vhs-gothic.ttf" id="26_dwyib"]
-[ext_resource type="Texture2D" uid="uid://cgpp2gycwv7oh" path="res://Elouann/Ressources/Womer.png" id="26_u7m6c"]
 
 [sub_resource type="Animation" id="Animation_7shdg"]
 resource_name = "FadeIn"
@@ -121,102 +119,6 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CanvasLayer/Womer:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.634839, 0.634839)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("CanvasLayer/Title/F:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(153, 36)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("CanvasLayer/Title/O:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(167, 35)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("CanvasLayer/Title/A:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(188, 33)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("CanvasLayer/Title/M:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(208, 34)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("CanvasLayer/Title/S:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(227, 37)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("CanvasLayer/Title/U:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(251, 33)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("CanvasLayer/Title/P:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(269, 32)]
-}
 
 [sub_resource type="Animation" id="Animation_1x02k"]
 resource_name = "Idle"
@@ -270,106 +172,9 @@ tracks/3/keys = {
 "update": 1,
 "values": [Vector2(0, 0), Vector2(1, 0), Vector2(0, 0)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CanvasLayer/Womer:scale")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1, 1.53333, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(0.634839, 0.634839), Vector2(0.634839, 0.634839), Vector2(0.665, 0.665), Vector2(0.634839, 0.634839)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CanvasLayer/Title/F:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(153, 36), Vector2(153, 34), Vector2(153, 36)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("CanvasLayer/Title/O:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(167, 35), Vector2(167, 37), Vector2(167, 35)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("CanvasLayer/Title/A:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(188, 33), Vector2(188, 37), Vector2(188, 33)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("CanvasLayer/Title/M:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(208, 34), Vector2(208, 35), Vector2(208, 34)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("CanvasLayer/Title/S:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 1, 2.01979),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(227, 37), Vector2(227, 33), Vector2(227, 37)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("CanvasLayer/Title/U:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 1, 2.01979),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(251, 33), Vector2(251, 31), Vector2(251, 33)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("CanvasLayer/Title/P:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 1, 2.01979),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(269, 32), Vector2(269, 34), Vector2(269, 32)]
-}
 
 [sub_resource type="Animation" id="Animation_wbj8v"]
 resource_name = "FadeOut2"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -377,7 +182,7 @@ tracks/0/path = NodePath("CanvasLayer/Sprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333334, 0.5),
+"times": PackedFloat32Array(0.7, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -399,29 +204,12 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_oljq6"]
-resource_name = "FadeOut3"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Sprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333334, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6y1cu"]
 _data = {
 "FadeIn": SubResource("Animation_7shdg"),
 "FadeIn2": SubResource("Animation_6duin"),
 "FadeOut": SubResource("Animation_2n84x"),
 "FadeOut2": SubResource("Animation_wbj8v"),
-"FadeOut3": SubResource("Animation_oljq6"),
 "Idle": SubResource("Animation_1x02k"),
 "RESET": SubResource("Animation_g2agm")
 }
@@ -442,11 +230,6 @@ texture = ExtResource("4_0rujp")
 [node name="Menu-main-tavern" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(272, 71)
 texture = ExtResource("4_n8s5j")
-
-[node name="Womer" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(51, 113)
-scale = Vector2(0.634839, 0.634839)
-texture = ExtResource("26_u7m6c")
 
 [node name="Main-menu-fairy" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(211.5, 114.5)
@@ -489,12 +272,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="M" type="Sprite2D" parent="CanvasLayer/Title"]
-position = Vector2(208, 34)
+position = Vector2(208, 36)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_k5w3k")
 
 [node name="P" type="Sprite2D" parent="CanvasLayer/Title"]
-position = Vector2(269, 32)
+position = Vector2(269, 34)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("15_7eijf")
 
@@ -509,7 +292,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_in7xr")
 
 [node name="A" type="Sprite2D" parent="CanvasLayer/Title"]
-position = Vector2(188, 33)
+position = Vector2(188, 36)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("18_0pxle")
 
@@ -519,7 +302,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_yckxu")
 
 [node name="O" type="Sprite2D" parent="CanvasLayer/Title"]
-position = Vector2(167, 35)
+position = Vector2(168, 37)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("20_r7vxq")
 
@@ -540,8 +323,14 @@ stretch_mode = 4
 position = Vector2(-50.4485, -317.538)
 rotation = 0.0712632
 
-[node name="CreditRoom" type="Control" parent="CanvasLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(163.241, 93.9445)
+scale = Vector2(2.1638, 2.00106)
+texture = ExtResource("10_klad5")
+
+[node name="CreditRoom" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 
@@ -551,58 +340,12 @@ texture = ExtResource("25_3jlwo")
 
 [node name="Label" type="Label" parent="CanvasLayer/CreditRoom"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 15.0
-offset_right = 77.0
-offset_bottom = 72.0
+offset_left = 13.0
+offset_top = 37.0
+offset_right = 162.0
+offset_bottom = 60.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("26_dwyib")
-theme_override_font_sizes/font_size = 7
-text = "Artistes :
-- Inès Chmourrane
-- Lise Carton
-- Salomé Raffort
-- Roxane Jacquot"
-
-[node name="Label2" type="Label" parent="CanvasLayer/CreditRoom"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 77.0
-offset_right = 152.0
-offset_bottom = 118.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("26_dwyib")
-theme_override_font_sizes/font_size = 7
-text = "Sound Designer/Compositor :
-- Robin Brech
-- Sylvain Debrock"
-
-[node name="Label3" type="Label" parent="CanvasLayer/CreditRoom"]
-layout_mode = 0
-offset_left = 116.0
-offset_top = 16.0
-offset_right = 216.0
-offset_bottom = 70.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("26_dwyib")
-theme_override_font_sizes/font_size = 7
-text = "Designer :
-- Roxane Jacquot
-- Elouann Giacomoni
-- Rémi Monthiller"
-
-[node name="Label4" type="Label" parent="CanvasLayer/CreditRoom"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 116.0
-offset_right = 88.0
-offset_bottom = 158.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("26_dwyib")
-theme_override_font_sizes/font_size = 7
-text = "Developer :
-- Elouann Giacomoni
-- Rémi Monthiller"
+text = "on met les noms ici"
 
 [node name="ButtonCreditBack" type="TextureButton" parent="CanvasLayer/CreditRoom"]
 layout_mode = 0
@@ -616,19 +359,7 @@ texture_hover = ExtResource("6_q1bvv")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(163.241, 93.9445)
-scale = Vector2(2.1638, 2.00106)
-texture = ExtResource("10_klad5")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_6y1cu")
-}
-autoplay = "Idle"
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_6y1cu")
 }
@@ -636,7 +367,5 @@ autoplay = "Idle"
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/CreditRoom/ButtonCreditBack" to="." method="_on_button_credit_back_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_animation_player_animation_finished"]

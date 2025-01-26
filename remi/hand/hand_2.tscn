@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://rqe5vp65mnkr"]
+
+[ext_resource type="Script" path="res://remi/hand/hand_2.gd" id="1_lelrk"]
+[ext_resource type="Texture2D" uid="uid://cwiuturrw7eo1" path="res://more/hand_2.png" id="2_c4gum"]
+[ext_resource type="Texture2D" uid="uid://c52je78kga0ek" path="res://more/thumb_2.png" id="3_lncn6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6uxuj"]
+
+[node name="Hand2" type="RigidBody2D"]
+collision_layer = 2
+mass = 8.0
+gravity_scale = 0.0
+script = ExtResource("1_lelrk")
+
+[node name="UI" type="Node2D" parent="."]
+z_index = 3
+
+[node name="Sprite2DHand" type="Sprite2D" parent="UI"]
+position = Vector2(-9, 0)
+texture = ExtResource("2_c4gum")
+
+[node name="Sprite2DThumb" type="Sprite2D" parent="UI"]
+position = Vector2(11, -1)
+texture = ExtResource("3_lncn6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6uxuj")

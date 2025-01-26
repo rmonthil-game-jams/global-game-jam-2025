@@ -239,10 +239,11 @@ func _on_battle_finished(victor_id: int) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		if not event.pressed:
-			# fade out
-			var tween: Tween = create_tween()
-			tween.tween_property($Env/CanvasModulate, "color", Color.BLACK, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
-			await tween.finished
-			# open menu
-			get_tree().change_scene_to_file("res://Elouann/MainMenu.tscn")
+		if event.keycode == KEY_ESCAPE:
+			if not event.pressed:
+				# fade out
+				var tween: Tween = create_tween()
+				tween.tween_property($Env/CanvasModulate, "color", Color.BLACK, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+				await tween.finished
+				# open menu
+				get_tree().change_scene_to_file("res://Elouann/MainMenu.tscn")

@@ -2,7 +2,7 @@ class_name Game
 extends Node
 
 # parameters
-const HAND_SPACING: float = 180.0
+const HAND_SPACING: float = 240.0
 
 # output
 var arena: Node2D

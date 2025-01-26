@@ -1,7 +1,7 @@
 extends Node2D
 
 var DISPLACEMENT: float = 10.0
-var DURATION: float = 4.0
+var DURATION: float = 2.0
 
 func _ready() -> void:
 	# init

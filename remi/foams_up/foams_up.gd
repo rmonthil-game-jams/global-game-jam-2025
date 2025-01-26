@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 			)
 			# TODO: FX CONTACT (PARTICLES)
 			if not is_bottle_0_foaming:
-				var foam_duration: float = HIT_INTENSITY * (bottle_0.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_0.linear_velocity - other_bottle.linear_velocity).length())
+				var foam_duration: float = HIT_INTENSITY * (53.0/bottle_0.HEIGHT) * (bottle_0.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_0.linear_velocity - other_bottle.linear_velocity).length())
 				if foam_duration > 0.0:
 					is_bottle_0_foaming = true
 					get_tree().create_timer(foam_duration, false, true).timeout.connect(
@@ -97,7 +97,7 @@ func _physics_process(delta: float) -> void:
 			)
 			# foam
 			if not is_bottle_1_foaming:
-				var foam_duration: float = HIT_INTENSITY * (bottle_1.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_1.linear_velocity - other_bottle.linear_velocity).length())
+				var foam_duration: float = HIT_INTENSITY * (53.0/bottle_1.HEIGHT) * (bottle_1.global_position.y - other_bottle.global_position.y) * (1.0 + HIT_INTENSITY_V * (bottle_1.linear_velocity - other_bottle.linear_velocity).length())
 				if foam_duration > 0.0:
 					is_bottle_1_foaming = true
 					get_tree().create_timer(foam_duration, false, true).timeout.connect(

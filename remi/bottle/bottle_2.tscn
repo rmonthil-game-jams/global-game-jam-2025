@@ -24,6 +24,7 @@ height = 16.0
 [node name="Bottle2" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 13
+mass = 4.0
 physics_material_override = SubResource("PhysicsMaterial_wnbal")
 gravity_scale = 0.0
 continuous_cd = 2

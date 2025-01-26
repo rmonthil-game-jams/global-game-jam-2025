@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://csw3big14bkwq"]
+
+[ext_resource type="Script" path="res://remi/player/player_mouse/player_mouse.gd" id="1_cwry0"]
+
+[node name="PlayerMouse" type="Node"]
+script = ExtResource("1_cwry0")
+
+[node name="UI" type="Node2D" parent="."]
+visible = false
+
+[node name="Anchor" type="Node2D" parent="UI"]
+
+[node name="Marker2D" type="Marker2D" parent="UI/Anchor"]
+position = Vector2(1, 0)
+
+[node name="Pad" type="Node2D" parent="UI"]
+
+[node name="Polygon2D" type="Polygon2D" parent="UI/Pad"]
+polygon = PackedVector2Array(8, 0, 0, -8, -8, 0, 0, 8)

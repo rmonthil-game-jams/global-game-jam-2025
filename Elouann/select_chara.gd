@@ -117,7 +117,7 @@ func AutoSelect():
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "FadeOut":
-		get_node("Timer").start(1)
+		get_node("Timer").start(0.05)
 
 #Button Play
 func _on_button_pressed() -> void:

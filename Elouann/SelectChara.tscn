@@ -102,14 +102,15 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_62n58"]
 resource_name = "FadeOut"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label11:modulate")
+tracks/0/path = NodePath("ControlesP1:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0104167, 0.4),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -117,7 +118,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Button:modulate")
+tracks/1/path = NodePath("ControlesP0:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -129,19 +130,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ControlesP1:modulate")
+tracks/2/path = NodePath("Player0PreviousMode:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"update": 1,
+"values": [false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ControlesP0:modulate")
+tracks/3/path = NodePath("Player0PreviousMode:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -153,7 +154,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Player0PreviousMode:disabled")
+tracks/4/path = NodePath("Player0NextMode:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -165,7 +166,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Player0PreviousMode:modulate")
+tracks/5/path = NodePath("Player0NextMode:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -177,38 +178,26 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Player0NextMode:disabled")
+tracks/6/path = NodePath("TextureButton:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Player0NextMode:modulate")
+tracks/7/path = NodePath("Sprite2D3:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("TextureButton:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_umbuw"]
@@ -348,7 +337,8 @@ script = ExtResource("1_bfoi2")
 TableChara = [SubResource("CompressedTexture2D_h0mvw"), ExtResource("3_kd8am"), ExtResource("3_0um0t")]
 BotArray = [ExtResource("14_ai65n"), ExtResource("5_1gdkq"), ExtResource("6_8v052"), ExtResource("7_ra3ru")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="Control" parent="."]
+anchors_preset = 0
 
 [node name="FondEcran" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
@@ -456,12 +446,13 @@ texture_hover = ExtResource("10_vynst")
 
 [node name="Label11" type="Label" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -96.0
+offset_left = 65.0
 offset_top = 9.0
-offset_right = 96.0
+offset_right = 257.0
 offset_bottom = 27.0
 grow_horizontal = 2
 theme = ExtResource("3_nflbn")
@@ -534,7 +525,6 @@ scale = Vector2(0.736764, 0.736764)
 texture = ExtResource("14_ai65n")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
-visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(161.5, 100)
 scale = Vector2(2.17262, 2.26667)

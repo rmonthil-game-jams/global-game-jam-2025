@@ -386,18 +386,18 @@ modulate = Color(0.5, 0.5, 0.5, 1)
 position = Vector2(209, 144)
 rotation = -3.14159
 scale = Vector2(1, -1)
-texture = ExtResource("5_3j1s4")
+texture = ExtResource("6_bhtpt")
 
 [node name="P1Bear" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.5, 0.5, 0.5, 1)
 position = Vector2(112, 138)
 rotation = -3.14159
 scale = Vector2(1, -1)
-texture = ExtResource("6_bhtpt")
+texture = ExtResource("5_3j1s4")
 
 [node name="P0Chara" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(261, 116)
-texture = ExtResource("4_q16pt")
+texture = ExtResource("3_rvmpx")
 
 [node name="P1Chara" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(60, 116)
